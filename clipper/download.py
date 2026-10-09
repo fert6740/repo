@@ -182,7 +182,7 @@ def make_audio(rec: Record, total: float) -> None:
 
 def make_proxy(rec: Record, total: float) -> None:
     c = rec.cfg["download"]
-    vf = f"scale=-2:{c['proxy_height']},fps={c['proxy_fps']}"
+    vf = f"fps={c['proxy_fps']},scale=-2:{c['proxy_height']}"  # сначала прореживаем кадры — масштабировать вдвое меньше
     g = str(int(c["proxy_fps"] * c["proxy_keyint_sec"]))
     audio = ["-c:a", "aac", "-b:a", "96k", "-movflags", "+faststart"]
     nv = ["-c:v", c["proxy_encoder"], "-preset", "p4", "-cq", "30", "-g", g, "-bf", "0"]
