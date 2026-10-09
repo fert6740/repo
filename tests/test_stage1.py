@@ -288,3 +288,11 @@ def test_transcribe_resume_and_oom(cfg, monkeypatch):
     calls["n"] = 0
     TR.run_transcribe(rec)
     assert calls["n"] == 2  # снова 8 → OOM, затем 4
+
+
+def test_muted_from_playlist():
+    from clipper.download import muted_from_playlist
+    pl = "\n".join(["#EXTM3U", "#EXT-X-TARGETDURATION:10",
+                    "#EXTINF:10.000,", "0.ts", "#EXTINF:10.000,", "1-muted.ts", "#EXTINF:10.000,", "2-muted.ts",
+                    "#EXTINF:10.000,", "3.ts", "#EXTINF:4.500,", "4-muted.ts?x=1", "#EXT-X-ENDLIST"])
+    assert muted_from_playlist(pl) == [[10.0, 30.0], [40.0, 44.5]]

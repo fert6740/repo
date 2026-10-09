@@ -84,6 +84,7 @@ def parse_cli_output(stdout: str) -> tuple[dict | None, Usage, str]:
     return data, usage, ""
 
 
+LOGIN_WORDS = ("not logged in", "please run /login", "invalid api key", "oauth token has expired")
 LIMIT_WORDS = ("usage limit", "rate limit", "limit reached", "5-hour limit", "weekly limit", "out of extra usage")
 
 
@@ -118,6 +119,9 @@ class ClaudeCLI:
         usage.seconds = round(time.time() - t0, 1)
         if data is None:
             msg = err or p.stderr.strip()[-1000:] or f"код выхода {p.returncode}"
+            if any(w in (msg + p.stderr).lower() for w in LOGIN_WORDS):
+                raise ClipperError("Claude Code не залогинен. Запустите в терминале claude, войдите по подписке "
+                                   "(/login) и повторите команду.")
             if any(w in (msg + p.stderr).lower() for w in LIMIT_WORDS):
                 raise LimitReached("Исчерпан лимит подписки Claude: " + msg + "\nПовторите позже — "
                                    "готовые шаги пересчитываться не будут.")

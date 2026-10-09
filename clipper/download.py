@@ -4,6 +4,7 @@ from __future__ import annotations
 import json
 import logging
 import os
+import re
 import shutil
 import stat
 import subprocess
@@ -16,7 +17,7 @@ from pathlib import Path
 import numpy as np
 
 from .config import ClipperError
-from .media import ffmpeg_try, gray_frames, iter_wav_blocks, probe_duration, run_ffmpeg, wav_info
+from .media import ffmpeg_try, gray_frames, iter_wav_blocks, probe_duration, wav_info
 from .record import Record, fmt_duration, fmt_time, read_json, write_json
 
 log = logging.getLogger("clipper")
@@ -35,14 +36,19 @@ def fetch_info(url: str) -> dict:
     return json.loads(p.stdout)
 
 
+def best_format(info: dict, max_height: int) -> dict | None:
+    """Формат, который выберет yt-dlp по строке из pick_format."""
+    fmts = [f for f in info.get("formats", []) if f.get("vcodec") not in (None, "none") and f.get("height")]
+    ok = [f for f in fmts if f["height"] <= max_height] or fmts
+    return max(ok, key=lambda f: (f["height"], f.get("fps") or 0, f.get("tbr") or 0)) if ok else None
+
+
 def pick_format(info: dict, max_height: int) -> tuple[str, float]:
     """Строка формата для yt-dlp и оценка размера файла в байтах."""
     dur = float(info.get("duration") or 0)
-    fmts = [f for f in info.get("formats", []) if f.get("vcodec") not in (None, "none") and f.get("height")]
-    ok = [f for f in fmts if f["height"] <= max_height] or fmts
+    best = best_format(info, max_height)
     est = 0.0
-    if ok:
-        best = max(ok, key=lambda f: (f["height"], f.get("fps") or 0, f.get("tbr") or 0))
+    if best:
         est = best.get("filesize") or best.get("filesize_approx") or 0
         if not est and best.get("tbr") and dur:
             est = best["tbr"] * 1000 / 8 * dur
@@ -111,23 +117,6 @@ def parse_chat(raw) -> list[dict]:
     return out
 
 
-def chat_via_ytdlp(rec: Record) -> list[dict] | None:
-    tmpl = "chat_rechat"
-    p = subprocess.run(ytdlp_cmd("--skip-download", "--write-subs", "--sub-langs", "rechat",
-                                 "-P", str(rec.dir), "-o", tmpl, rec.url), capture_output=True, text=True)
-    files = list(rec.dir.glob(tmpl + "*.json"))
-    if p.returncode != 0 or not files:
-        log.info("  yt-dlp не отдал чат (%s)", (p.stderr.strip().splitlines() or ["нет файла"])[-1][:200])
-        return None
-    try:
-        msgs = parse_chat(read_json(files[0]))
-    except (json.JSONDecodeError, AttributeError, TypeError):
-        msgs = []
-    for f in files:
-        f.unlink(missing_ok=True)
-    return msgs or None
-
-
 def twitch_downloader(rec: Record) -> Path:
     found = shutil.which("TwitchDownloaderCLI")
     if found:
@@ -162,7 +151,8 @@ def chat_via_twitch_downloader(rec: Record) -> list[dict] | None:
     raw = rec.path("chat_raw.json")
     raw.unlink(missing_ok=True)
     env = dict(os.environ, DOTNET_SYSTEM_GLOBALIZATION_INVARIANT="1")
-    p = subprocess.run([str(exe), "chatdownload", "--id", rec.vod_id, "-o", str(raw)],
+    p = subprocess.run([str(exe), "chatdownload", "--id", rec.vod_id, "-o", str(raw),
+                        "--collision", "Overwrite", "--banner", "false"],
                        capture_output=True, text=True, env=env, stdin=subprocess.DEVNULL)
     if p.returncode != 0 or not raw.exists():
         log.warning("  TwitchDownloaderCLI не скачал чат: %s", (p.stderr or p.stdout).strip()[-500:])
@@ -173,12 +163,12 @@ def chat_via_twitch_downloader(rec: Record) -> list[dict] | None:
 
 
 def download_chat(rec: Record) -> None:
-    for name, fn in (("yt-dlp", chat_via_ytdlp), ("TwitchDownloaderCLI", chat_via_twitch_downloader)):
-        msgs = fn(rec)
-        if msgs is not None:
-            write_json(rec.chat, {"source": name, "messages": msgs}, indent=None)
-            log.info("  чат: %d сообщений (через %s)", len(msgs), name)
-            return
+    # yt-dlp чат Twitch больше не скачивает (в его коде нет rechat) — сразу TwitchDownloaderCLI
+    msgs = chat_via_twitch_downloader(rec)
+    if msgs is not None:
+        write_json(rec.chat, {"source": "TwitchDownloaderCLI", "messages": msgs}, indent=None)
+        log.info("  чат: %d сообщений", len(msgs))
+        return
     log.warning("Чат скачать не удалось — продолжаю без него (сигналы чата будут нулевые). "
                 "Повторный запуск попробует снова.")
 
@@ -207,6 +197,48 @@ def make_proxy(rec: Record, total: float) -> None:
 
 
 # ---------- заглушённые куски ----------
+
+MUTED_SEG_RE = re.compile(r"-muted\.ts(\?|$)")
+
+
+def muted_from_playlist(text: str) -> list[list[float]]:
+    """Twitch помечает заглушённые куски записи в плейлисте именами вида «123-muted.ts»."""
+    out: list[list[float]] = []
+    t, dur = 0.0, None
+    for line in text.splitlines():
+        line = line.strip()
+        if line.startswith("#EXTINF:"):
+            try:
+                dur = float(line[8:].split(",")[0])
+            except ValueError:
+                dur = None
+        elif line and not line.startswith("#") and dur is not None:
+            if MUTED_SEG_RE.search(line):
+                if out and abs(out[-1][1] - t) < 1e-3:
+                    out[-1][1] = round(t + dur, 3)
+                else:
+                    out.append([round(t, 3), round(t + dur, 3)])
+            t += dur
+            dur = None
+    return out
+
+
+def fetch_muted_playlist(rec: Record, info: dict) -> None:
+    """Сохраняет заглушённые куски по плейлисту выбранного качества (ссылки на плейлист быстро устаревают)."""
+    f = best_format(info, rec.cfg["download"]["max_height"])
+    url = f and f.get("url")
+    if not url or ".m3u8" not in url:
+        return
+    try:
+        req = urllib.request.Request(url, headers={"User-Agent": "Mozilla/5.0"})
+        with urllib.request.urlopen(req, timeout=60) as r:
+            text = r.read().decode("utf-8", "replace")
+    except Exception as e:  # noqa: BLE001 — не страшно, есть запасной способ по звуку
+        log.warning("  не удалось прочитать плейлист записи (%s) — заглушённые куски будут искаться по звуку", e)
+        return
+    if "#EXTINF" not in text:
+        return
+    write_json(rec.path("muted_playlist.json"), muted_from_playlist(text))
 
 def silent_runs(rec: Record, peak: float, min_sec: float, hop: float = 0.1) -> list[tuple[float, float]]:
     """Отрезки цифровой тишины не короче min_sec."""
@@ -244,7 +276,13 @@ def find_muted(rec: Record) -> None:
     for s, e in silent_runs(rec, c["silence_peak"], c["min_sec"]):
         m = picture_motion(video, s, e)
         (muted if m >= c["frame_diff_min"] else static).append([round(s, 1), round(e, 1)])
-    write_json(rec.muted, {"muted": muted, "silent_static": static})
+    pl = rec.path("muted_playlist.json")
+    if pl.exists():  # точная разметка Twitch; тишина по звуку остаётся как справка
+        write_json(rec.muted, {"source": "playlist", "muted": read_json(pl),
+                               "audio_guess": muted, "silent_static": static})
+        muted = read_json(pl)
+    else:
+        write_json(rec.muted, {"source": "audio", "muted": muted, "silent_static": static})
     total = sum(e - s for s, e in muted)
     if muted:
         log.info("  заглушено Twitch: %d кусков, всего %s", len(muted), fmt_duration(total))
@@ -275,13 +313,14 @@ def update_streamer_login(rec: Record, info: dict) -> None:
 def run_download(rec: Record, force: bool = False) -> None:
     rec.create()
     if force:
-        for p in (rec.source, rec.audio, rec.proxy, rec.chat, rec.muted, rec.info):
+        for p in (rec.source, rec.audio, rec.proxy, rec.chat, rec.muted, rec.info, rec.path("muted_playlist.json")):
             p.unlink(missing_ok=True)
 
     if not rec.info.exists():
         with rec.step("download.info"):
             info = fetch_info(rec.url)
             save_info(rec, info)
+            fetch_muted_playlist(rec, info)
             update_streamer_login(rec, info)
             log.info("  «%s», %s, длительность %s", info.get("title"), info.get("uploader"),
                      fmt_time(info.get("duration") or 0))
@@ -292,7 +331,10 @@ def run_download(rec: Record, force: bool = False) -> None:
         log.info("source.mp4 уже есть, пропускаю скачивание")
     else:
         with rec.step("download.video"):
-            download_video(rec, fetch_info(rec.url))
+            fresh = fetch_info(rec.url)
+            if not rec.path("muted_playlist.json").exists():
+                fetch_muted_playlist(rec, fresh)
+            download_video(rec, fresh)
 
     total = probe_duration(rec.source)
     if not info.get("duration"):
