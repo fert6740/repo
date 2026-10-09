@@ -29,8 +29,10 @@ def render_page(rec: Record, out: Path, runs: list[dict], title: str) -> Path:
     info = rec.load_info()
     video = os.path.relpath(rec.proxy, out.parent) if rec.proxy.exists() else ""
     muted = read_json(rec.muted)["muted"] if rec.muted.exists() else []
+    clips_path = rec.path("clips.json")
+    clips = read_json(clips_path)["clips"] if clips_path.exists() else []
     data = {"title": title, "streamer": info.get("uploader") or rec.streamer, "url": rec.url,
-            "duration": rec.duration(), "video": video, "muted": muted, "runs": runs}
+            "duration": rec.duration(), "video": video, "muted": muted, "runs": runs, "clips": clips}
     html = TEMPLATE.read_text(encoding="utf-8")
     page_title = (info.get("title") or rec.vod_id)[:60]
     html = html.replace("__TITLE__", page_title.replace("<", "&lt;"))

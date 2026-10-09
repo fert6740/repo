@@ -164,6 +164,8 @@ class Transcriber:
         c = self.c
         kw = dict(language=c["language"], beam_size=c["beam_size"], word_timestamps=True,
                   vad_filter=c["vad"], condition_on_previous_text=c["condition_on_previous_text"])
+        if c.get("hotwords"):
+            kw["hotwords"] = c["hotwords"]
         if self.batch > 0:
             from faster_whisper import BatchedInferencePipeline
             if self._batched is None:
@@ -195,13 +197,32 @@ class Transcriber:
 
 # ---------- шаг целиком ----------
 
+def hotwords(rec: Record, max_chars: int = 400) -> str:
+    """Подсказка для whisper: словарь стримера, его имя и категории записи."""
+    sc = rec.streamer_cfg
+    info = rec.load_info()
+    words = list(sc.get("transcribe", {}).get("vocabulary") or [])
+    words += [sc.get("display_name") or "", info.get("uploader") or ""]
+    words += [ch.get("title") or "" for ch in info.get("chapters") or []]
+    out, size = [], 0
+    for w in dict.fromkeys(w.strip() for w in words if w and w.strip()):
+        if size + len(w) + 2 > max_chars:
+            break
+        out.append(w)
+        size += len(w) + 2
+    return ", ".join(out)
+
+
 def run_transcribe(rec: Record, force: bool = False) -> None:
     if rec.transcript.exists() and not force:
         log.info("transcript.json уже есть, пропускаю (--force чтобы пересчитать)")
         return
     if not rec.audio.exists():
         raise ClipperError("Нет audio.wav — сначала шаг download.")
-    c = rec.cfg["transcribe"]
+    c = dict(rec.cfg["transcribe"])
+    c["hotwords"] = hotwords(rec)
+    if c["hotwords"]:
+        log.info("  словарь для распознавания: %s", c["hotwords"])
     parts = rec.path("transcript_parts")
     if force and parts.exists():
         for p in parts.glob("*.json"):

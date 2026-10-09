@@ -297,6 +297,9 @@ def save_info(rec: Record, info: dict) -> None:
                                      "upload_date", "webpage_url", "description")}
     keep["vod_id"] = rec.vod_id
     keep["streamer"] = rec.streamer
+    # главы записи Twitch — смены игры/категории
+    keep["chapters"] = [{"start": c.get("start_time") or 0, "end": c.get("end_time"), "title": c.get("title") or ""}
+                        for c in info.get("chapters") or []]
     write_json(rec.info, keep)
 
 
@@ -313,7 +316,8 @@ def update_streamer_login(rec: Record, info: dict) -> None:
 def run_download(rec: Record, force: bool = False) -> None:
     rec.create()
     if force:
-        for p in (rec.source, rec.audio, rec.proxy, rec.chat, rec.muted, rec.info, rec.path("muted_playlist.json")):
+        for p in (rec.source, rec.audio, rec.proxy, rec.chat, rec.muted, rec.info, rec.path("muted_playlist.json"),
+                  rec.path("clips.json")):
             p.unlink(missing_ok=True)
 
     if not rec.info.exists():
@@ -353,3 +357,7 @@ def run_download(rec: Record, force: bool = False) -> None:
     if not rec.chat.exists():
         with rec.step("download.chat"):
             download_chat(rec)
+    if not rec.path("clips.json").exists():
+        from .clips import download_clips
+        with rec.step("download.clips"):
+            download_clips(rec)

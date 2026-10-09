@@ -58,16 +58,34 @@ def markers(sig: pd.DataFrame | None, a: float, b: float, c: dict) -> list[str]:
         out.append("⟨смех в чате⟩")
     if ((w["loud_db_z"] >= c["shout_z"]) & (w["speech"] >= 0.5)).any():
         out.append("⟨крик⟩")
+    if "alert" in w and (w["alert"] > 0).any():
+        out.append("⟨донат⟩")
     return out
 
 
+def clip_mark(g: dict) -> str:
+    who = f"{g['count']} клипа" if 2 <= g["count"] <= 4 else (f"{g['count']} клипов" if g["count"] > 4 else "клип")
+    title = f", «{g['title'][:60]}»" if g.get("title") else ""
+    return f"⟨зрители сделали {who}: {g['views']} просмотров{title}⟩"
+
+
 def build_lines(segments: list[dict], sig: pd.DataFrame | None, muted: list[list[float]], c: dict,
-                duration: float | None = None) -> list[Line]:
+                duration: float | None = None, clip_groups: list[dict] | None = None,
+                chapters: list[dict] | None = None) -> list[Line]:
     chunks = build_chunks(segments, c["chunk_min_sec"], c["chunk_max_sec"], c["silence_mark_sec"])
+    extra: dict[int, list[str]] = {}
+    for g in clip_groups or []:  # клип — к куску речи, с которым он больше всего пересекается
+        best = max(range(len(chunks)), default=None,
+                   key=lambda i: min(chunks[i]["end"], g["end"]) - max(chunks[i]["start"], g["start"]))
+        if best is not None and min(chunks[best]["end"], g["end"]) > max(chunks[best]["start"], g["start"]) - 30:
+            extra.setdefault(best, []).append(clip_mark(g))
     events: list[Line] = []
-    for ch in chunks:
-        marks = markers(sig, ch["start"], ch["end"], c)
+    for i, ch in enumerate(chunks):
+        marks = markers(sig, ch["start"], ch["end"], c) + extra.get(i, [])
         events.append(Line(ch["start"], ch["end"], " ".join([ch["text"], *marks]).strip()))
+    if chapters and len(chapters) > 1:
+        for ch in chapters:
+            events.append(Line(float(ch["start"]), float(ch["start"]), f"⟨категория на Twitch: {ch['title']}⟩"))
     for a, b in muted:
         events.append(Line(a, b, f"⟨звук вырезан {int(round(b - a))}с⟩"))
     # тишина между кусками речи (если она не объясняется вырезанным звуком)

@@ -21,12 +21,17 @@ cd ~/stream-clipper
 ## Порядок работы на этапе 1
 
 ```bash
+# 0. Всё ли готово на компьютере (видеокарта, ffmpeg, доступ к Twitch, вход в claude, место на диске)
+clipper doctor
+
 # 1. Какого размера запрос проходит через claude -p (немного тратит лимит, в основном на дешёвой haiku)
 clipper llm-probe
 
-# 2. Всё до списка тем. Долго (скачивание + распознавание) — поэтому в фоне, переживёт закрытие окна:
-clipper bg run https://www.twitch.tv/videos/<номер> --streamer <имя>
+# 2. Всё до списка тем. Долго (скачивание + распознавание) — поэтому в фоне, переживёт закрытие окна.
+#    --shutdown — выключить компьютер, когда закончит (можно не добавлять)
+clipper bg run https://www.twitch.tv/videos/<номер> --streamer <имя> --shutdown
 #    посмотреть ход работы: tmux attach -t clipper-...  (выйти, не прерывая: Ctrl+B, затем D)
+#    отменить выключение в последнюю минуту: shutdown -c
 
 # 3. Страница со списком тем откроется сама; ещё раз открыть/пересобрать:
 clipper page <номер>
@@ -38,8 +43,17 @@ clipper usage <номер>
 clipper compare-models <номер>
 ```
 
-Отдельные шаги: `clipper download|transcribe|signals|topics <номер>`. Повторный запуск не пересчитывает
+Отдельные шаги: `clipper download|transcribe|alerts|signals|topics <номер>`. Повторный запуск не пересчитывает
 готовое (`--force` — пересчитать); прерванное скачивание и распознавание продолжаются с места остановки.
+
+## Что помогает точности
+
+- **Клипы зрителей.** Клипы, которые зрители нарезали из записи, скачиваются сами и передаются нейросети
+  как подсказка «здесь было интересно». На странице тем они видны оранжевыми отметками.
+- **Словарь стримера.** В `streamers/<имя>/streamer.toml`, раздел `[transcribe]`, впишите имена, ники,
+  названия игр — распознавание будет реже в них ошибаться. Категории записи с Twitch добавляются сами.
+- **Плашки донатов.** Положите вырезанные картинки плашек в `streamers/<имя>/alerts/` — моменты с ними
+  помечаются для нейросети как ⟨донат⟩. Если плашка всегда в одном месте, задайте `region` в `[alerts]`.
 
 ## Где что лежит
 
@@ -47,7 +61,7 @@ clipper compare-models <номер>
 config.toml                    общие настройки (все пороги, модели, папка данных)
 streamers/<имя>/streamer.toml  настройки стримера (создаётся сам из streamers/_template)
 data/<имя>/<номер>/            всё по одной записи
-  source.mp4 proxy.mp4 audio.wav chat.json info.json muted.json
+  source.mp4 proxy.mp4 audio.wav chat.json info.json muted.json clips.json alerts.json
   transcript.json signals.parquet topics.json topics.html
   llm_usage.jsonl timings.json log.txt
   compare/compare.html         сравнение моделей

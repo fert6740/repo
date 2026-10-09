@@ -296,3 +296,63 @@ def test_muted_from_playlist():
                     "#EXTINF:10.000,", "0.ts", "#EXTINF:10.000,", "1-muted.ts", "#EXTINF:10.000,", "2-muted.ts",
                     "#EXTINF:10.000,", "3.ts", "#EXTINF:4.500,", "4-muted.ts?x=1", "#EXT-X-ENDLIST"])
     assert muted_from_playlist(pl) == [[10.0, 30.0], [40.0, 44.5]]
+
+
+def test_clips_parse_group_and_marks(monkeypatch):
+    from clipper import clips as C
+    page = {"user": {"clips": {"edges": [
+        {"cursor": "c1", "node": {"slug": "A", "title": "Он упал", "viewCount": 900, "durationSeconds": 30,
+                                  "videoOffsetSeconds": 100, "video": {"id": "42"}, "curator": {"displayName": "x"}}},
+        {"cursor": "c2", "node": {"slug": "B", "title": "упал!!", "viewCount": 100, "durationSeconds": 30,
+                                  "videoOffsetSeconds": 110, "video": {"id": "42"}, "curator": None}},
+        {"cursor": "c3", "node": {"slug": "C", "title": "чужой", "viewCount": 5000, "durationSeconds": 30,
+                                  "videoOffsetSeconds": 10, "video": {"id": "41"}}},
+        {"cursor": "c4", "node": {"slug": "D", "title": "без записи", "viewCount": 5, "durationSeconds": 30,
+                                  "videoOffsetSeconds": None, "video": None}}],
+        "pageInfo": {"hasNextPage": True}}}}
+    calls = []
+
+    def fake_gql(q, client_id=C.LIST_CLIENT_ID):
+        calls.append(q)
+        return page if len(calls) == 1 else {"user": {"clips": {"edges": [], "pageInfo": {"hasNextPage": False}}}}
+
+    monkeypatch.setattr(C, "gql", fake_gql)
+    clips = C.fetch_vod_clips("streamer", "42", None)
+    assert [c["slug"] for c in clips] == ["A", "B"] and 'after:"c4"' in calls[1] and "ALL_TIME" in calls[0]
+    groups = C.group_clips(clips)
+    assert len(groups) == 1 and groups[0]["views"] == 1000 and groups[0]["count"] == 2
+    assert groups[0]["title"] == "Он упал"
+    segs = [seg(s, s + 4.5, "раз два три") for s in range(0, 200, 5)]
+    lines = build_lines(segs, None, [], {"chunk_min_sec": 20, "chunk_max_sec": 30, "silence_mark_sec": 20,
+                                         "chat_ratio_mark": 2, "laugh_fraction_mark": .3, "laugh_count_mark": 3,
+                                         "shout_z": 2.5}, 200, groups,
+                        [{"start": 0, "title": "Just Chatting"}, {"start": 150, "title": "Dota 2"}])
+    text = render(lines)
+    assert text.count("⟨зрители сделали 2 клипа: 1000 просмотров, «Он упал»⟩") == 1
+    assert "[0:02:30] ⟨категория на Twitch: Dota 2⟩" in text
+
+
+def test_hotwords_and_stale_signals(cfg):
+    import os, time
+    from clipper.signals import run_signals, stale_inputs
+    from clipper.transcribe import hotwords
+    rec = make_record(cfg, dur=120)
+    write_json(rec.info, {"title": "т", "duration": 120, "uploader": "Стример",
+                          "chapters": [{"start": 0, "title": "Dota 2"}, {"start": 60, "title": "Dota 2"}]})
+    assert hotwords(rec) == "Стример, Dota 2"
+    run_signals(rec)
+    assert stale_inputs(rec) == []
+    future = time.time() + 5
+    write_json(rec.path("alerts.json"), {"intervals": [[10, 15]], "score": []})
+    os.utime(rec.path("alerts.json"), (future, future))
+    assert stale_inputs(rec) == ["alerts.json"]
+    run_signals(rec)
+    import pandas as pd
+    df = pd.read_parquet(rec.signals)
+    assert df["alert"].sum() == 5
+
+
+def test_alert_intervals():
+    from clipper.alerts import to_intervals
+    s = np.array([0, .8, .9, 0, 0, .75, 0, 0, 0, 0, .9, .1], dtype=np.float32)
+    assert to_intervals(s, 0.7) == [[1, 6], [10, 11]]

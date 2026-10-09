@@ -21,6 +21,9 @@ LATER = {
 }
 
 
+LONG = {"run", "download", "transcribe", "alerts", "signals", "topics", "compare-models"}
+
+
 def setup_logging(verbose: bool) -> None:
     root = logging.getLogger("clipper")
     root.setLevel(logging.DEBUG)
@@ -58,6 +61,10 @@ def cmd_step(args, cfg: Config) -> None:
         from .transcribe import run_transcribe
         run_transcribe(rec, args.force)
         print(f"Готово: {rec.transcript}")
+    elif args.cmd == "alerts":
+        from .alerts import run_alerts
+        run_alerts(rec, args.force)
+        print(f"Готово: {rec.path('alerts.json')}")
     elif args.cmd == "signals":
         from .signals import run_signals
         run_signals(rec, args.force)
@@ -85,6 +92,8 @@ def cmd_run(args, cfg: Config) -> None:
     log.info("Запись %s, стример %s, папка %s", rec.vod_id, rec.streamer, rec.dir)
     run_download(rec, args.force)
     run_transcribe(rec, args.force)
+    from .alerts import run_alerts
+    run_alerts(rec, args.force)
     run_signals(rec, args.force)
     run_topics(rec, args.force, args.model)
     page = topics_page(rec)
@@ -127,6 +136,12 @@ def cmd_probe(args, cfg: Config) -> None:
     run_probe(cfg, args.model, sizes, models)
 
 
+def cmd_doctor(args, cfg: Config) -> None:
+    from .doctor import run_doctor
+    if run_doctor(cfg, llm=not args.no_llm):
+        raise ClipperError("проверка нашла проблемы (см. выше)")
+
+
 def cmd_bg(args, cfg: Config) -> None:
     if not shutil.which("tmux"):
         raise ClipperError("Не найден tmux: sudo pacman -S tmux")
@@ -151,10 +166,13 @@ def cmd_later(args, cfg: Config) -> None:
 
 def build_parser() -> argparse.ArgumentParser:
     p = argparse.ArgumentParser(prog="clipper", description="Нарезки из записей стримов Twitch")
+    common = argparse.ArgumentParser(add_help=False)
+    common.add_argument("--shutdown", action="store_true",
+                        help="выключить компьютер, когда команда закончится (даже с ошибкой)")
     p.add_argument("-v", "--verbose", action="store_true", help="подробный вывод")
     sub = p.add_subparsers(dest="cmd", required=True, metavar="команда")
 
-    r = sub.add_parser("run", help="всё до списка тем: скачать, распознать, найти темы")
+    r = sub.add_parser("run", help="всё до списка тем: скачать, распознать, найти темы", parents=[common])
     r.add_argument("url")
     r.add_argument("--streamer", required=True, help="имя стримера (папка его настроек)")
     r.add_argument("--model", help="модель для прохода 1 (по умолчанию из config.toml)")
@@ -163,9 +181,11 @@ def build_parser() -> argparse.ArgumentParser:
     r.set_defaults(fn=cmd_run)
 
     for name, hlp in (("download", "скачать запись, чат, сделать proxy и звук"),
-                      ("transcribe", "распознать речь"), ("signals", "посчитать сигналы"),
+                      ("transcribe", "распознать речь"),
+                      ("alerts", "найти плашки донатов по образцам из streamers/<имя>/alerts/"),
+                      ("signals", "посчитать сигналы"),
                       ("topics", "найти темы (проход 1)")):
-        s = sub.add_parser(name, help=hlp)
+        s = sub.add_parser(name, help=hlp, parents=[common])
         s.add_argument("record", help="ссылка, номер записи или путь к папке")
         s.add_argument("--streamer")
         s.add_argument("--force", action="store_true")
@@ -182,7 +202,7 @@ def build_parser() -> argparse.ArgumentParser:
     s.add_argument("record"); s.add_argument("--streamer")
     s.set_defaults(fn=cmd_usage)
 
-    s = sub.add_parser("compare-models", help="сравнить модели на проходе 1")
+    s = sub.add_parser("compare-models", help="сравнить модели на проходе 1", parents=[common])
     s.add_argument("record"); s.add_argument("--streamer")
     s.add_argument("--models", help="через запятую, по умолчанию haiku,sonnet,opus")
     s.add_argument("--force", action="store_true"); s.add_argument("--no-open", action="store_true")
@@ -193,6 +213,10 @@ def build_parser() -> argparse.ArgumentParser:
     s.add_argument("--sizes", default="50000,150000,300000", help="размеры в токенах через запятую")
     s.add_argument("--info-models", help="модели, у которых узнать окно контекста")
     s.set_defaults(fn=cmd_probe)
+
+    s = sub.add_parser("doctor", help="проверить, что на компьютере всё готово к работе")
+    s.add_argument("--no-llm", action="store_true", help="не проверять claude -p (не тратить лимит)")
+    s.set_defaults(fn=cmd_doctor)
 
     s = sub.add_parser("bg", help="запустить команду в фоне (tmux), например: clipper bg run <ссылка> --streamer x")
     s.add_argument("rest", nargs=argparse.REMAINDER)
@@ -205,19 +229,44 @@ def build_parser() -> argparse.ArgumentParser:
     return p
 
 
+def notify(title: str, body: str, error: bool = False) -> None:
+    """Уведомление на рабочем столе (если есть notify-send)."""
+    if shutil.which("notify-send"):
+        subprocess.run(["notify-send", "-a", "stream-clipper", "-u", "critical" if error else "normal",
+                        title, body], stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
+
+
+def power_off() -> None:
+    log.info("Выключаю компьютер через 1 минуту. Отменить: shutdown -c")
+    for cmd in (["shutdown", "-h", "+1", "stream-clipper закончил работу"], ["systemctl", "poweroff"]):
+        if shutil.which(cmd[0]) and subprocess.run(cmd).returncode == 0:
+            return
+    log.error("Не удалось выключить компьютер. Выключите вручную: sudo shutdown -h now")
+
+
 def main(argv: list[str] | None = None) -> int:
     args = build_parser().parse_args(argv)
     setup_logging(args.verbose)
+    long_cmd = args.cmd in LONG
+    code, msg = 0, "Готово"
     try:
         cfg = load_config()
         args.fn(args, cfg)
     except ClipperError as e:
         log.error("Ошибка: %s", e)
-        return 1
+        code, msg = 1, f"Ошибка: {e}"
     except KeyboardInterrupt:
         log.error("Прервано. Повторный запуск продолжит с того же места.")
-        return 130
-    return 0
+        code, msg = 130, "Прервано"
+    except Exception as e:  # noqa: BLE001 — чтобы не остаться без выключения и уведомления
+        log.exception("Непредвиденная ошибка: %s", e)
+        code, msg = 2, f"Непредвиденная ошибка: {e}"
+    finally:
+        if long_cmd:
+            notify(f"clipper {args.cmd}", msg[:300], error=code != 0)
+        if getattr(args, "shutdown", False) and code != 130:
+            power_off()
+    return code
 
 
 if __name__ == "__main__":

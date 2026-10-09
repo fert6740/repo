@@ -96,6 +96,12 @@ def compute_signals(rec: Record) -> pd.DataFrame:
         for a, b in read_json(rec.muted)["muted"]:
             muted[int(a): int(np.ceil(b))] = True
     df["muted"] = muted
+    alerts = rec.path("alerts.json")
+    if alerts.exists():  # плашка доната на экране (шаг alerts)
+        a = np.zeros(n, dtype=np.float32)
+        for s, e in read_json(alerts)["intervals"]:
+            a[int(s): int(e)] = 1.0
+        df["alert"] = a
     win = c["baseline_window_sec"]
     floors = c["scale_floor"]
     for col, fl in (("loud_db", floors["loud_db"]), ("speech", floors["speech"]),
@@ -107,10 +113,20 @@ def compute_signals(rec: Record) -> pd.DataFrame:
     return df
 
 
+def stale_inputs(rec: Record) -> list[str]:
+    """Входные файлы, появившиеся или изменившиеся после расчёта сигналов (например, чат скачался позже)."""
+    t = rec.signals.stat().st_mtime
+    return [p.name for p in (rec.transcript, rec.chat, rec.muted, rec.path("alerts.json"))
+            if p.exists() and p.stat().st_mtime > t]
+
+
 def run_signals(rec: Record, force: bool = False) -> None:
     if rec.signals.exists() and not force:
-        log.info("signals.parquet уже есть, пропускаю (--force чтобы пересчитать)")
-        return
+        changed = stale_inputs(rec)
+        if not changed:
+            log.info("signals.parquet уже есть, пропускаю (--force чтобы пересчитать)")
+            return
+        log.info("Пересчитываю сигналы: обновились %s", ", ".join(changed))
     with rec.step("signals"):
         df = compute_signals(rec)
         tmp = rec.signals.with_name("signals.parquet.tmp")

@@ -6,6 +6,7 @@ from pathlib import Path
 
 import pandas as pd
 
+from .clips import group_clips
 from .config import ClipperError
 from .digest import Line, build_lines, estimate_tokens, render, split_windows
 from .llm import LLM
@@ -55,7 +56,9 @@ SYSTEM_PASS1 = """Ты — опытный монтажёр YouTube-канала 
 Пометки в угловых скобках получены автоматически:
 ⟨чат ×N⟩ — чат в N раз активнее обычного; ⟨смех в чате⟩ — зрители смеются; ⟨крик⟩ — стример заметно громче обычного; \
 ⟨донат⟩ — на экране плашка доната; ⟨тишина Nс⟩ — N секунд без речи; ⟨сцена: …⟩ — сменилась раскладка экрана; \
-⟨звук вырезан Nс⟩ — Twitch заглушил звук (чужая музыка).
+⟨звук вырезан Nс⟩ — Twitch заглушил звук (чужая музыка); ⟨зрители сделали клип: N просмотров, «название»⟩ — \
+зрители сами вырезали клип из этого места (самый сильный признак яркого момента, особенно для шортов); \
+⟨категория на Twitch: …⟩ — стример сменил игру или категорию.
 Распознавание речи автоматическое и может ошибаться в словах — суди по смыслу. Озвучка донатов синтезированным \
 голосом тоже попадает в расшифровку как речь.
 
@@ -225,7 +228,10 @@ def load_lines(rec: Record) -> list[Line]:
     segs = read_json(rec.transcript)["segments"]
     sig = pd.read_parquet(rec.signals) if rec.signals.exists() else None
     muted = read_json(rec.muted)["muted"] if rec.muted.exists() else []
-    return build_lines(segs, sig, muted, rec.cfg["digest"], rec.duration())
+    clips_path = rec.path("clips.json")
+    groups = group_clips(read_json(clips_path)["clips"]) if clips_path.exists() else []
+    chapters = rec.load_info().get("chapters") or []
+    return build_lines(segs, sig, muted, rec.cfg["digest"], rec.duration(), groups, chapters)
 
 
 def pass1(rec: Record, llm: LLM, model: str, step: str = "pass1") -> dict:

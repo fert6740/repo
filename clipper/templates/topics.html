@@ -8,13 +8,13 @@
 :root {
   --bg: #f6f6f4; --panel: #ffffff; --text: #1d1d1b; --muted: #6b6b66; --line: #e2e1dc;
   --accent: #2f6fdf; --accent-soft: #dbe6fb; --off: #c9c8c2; --warn: #b4531a; --muted-red: #d64545;
-  --short: #8a3ffc; --good: #1f8a4c;
+  --short: #8a3ffc; --good: #1f8a4c; --clip: #d97706;
 }
 @media (prefers-color-scheme: dark) {
   :root {
     --bg: #161615; --panel: #1f1f1d; --text: #ecebe6; --muted: #9a9993; --line: #33332f;
     --accent: #6b9bff; --accent-soft: #24324d; --off: #4a4a45; --warn: #f0975a; --muted-red: #ef6b6b;
-    --short: #b48bff; --good: #4cc27d;
+    --short: #b48bff; --good: #4cc27d; --clip: #f5a524;
   }
 }
 * { box-sizing: border-box; }
@@ -34,6 +34,8 @@ video { width: 480px; max-width: 100%; background: #000; border-radius: 6px; }
 .seg:hover { outline: 2px solid var(--text); z-index: 2; }
 .mut { position: absolute; top: 0; bottom: 0; background: repeating-linear-gradient(45deg, var(--muted-red) 0 3px, transparent 3px 6px); opacity: .55; pointer-events: none; }
 .sh { position: absolute; bottom: 1px; height: 6px; background: var(--short); border-radius: 1px; }
+.clip { position: absolute; top: 0; width: 3px; height: 7px; background: var(--clip); border-radius: 1px; cursor: pointer; z-index: 3; }
+.card.cliprow { border-left-color: var(--clip); }
 .cursor { position: absolute; top: 0; bottom: 0; width: 2px; background: var(--text); pointer-events: none; }
 .controls { display: flex; gap: 14px; align-items: center; margin: 12px 20px; font-size: 14px; flex-wrap: wrap; }
 .legend span { display: inline-block; width: 12px; height: 12px; border-radius: 2px; vertical-align: -2px; margin: 0 4px 0 10px; }
@@ -80,6 +82,7 @@ a { color: var(--accent); }
   <span class="legend"><span style="background:var(--accent)"></span>отобрана
     <span style="background:var(--off)"></span>не отобрана
     <span style="background:var(--short)"></span>шорт
+    <span style="background:var(--clip)"></span>клип зрителей
     <span style="background:var(--muted-red);opacity:.6"></span>звук вырезан Twitch</span>
 </div>
 <div class="cols" id="cols"></div>
@@ -120,6 +123,13 @@ D.runs.forEach((r, ri) => {
     el.style.left = (s.start/dur*100) + "%"; el.style.width = Math.max(0.3, (s.end-s.start)/dur*100) + "%";
     el.title = `шорт ${fmt(s.start)} · ${s.score}/10 · ${s.hook}`;
     el.onclick = e => { e.stopPropagation(); focusCard(ri, "s", s.id); seek(s.start); };
+    bar.appendChild(el);
+  }
+  for (const c of D.clips || []) {
+    const el = document.createElement("div"); el.className = "clip";
+    el.style.left = (c.start/dur*100) + "%";
+    el.title = `клип зрителей ${fmt(c.start)} · ${c.views} просмотров · ${c.title}`;
+    el.onclick = e => { e.stopPropagation(); seek(c.start); };
     bar.appendChild(el);
   }
   const cur = document.createElement("div"); cur.className = "cursor"; bar.appendChild(cur);
@@ -173,6 +183,14 @@ D.runs.forEach((r, ri) => {
     </div>`;
   }
   if (!r.shorts.length) h += `<div class="sub">нет</div>`;
+  if (ri === D.runs.length - 1 && (D.clips || []).length) {
+    h += `<h2>Клипы зрителей</h2>`;
+    for (const c of [...D.clips].sort((a, b) => b.views - a.views)) {
+      h += `<div class="card cliprow" data-sel="1"><div class="row"><span class="score">${c.views} просм.</span><span class="title">${esc(c.title)}</span></div>
+        <div class="row"><span class="t" data-t="${c.start}">${fmt(c.start)}</span><span class="dur">${mins(c.end - c.start)}</span>
+        <span class="kind">клипнул ${esc(c.curator)}</span><a class="kind" href="${esc(c.url)}" target="_blank">открыть клип</a></div></div>`;
+    }
+  }
   col.innerHTML = h; cols.appendChild(col);
 });
 cols.addEventListener("click", e => { const t = e.target.closest(".t"); if (t) seek(+t.dataset.t); });
