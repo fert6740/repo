@@ -57,6 +57,13 @@ a { color: var(--accent); }
 .stats { font-size: 13px; color: var(--muted); }
 .stats b { color: var(--text); }
 .hidden { display: none !important; }
+.search { flex: 1 1 260px; max-width: 420px; padding: 6px 10px; font: inherit; border: 1px solid var(--line); border-radius: 6px; background: var(--panel); color: var(--text); }
+#found { padding: 0 20px; }
+#found .hit { display: flex; gap: 10px; padding: 5px 0; border-bottom: 1px solid var(--line); cursor: pointer; }
+#found .hit:hover { background: var(--accent-soft); }
+#found mark { background: #ffd54a; color: #000; border-radius: 2px; }
+#found .in { color: var(--muted); font-size: 13px; white-space: nowrap; }
+.hitmark { position: absolute; bottom: 0; width: 2px; height: 26px; background: #ffd54a; opacity: .9; pointer-events: none; }
 @media (max-width: 700px) { .top { position: static; } }
 </style>
 </head>
@@ -78,6 +85,7 @@ a { color: var(--accent); }
 </div>
 <div id="warns"></div>
 <div class="controls">
+  <input class="search" id="q" type="search" placeholder="Поиск по словам стримера…" autocomplete="off">
   <label><input type="checkbox" id="onlySel"> только отобранные</label>
   <span class="legend"><span style="background:var(--accent)"></span>отобрана
     <span style="background:var(--off)"></span>не отобрана
@@ -85,6 +93,7 @@ a { color: var(--accent); }
     <span style="background:var(--clip)"></span>клип зрителей
     <span style="background:var(--muted-red);opacity:.6"></span>звук вырезан Twitch</span>
 </div>
+<div id="found"></div>
 <div class="cols" id="cols"></div>
 <script>
 const D = __DATA__;
@@ -198,6 +207,32 @@ function focusCard(ri, kind, id) {
   document.querySelectorAll(".card.active").forEach(c => c.classList.remove("active"));
   const c = document.getElementById(`c${ri}${kind}${id}`);
   if (c) { c.classList.add("active"); c.scrollIntoView({block: "nearest"}); }
+}
+// поиск по расшифровке
+const norm = s => s.toLowerCase().replace(/ё/g, "е");
+const SEGS = (D.segments || []).map(([t, s]) => [t, s, norm(s)]);
+const topicAt = t => (D.runs[0]?.topics || []).find(x => x.start <= t && t < x.end);
+let qTimer;
+$("#q").addEventListener("input", e => { clearTimeout(qTimer); qTimer = setTimeout(() => runSearch(e.target.value), 200); });
+function runSearch(q) {
+  const box = $("#found");
+  document.querySelectorAll(".hitmark").forEach(m => m.remove());
+  const words = norm(q).trim().split(/\s+/).filter(w => w.length > 1);
+  if (!words.length) { box.innerHTML = ""; return; }
+  if (!SEGS.length) { box.innerHTML = `<div class="sub">Расшифровки нет.</div>`; return; }
+  const hits = [];
+  for (let i = 0; i < SEGS.length; i++) {
+    const both = SEGS[i][2] + " " + (SEGS[i + 1] ? SEGS[i + 1][2] : "");  // фраза может переходить в следующий отрезок
+    if (words.every(w => both.includes(w)) && words.some(w => SEGS[i][2].includes(w))) hits.push(i);
+  }
+  const re = new RegExp("(" + words.map(w => w.replace(/[.*+?^${}()|[\]\\]/g, "\\$&").replace(/е/g, "[её]")).join("|") + ")", "gi");
+  const hl = s => esc(s).replace(re, "<mark>$1</mark>");
+  box.innerHTML = `<h2 style="font-size:16px">Найдено: ${hits.length}${hits.length > 200 ? " (показаны первые 200)" : ""}</h2>` +
+    hits.slice(0, 200).map(i => { const [t, s] = SEGS[i]; const tp = topicAt(t);
+      return `<div class="hit" data-t="${t}"><span class="t">${fmt(t)}</span><span>${hl(s)}</span>${tp ? `<span class="in">тема #${tp.id}</span>` : ""}</div>`; }).join("");
+  box.querySelectorAll(".hit").forEach(h => h.onclick = () => seek(+h.dataset.t - 2));
+  document.querySelectorAll(".bar").forEach(bar => hits.forEach(i =>
+    bar.insertAdjacentHTML("beforeend", `<div class="hitmark" style="left:${SEGS[i][0]/dur*100}%"></div>`)));
 }
 $("#onlySel").onchange = e => document.querySelectorAll(".card").forEach(c => c.classList.toggle("hidden", e.target.checked && c.dataset.sel !== "1"));
 </script>

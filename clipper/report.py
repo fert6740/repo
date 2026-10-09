@@ -31,8 +31,12 @@ def render_page(rec: Record, out: Path, runs: list[dict], title: str) -> Path:
     muted = read_json(rec.muted)["muted"] if rec.muted.exists() else []
     clips_path = rec.path("clips.json")
     clips = read_json(clips_path)["clips"] if clips_path.exists() else []
+    # расшифровка для поиска по словам на странице
+    segs = ([[round(s["start"], 1), s["text"]] for s in read_json(rec.transcript)["segments"]]
+            if rec.transcript.exists() else [])
     data = {"title": title, "streamer": info.get("uploader") or rec.streamer, "url": rec.url,
-            "duration": rec.duration(), "video": video, "muted": muted, "runs": runs, "clips": clips}
+            "duration": rec.duration(), "video": video, "muted": muted, "runs": runs, "clips": clips,
+            "segments": segs}
     html = TEMPLATE.read_text(encoding="utf-8")
     page_title = (info.get("title") or rec.vod_id)[:60]
     html = html.replace("__TITLE__", page_title.replace("<", "&lt;"))

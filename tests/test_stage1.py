@@ -246,7 +246,7 @@ def test_pass1_single_and_windowed(cfg):
     write_json(rec.topics, out)
     page = topics_page(rec)
     html = page.read_text()
-    assert "Первая" in html and "__DATA__" not in html
+    assert "Первая" in html and "__DATA__" not in html and "\"segments\": [[" in html
     rep = report(rec)
     assert "Итого" in rep and "haiku" in rep and "opus" in rep
 
