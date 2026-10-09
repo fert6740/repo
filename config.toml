@@ -1,0 +1,96 @@
+# Общие настройки stream-clipper.
+# Все числа — стартовые значения из ТЗ, их можно менять.
+# Пути без "/" в начале считаются от папки проекта.
+
+[paths]
+data_dir = "data"            # рабочие папки записей; можно указать другой диск, например "/mnt/big/clipper-data"
+streamers_dir = "streamers"
+tools_dir = "tools"          # сюда сами скачиваются внешние программы (TwitchDownloaderCLI)
+
+[download]
+max_height = 1080            # качество записи: не выше этого
+concurrent_fragments = 8     # параллельная загрузка кусков (помогает через VPN)
+disk_reserve_factor = 2.0    # свободного места нужно не меньше N размеров записи
+proxy_height = 360
+proxy_fps = 30
+proxy_keyint_sec = 1         # ключевой кадр каждые N секунд — быстрые перемотки
+hwaccel = true               # аппаратное декодирование (cuda); при ошибке — обычное
+proxy_encoder = "h264_nvenc" # при ошибке будет libx264
+
+[muted]
+# Twitch заглушает куски с чужой музыкой: в записи цифровая тишина.
+silence_peak = 0.0005        # амплитуда (0..1), ниже которой звук считается цифровой тишиной
+min_sec = 5.0                # минимальная длина такого отрезка
+frame_diff_min = 1.5         # средняя разница кадров (0..255), выше которой картинка «движется»
+
+[transcribe]
+model = "large-v3-turbo"
+language = "ru"
+device = "cuda"              # "cpu" — если видеокарта недоступна (очень медленно)
+compute_type = "int8_float16"
+beam_size = 5
+batch_size = 8               # пакетная обработка быстрее; при нехватке памяти уменьшается сама; 0 — выключить
+chunk_minutes = 30           # аудио режется на куски; прерванное распознавание продолжается с места остановки
+vad = true
+condition_on_previous_text = false
+# Отбрасывание выдуманного текста:
+max_avg_logprob_drop = -1.0  # отрезок отбрасывается, если уверенность ниже этого...
+min_no_speech_prob_drop = 0.6  # ...и одновременно вероятность «нет речи» выше этого
+max_compression_ratio = 2.4  # сильно повторяющийся текст
+drop_very_low_logprob = -1.5 # отрезок с такой низкой уверенностью отбрасывается всегда
+max_repeats = 2              # одинаковая фраза подряд: оставить не больше N раз...
+repeat_window_sec = 30       # ...если повторы идут вплотную (не дальше N секунд друг от друга)
+hallucination_phrases = [
+  "субтитры сделал", "субтитры создавал", "субтитры подогнал", "редактор субтитров",
+  "корректор", "продолжение следует", "спасибо за просмотр", "подписывайтесь на канал",
+  "ставьте лайки", "dimatorzok", "благодарю за внимание",
+]
+
+[signals]
+baseline_window_sec = 600    # «обычный уровень» = скользящая медиана за 10 минут
+chat_window_sec = 10         # сообщений за 10 с
+# Минимальный разброс для расчёта отклонения (чтобы не делить на ноль на ровных участках)
+scale_floor = { loud_db = 3.0, speech = 0.15, chat = 1.0, laugh = 0.1 }
+
+[digest]
+# Сжатый текст для нейросети
+chunk_min_sec = 20
+chunk_max_sec = 30
+silence_mark_sec = 20        # пауза длиннее — пометка ⟨тишина Nс⟩
+chat_ratio_mark = 2.0        # ⟨чат ×N⟩, если чат в N раз активнее обычного
+laugh_fraction_mark = 0.3    # ⟨смех в чате⟩: доля смеховых сообщений...
+laugh_count_mark = 3         # ...и их количество за окно
+shout_z = 2.5                # ⟨крик⟩: громкость выше обычной на столько отклонений при речи
+chars_per_token = 2.5        # грубая оценка размера русского текста в токенах (уточняется по факту)
+
+[llm]
+backend = "claude_cli"       # "claude_cli" (по подписке) или "anthropic_api" (пока заглушка)
+pass1_model = "opus"
+pass2_model = "opus"
+compare_models = ["haiku", "sonnet", "opus"]
+window_tokens = 150000       # если текст стрима больше — режется на окна (уточнить через `clipper llm-probe`)
+window_overlap_sec = 600     # перекрытие окон
+recap_tokens = 1500          # пересказ предыдущих окон
+timeout_sec = 1800
+retries = 2
+effort = ""                  # уровень размышлений для claude -p (low/medium/high); пусто — по умолчанию
+claude_bin = "claude"
+claude_extra_args = ["--disable-slash-commands", "--setting-sources", ""]
+
+[topics]
+min_score = 6
+min_minutes = 4
+max_minutes = 25
+excluded_kinds = ["donations_block", "pause", "tech"]
+muted_overlap_sec = 10       # тема помечается «звук вырезан», если заглушено больше N секунд
+seam_check_sec = 30          # проверка стыков окон: граница темы ближе N секунд к стыку — подозрительно
+short_min_sec = 20
+short_max_sec = 60
+
+[prices]
+# Цены API за 1 млн токенов (вход, выход) — только для сравнения, по подписке деньги не списываются.
+opus = [4.0, 20.0]
+sonnet = [2.0, 10.0]
+haiku = [0.10, 0.50]
+haiku_long = [0.50, 2.50]    # запросы длиннее 100 тыс. токенов
+long_threshold = 100000

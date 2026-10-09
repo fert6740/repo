@@ -1,0 +1,31 @@
+[project]
+name = "stream-clipper"
+version = "0.1.0"
+description = "Автоматические нарезки из записей стримов Twitch"
+requires-python = ">=3.11"
+dependencies = [
+    "yt-dlp",
+    "numpy",
+    "pandas",
+    "pyarrow",
+    "faster-whisper>=1.1",
+    "nvidia-cublas-cu12; sys_platform == 'linux'",
+    "nvidia-cudnn-cu12>=9,<10; sys_platform == 'linux'",
+]
+
+[project.optional-dependencies]
+api = ["anthropic"]
+dev = ["pytest"]
+
+[project.scripts]
+clipper = "clipper.cli:main"
+
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools]
+packages = ["clipper"]
+
+[tool.setuptools.package-data]
+clipper = ["templates/*"]

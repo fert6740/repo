@@ -1,0 +1,15 @@
+#!/usr/bin/env bash
+# Запуск clipper из окружения проекта (можно вызывать откуда угодно, в том числе через ссылку в ~/.local/bin).
+set -e
+HERE="$(cd "$(dirname "$(readlink -f "${BASH_SOURCE[0]}")")/.." && pwd)"
+VENV="$HERE/.venv"
+if [ ! -x "$VENV/bin/python" ]; then
+  echo "Окружение проекта не установлено. Запустите: $HERE/install.sh" >&2
+  exit 1
+fi
+# Библиотеки CUDA (cuBLAS, cuDNN) из pip-пакетов nvidia-* — для распознавания речи на видеокарте
+for d in "$VENV"/lib/python3*/site-packages/nvidia/*/lib; do
+  [ -d "$d" ] && LD_LIBRARY_PATH="$d${LD_LIBRARY_PATH:+:$LD_LIBRARY_PATH}"
+done
+export LD_LIBRARY_PATH
+exec "$VENV/bin/python" -m clipper "$@"

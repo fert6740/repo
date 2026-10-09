@@ -3,3 +3,8 @@ __pycache__/
 *.pyc
 .venv/
 venv/
+data/
+tools/
+.bootstrap/
+*.egg-info/
+.pytest_cache/

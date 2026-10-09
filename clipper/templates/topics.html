@@ -1,0 +1,187 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>__TITLE__</title>
+<style>
+:root {
+  --bg: #f6f6f4; --panel: #ffffff; --text: #1d1d1b; --muted: #6b6b66; --line: #e2e1dc;
+  --accent: #2f6fdf; --accent-soft: #dbe6fb; --off: #c9c8c2; --warn: #b4531a; --muted-red: #d64545;
+  --short: #8a3ffc; --good: #1f8a4c;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #161615; --panel: #1f1f1d; --text: #ecebe6; --muted: #9a9993; --line: #33332f;
+    --accent: #6b9bff; --accent-soft: #24324d; --off: #4a4a45; --warn: #f0975a; --muted-red: #ef6b6b;
+    --short: #b48bff; --good: #4cc27d;
+  }
+}
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--bg); color: var(--text); font: 15px/1.45 system-ui, sans-serif; }
+header { padding: 16px 20px 8px; }
+h1 { font-size: 20px; margin: 0 0 4px; }
+.sub { color: var(--muted); font-size: 13px; }
+.top { position: sticky; top: 0; z-index: 5; background: var(--bg); padding: 8px 20px 10px; border-bottom: 1px solid var(--line); }
+.player { display: flex; gap: 16px; align-items: flex-start; flex-wrap: wrap; }
+video { width: 480px; max-width: 100%; background: #000; border-radius: 6px; }
+.now { font-variant-numeric: tabular-nums; color: var(--muted); font-size: 13px; }
+.lane { margin-top: 8px; }
+.lane-label { font-size: 12px; color: var(--muted); margin-bottom: 2px; }
+.bar { position: relative; height: 26px; background: var(--panel); border: 1px solid var(--line); border-radius: 4px; cursor: pointer; overflow: hidden; }
+.seg { position: absolute; top: 2px; bottom: 9px; border-radius: 2px; background: var(--off); border-right: 1px solid var(--panel); }
+.seg.sel { background: var(--accent); }
+.seg:hover { outline: 2px solid var(--text); z-index: 2; }
+.mut { position: absolute; top: 0; bottom: 0; background: repeating-linear-gradient(45deg, var(--muted-red) 0 3px, transparent 3px 6px); opacity: .55; pointer-events: none; }
+.sh { position: absolute; bottom: 1px; height: 6px; background: var(--short); border-radius: 1px; }
+.cursor { position: absolute; top: 0; bottom: 0; width: 2px; background: var(--text); pointer-events: none; }
+.controls { display: flex; gap: 14px; align-items: center; margin: 12px 20px; font-size: 14px; flex-wrap: wrap; }
+.legend span { display: inline-block; width: 12px; height: 12px; border-radius: 2px; vertical-align: -2px; margin: 0 4px 0 10px; }
+.cols { display: grid; gap: 16px; padding: 0 20px 40px; }
+.col h2 { font-size: 16px; margin: 8px 0; }
+.card { background: var(--panel); border: 1px solid var(--line); border-left: 4px solid var(--off); border-radius: 6px; padding: 10px 12px; margin-bottom: 8px; }
+.card.sel { border-left-color: var(--accent); }
+.card.short { border-left-color: var(--short); }
+.card.active { box-shadow: 0 0 0 2px var(--accent); }
+.row { display: flex; gap: 8px; align-items: baseline; flex-wrap: wrap; }
+.t { font-variant-numeric: tabular-nums; color: var(--accent); cursor: pointer; text-decoration: underline dotted; }
+.title { font-weight: 600; }
+.score { font-weight: 700; padding: 0 6px; border-radius: 4px; background: var(--accent-soft); }
+.kind, .dur { color: var(--muted); font-size: 13px; }
+.why { color: var(--muted); font-size: 13px; margin-top: 4px; }
+.rej { color: var(--warn); font-size: 13px; }
+.warn { color: var(--warn); margin: 6px 20px; font-size: 14px; }
+a { color: var(--accent); }
+.stats { font-size: 13px; color: var(--muted); }
+.stats b { color: var(--text); }
+.hidden { display: none !important; }
+@media (max-width: 700px) { .top { position: static; } }
+</style>
+</head>
+<body>
+<header>
+  <h1 id="h1"></h1>
+  <div class="sub" id="sub"></div>
+</header>
+<div class="top">
+  <div class="player">
+    <video id="v" controls preload="metadata"></video>
+    <div>
+      <div class="now" id="now">0:00:00</div>
+      <div class="stats" id="stats"></div>
+      <div class="sub" id="novideo"></div>
+    </div>
+  </div>
+  <div id="lanes"></div>
+</div>
+<div id="warns"></div>
+<div class="controls">
+  <label><input type="checkbox" id="onlySel"> только отобранные</label>
+  <span class="legend"><span style="background:var(--accent)"></span>отобрана
+    <span style="background:var(--off)"></span>не отобрана
+    <span style="background:var(--short)"></span>шорт
+    <span style="background:var(--muted-red);opacity:.6"></span>звук вырезан Twitch</span>
+</div>
+<div class="cols" id="cols"></div>
+<script>
+const D = __DATA__;
+const $ = s => document.querySelector(s);
+const esc = s => String(s ?? "").replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+const fmt = s => { s = Math.max(0, Math.round(s)); return `${Math.floor(s/3600)}:${String(Math.floor(s%3600/60)).padStart(2,"0")}:${String(s%60).padStart(2,"0")}`; };
+const mins = s => s >= 60 ? `${Math.floor(s/60)} мин ${Math.round(s%60)} с` : `${Math.round(s)} с`;
+const tw = s => { s = Math.round(s); return `${D.url}?t=${Math.floor(s/3600)}h${Math.floor(s%3600/60)}m${s%60}s`; };
+const v = $("#v");
+const dur = D.duration || 1;
+
+$("#h1").textContent = D.title;
+$("#sub").innerHTML = `${esc(D.streamer)} · ${fmt(D.duration)} · <a href="${esc(D.url)}" target="_blank">запись на Twitch</a>`;
+if (D.video) { v.src = D.video; v.onerror = () => { $("#novideo").textContent = "Браузер не смог открыть proxy.mp4 — используйте ссылки на Twitch."; }; }
+else { v.classList.add("hidden"); }
+
+function seek(t) { if (D.video) { v.currentTime = t; v.play().catch(()=>{}); } else { window.open(tw(t), "_blank"); } }
+
+// дорожки времени
+const lanes = $("#lanes");
+D.runs.forEach((r, ri) => {
+  const lane = document.createElement("div"); lane.className = "lane";
+  if (D.runs.length > 1) lane.innerHTML = `<div class="lane-label">${esc(r.label)}</div>`;
+  const bar = document.createElement("div"); bar.className = "bar";
+  for (const [a, b] of D.muted) bar.insertAdjacentHTML("beforeend", `<div class="mut" style="left:${a/dur*100}%;width:${(b-a)/dur*100}%"></div>`);
+  for (const t of r.topics) {
+    const el = document.createElement("div");
+    el.className = "seg" + (t.selected ? " sel" : "");
+    el.style.left = (t.start/dur*100) + "%"; el.style.width = ((t.end-t.start)/dur*100) + "%";
+    el.title = `#${t.id} ${fmt(t.start)}–${fmt(t.end)} · ${t.score}/10 · ${t.title}`;
+    el.onclick = e => { e.stopPropagation(); focusCard(ri, "t", t.id); seek(t.start); };
+    bar.appendChild(el);
+  }
+  for (const s of r.shorts) {
+    const el = document.createElement("div"); el.className = "sh";
+    el.style.left = (s.start/dur*100) + "%"; el.style.width = Math.max(0.3, (s.end-s.start)/dur*100) + "%";
+    el.title = `шорт ${fmt(s.start)} · ${s.score}/10 · ${s.hook}`;
+    el.onclick = e => { e.stopPropagation(); focusCard(ri, "s", s.id); seek(s.start); };
+    bar.appendChild(el);
+  }
+  const cur = document.createElement("div"); cur.className = "cursor"; bar.appendChild(cur);
+  bar.onclick = e => { const r = bar.getBoundingClientRect(); seek((e.clientX - r.left) / r.width * dur); };
+  lane.appendChild(bar); lanes.appendChild(lane);
+});
+v.addEventListener("timeupdate", () => {
+  $("#now").textContent = fmt(v.currentTime);
+  document.querySelectorAll(".cursor").forEach(c => c.style.left = (v.currentTime/dur*100) + "%");
+});
+
+// предупреждения
+const warns = D.runs.flatMap(r => (r.problems || []).map(p => (D.runs.length > 1 ? r.label + ": " : "") + p));
+$("#warns").innerHTML = warns.map(w => `<div class="warn">⚠ ${esc(w)}</div>`).join("");
+
+// статистика
+$("#stats").innerHTML = D.runs.map(r => {
+  const sel = r.topics.filter(t => t.selected);
+  const u = r.usage;
+  return `<div>${D.runs.length > 1 ? `<b>${esc(r.label)}</b>: ` : ""}тем <b>${r.topics.length}</b>, отобрано <b>${sel.length}</b> (${mins(sel.reduce((a, t) => a + t.end - t.start, 0))}), шортов <b>${r.shorts.length}</b>` +
+    (u ? ` · токены: вход <b>${u.input.toLocaleString("ru")}</b>, выход <b>${u.output.toLocaleString("ru")}</b>, ${Math.round(u.seconds)} с, по ценам API ≈ <b>$${u.usd.toFixed(2)}</b>` : "") + `</div>`;
+}).join("");
+
+// карточки
+const cols = $("#cols");
+cols.style.gridTemplateColumns = `repeat(${D.runs.length}, minmax(0, 1fr))`;
+if (D.runs.length > 1 && window.innerWidth < 900) cols.style.gridTemplateColumns = "1fr";
+D.runs.forEach((r, ri) => {
+  const col = document.createElement("div"); col.className = "col";
+  let h = D.runs.length > 1 ? `<h2>${esc(r.label)}</h2>` : `<h2>Темы</h2>`;
+  for (const t of r.topics) {
+    h += `<div class="card${t.selected ? " sel" : ""}" data-sel="${t.selected ? 1 : 0}" id="c${ri}t${t.id}">
+      <div class="row"><span class="score">${t.score}</span><span class="title">#${t.id} ${esc(t.title)}</span></div>
+      <div class="row"><span class="t" data-t="${t.start}">${fmt(t.start)}</span>–<span class="t" data-t="${t.end}">${fmt(t.end)}</span>
+        <span class="dur">${mins(t.end - t.start)}</span><span class="kind">${esc(t.kind)}${t.self_contained ? "" : " · нужен контекст"}</span>
+        <a class="kind" href="${tw(t.start)}" target="_blank">Twitch</a></div>
+      <div>${esc(t.summary)}</div>
+      <div class="why">${esc(t.why)}</div>
+      ${t.reject && t.reject.length ? `<div class="rej">не отобрана: ${esc(t.reject.join(", "))}</div>` : ""}
+      ${t.merged_from ? `<div class="why">склеена на стыке окон с: ${esc(t.merged_from.join(", "))}</div>` : ""}
+    </div>`;
+  }
+  h += `<h2>Шорты</h2>`;
+  for (const s of r.shorts) {
+    h += `<div class="card short" data-sel="${s.selected ? 1 : 0}" id="c${ri}s${s.id}">
+      <div class="row"><span class="score">${s.score}</span><span class="title">${esc(s.hook)}</span></div>
+      <div class="row"><span class="t" data-t="${s.start}">${fmt(s.start)}</span>–<span class="t" data-t="${s.end}">${fmt(s.end)}</span>
+        <span class="dur">${mins(s.end - s.start)}</span><a class="kind" href="${tw(s.start)}" target="_blank">Twitch</a></div>
+      <div class="why">${esc(s.why)}</div>
+      ${s.reject && s.reject.length ? `<div class="rej">${esc(s.reject.join(", "))}</div>` : ""}
+    </div>`;
+  }
+  if (!r.shorts.length) h += `<div class="sub">нет</div>`;
+  col.innerHTML = h; cols.appendChild(col);
+});
+cols.addEventListener("click", e => { const t = e.target.closest(".t"); if (t) seek(+t.dataset.t); });
+function focusCard(ri, kind, id) {
+  document.querySelectorAll(".card.active").forEach(c => c.classList.remove("active"));
+  const c = document.getElementById(`c${ri}${kind}${id}`);
+  if (c) { c.classList.add("active"); c.scrollIntoView({block: "nearest"}); }
+}
+$("#onlySel").onchange = e => document.querySelectorAll(".card").forEach(c => c.classList.toggle("hidden", e.target.checked && c.dataset.sel !== "1"));
+</script>
+</body>
+</html>
