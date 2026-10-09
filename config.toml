@@ -83,6 +83,7 @@ min_minutes = 4
 max_minutes = 25
 excluded_kinds = ["donations_block", "pause", "tech"]
 muted_overlap_sec = 10       # тема помечается «звук вырезан», если заглушено больше N секунд
+max_parts = 6                # тема может состоять из нескольких кусков (стример вернулся к ней позже)
 seam_check_sec = 30          # проверка стыков окон: граница темы ближе N секунд к стыку — подозрительно
 short_min_sec = 20
 short_max_sec = 60

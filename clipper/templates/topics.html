@@ -104,6 +104,8 @@ const mins = s => s >= 60 ? `${Math.floor(s/60)} мин ${Math.round(s%60)} с` 
 const tw = s => { s = Math.round(s); return `${D.url}?t=${Math.floor(s/3600)}h${Math.floor(s%3600/60)}m${s%60}s`; };
 const v = $("#v");
 const dur = D.duration || 1;
+const partsOf = t => t.parts && t.parts.length ? t.parts : [[t.start, t.end]];
+const lenOf = t => partsOf(t).reduce((a, [x, y]) => a + y - x, 0);
 
 $("#h1").textContent = D.title;
 $("#sub").innerHTML = `${esc(D.streamer)} · ${fmt(D.duration)} · <a href="${esc(D.url)}" target="_blank">запись на Twitch</a>`;
@@ -119,12 +121,12 @@ D.runs.forEach((r, ri) => {
   if (D.runs.length > 1) lane.innerHTML = `<div class="lane-label">${esc(r.label)}</div>`;
   const bar = document.createElement("div"); bar.className = "bar";
   for (const [a, b] of D.muted) bar.insertAdjacentHTML("beforeend", `<div class="mut" style="left:${a/dur*100}%;width:${(b-a)/dur*100}%"></div>`);
-  for (const t of r.topics) {
+  for (const t of r.topics) for (const [a, b] of partsOf(t)) {
     const el = document.createElement("div");
     el.className = "seg" + (t.selected ? " sel" : "");
-    el.style.left = (t.start/dur*100) + "%"; el.style.width = ((t.end-t.start)/dur*100) + "%";
-    el.title = `#${t.id} ${fmt(t.start)}–${fmt(t.end)} · ${t.score}/10 · ${t.title}`;
-    el.onclick = e => { e.stopPropagation(); focusCard(ri, "t", t.id); seek(t.start); };
+    el.style.left = (a/dur*100) + "%"; el.style.width = ((b-a)/dur*100) + "%";
+    el.title = `#${t.id} ${fmt(a)}–${fmt(b)} · ${t.score}/10 · ${t.title}` + (partsOf(t).length > 1 ? ` (кусок темы из ${partsOf(t).length})` : "");
+    el.onclick = e => { e.stopPropagation(); focusCard(ri, "t", t.id); seek(a); };
     bar.appendChild(el);
   }
   for (const s of r.shorts) {
@@ -158,7 +160,7 @@ $("#warns").innerHTML = warns.map(w => `<div class="warn">⚠ ${esc(w)}</div>`).
 $("#stats").innerHTML = D.runs.map(r => {
   const sel = r.topics.filter(t => t.selected);
   const u = r.usage;
-  return `<div>${D.runs.length > 1 ? `<b>${esc(r.label)}</b>: ` : ""}тем <b>${r.topics.length}</b>, отобрано <b>${sel.length}</b> (${mins(sel.reduce((a, t) => a + t.end - t.start, 0))}), шортов <b>${r.shorts.length}</b>` +
+  return `<div>${D.runs.length > 1 ? `<b>${esc(r.label)}</b>: ` : ""}тем <b>${r.topics.length}</b>, отобрано <b>${sel.length}</b> (${mins(sel.reduce((a, t) => a + lenOf(t), 0))}), шортов <b>${r.shorts.length}</b>` +
     (u ? ` · токены: вход <b>${u.input.toLocaleString("ru")}</b>, выход <b>${u.output.toLocaleString("ru")}</b>, ${Math.round(u.seconds)} с, по ценам API ≈ <b>$${u.usd.toFixed(2)}</b>` : "") + `</div>`;
 }).join("");
 
@@ -173,8 +175,9 @@ D.runs.forEach((r, ri) => {
     h += `<div class="card${t.selected ? " sel" : ""}" data-sel="${t.selected ? 1 : 0}" id="c${ri}t${t.id}">
       <div class="row"><span class="score">${t.score}</span><span class="title">#${t.id} ${esc(t.title)}</span></div>
       <div class="row"><span class="t" data-t="${t.start}">${fmt(t.start)}</span>–<span class="t" data-t="${t.end}">${fmt(t.end)}</span>
-        <span class="dur">${mins(t.end - t.start)}</span><span class="kind">${esc(t.kind)}${t.self_contained ? "" : " · нужен контекст"}</span>
+        <span class="dur">${mins(lenOf(t))}</span><span class="kind">${esc(t.kind)}${t.self_contained ? "" : " · нужен контекст"}</span>
         <a class="kind" href="${tw(t.start)}" target="_blank">Twitch</a></div>
+      ${partsOf(t).length > 1 ? `<div class="why">тема из ${partsOf(t).length} кусков: ${partsOf(t).map(([a, b]) => `<span class="t" data-t="${a}">${fmt(a)}</span>–${fmt(b)}`).join(", ")}</div>` : ""}
       <div>${esc(t.summary)}</div>
       <div class="why">${esc(t.why)}</div>
       ${t.reject && t.reject.length ? `<div class="rej">не отобрана: ${esc(t.reject.join(", "))}</div>` : ""}
@@ -211,7 +214,7 @@ function focusCard(ri, kind, id) {
 // поиск по расшифровке
 const norm = s => s.toLowerCase().replace(/ё/g, "е");
 const SEGS = (D.segments || []).map(([t, s]) => [t, s, norm(s)]);
-const topicAt = t => (D.runs[0]?.topics || []).find(x => x.start <= t && t < x.end);
+const topicAt = t => (D.runs[0]?.topics || []).find(x => partsOf(x).some(([a, b]) => a <= t && t < b));
 let qTimer;
 $("#q").addEventListener("input", e => { clearTimeout(qTimer); qTimer = setTimeout(() => runSearch(e.target.value), 200); });
 function runSearch(q) {

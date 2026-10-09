@@ -23,6 +23,7 @@ def pass1_schema(windowed: bool) -> dict:
         "type": "object",
         "properties": {
             "start": TIME, "end": TIME,
+            "key": {"type": "string"},
             "title": {"type": "string"},
             "summary": {"type": "string"},
             "kind": {"type": "string", "enum": KINDS},
@@ -30,7 +31,7 @@ def pass1_schema(windowed: bool) -> dict:
             "why": {"type": "string"},
             "self_contained": {"type": "boolean"},
         },
-        "required": ["start", "end", "title", "summary", "kind", "score", "why", "self_contained"],
+        "required": ["start", "end", "key", "title", "summary", "kind", "score", "why", "self_contained"],
         "additionalProperties": False,
     }
     short = {
@@ -63,11 +64,16 @@ SYSTEM_PASS1 = """Ты — опытный монтажёр YouTube-канала 
 голосом тоже попадает в расшифровку как речь.
 
 Что нужно:
-1. topics — темы подряд по всему тексту, без дыр и наложений (конец одной = начало следующей). Тема — связный \
-кусок, который можно выложить отдельным роликом: история, обсуждение одного вопроса, игровой эпизод, реакция на \
+1. topics — сплошная разметка всего текста на куски, без дыр и наложений (конец одного = начало следующего). \
+Тема — то, что можно выложить отдельным роликом: история, обсуждение одного вопроса, игровой эпизод, реакция на \
 видео и т.п. Скучные и служебные куски тоже размечай темами нужного типа, чтобы карта была сплошной.
-   - start, end — время в формате ч:мм:сс, бери из меток строк; начало темы — строка, с которой она начинается, \
-конец — время начала первой строки следующей темы.
+   - start, end — время куска в формате ч:мм:сс, бери из меток строк; начало — строка, с которой кусок начинается, \
+конец — время начала первой строки следующего куска.
+   - key — короткий ярлык темы (2–4 слова). Обычно у каждого куска свой key. Но если стример позже возвращается \
+к уже начатой теме (начал историю, отвлёкся на игру или донаты, потом досказал; вернулся к тому же обсуждению), \
+дай новому куску тот же key, что и началу темы, — такие куски смонтируют в один ролик. Возврат может быть и через \
+несколько часов. У кусков одной темы title, summary, kind, score, why и self_contained описывают тему целиком \
+и совпадают. Не объединяй одним key разные темы и не считай возвратом мимолётное упоминание.
    - title — рабочее название (по-русски, коротко); summary — 2–3 предложения, о чём тема.
    - kind: story (история из жизни), gameplay (игровой эпизод), discussion (обсуждение, ответы на вопросы), \
 reaction (реакция на видео/новость), donations_block (стример остановился и читает/отвечает на донаты не по теме), \
@@ -76,7 +82,7 @@ pause (перерыв, отошёл, заставка), tech (настройка
 6 — нормальный ролик, ниже 5 — не стоит). Учитывай реакцию чата, эмоции, законченность сюжета.
    - why — коротко, почему такая оценка.
    - self_contained — понятна ли тема без остального стрима.
-   Хорошая длина темы для ролика — от 4 до 25 минут. Не дроби одну историю на мелкие куски и не склеивай разные \
+   Хорошая длина темы для ролика (сумма её кусков) — от 4 до 25 минут. Не дроби одну историю на мелкие куски и не склеивай разные \
 истории в одну тему только ради длины.
 2. shorts — самые яркие моменты на 20–60 секунд для вертикальных роликов: смешная фраза, бурная реакция, \
 неожиданный поворот, сильная эмоция. start/end — по меткам времени; hook — дословная первая фраза стримера, с которой начнётся ролик \
@@ -92,12 +98,14 @@ WINDOW_NOTE = """
 (у остальных тем continues = false);
 - если в начале окна продолжается тема, начатая раньше (о ней сказано перед расшифровкой), верни её с тем же \
 названием и с её настоящим началом из предыдущей части;
+- перед расшифровкой перечислены темы предыдущих частей с их key: если в этом окне стример возвращается к одной \
+из них, дай куску её key; новым темам давай новые key, не совпадающие с перечисленными;
 - recap — краткий пересказ всего, что было на стриме до конца этого окна (вместе с пересказом прошлых частей), \
 не длиннее {recap_words} слов: он будет передан при разборе следующей части."""
 
 
 def user_prompt(rec: Record, text: str, part: tuple[int, int] | None = None, recap: str = "",
-                open_topic: dict | None = None) -> str:
+                open_topic: dict | None = None, prev_topics: list[dict] | None = None) -> str:
     info = rec.load_info()
     sc = rec.streamer_cfg
     head = [f"Стример: {sc.get('display_name') or info.get('uploader') or rec.streamer}",
@@ -113,9 +121,16 @@ def user_prompt(rec: Record, text: str, part: tuple[int, int] | None = None, rec
         head.append(f"Это часть {part[0]} из {part[1]}.")
     if recap:
         head.append("Пересказ предыдущих частей:\n" + recap)
+    if prev_topics:
+        seen: dict[str, dict] = {}
+        for t in prev_topics:
+            if t["kind"] not in ("pause", "tech") and t.get("key"):
+                seen.setdefault(t["key"], t)
+        head.append("Темы предыдущих частей (key — название — где началась):\n" + "\n".join(
+            f"- {k} — {t['title']} — {fmt_time(t['start'])}" for k, t in list(seen.items())[-80:]))
     if open_topic:
-        head.append(f"Незакрытая тема: «{open_topic['title']}» началась в {fmt_time(open_topic['start'])} "
-                    f"и не закончена в предыдущей части ({open_topic['summary']}).")
+        head.append(f"Незакрытая тема: «{open_topic['title']}» (key: {open_topic.get('key', '—')}) началась в "
+                    f"{fmt_time(open_topic['start'])} и не закончена в предыдущей части ({open_topic['summary']}).")
     return "\n\n".join(head) + "\n\nРасшифровка:\n" + text
 
 
@@ -126,30 +141,39 @@ def overlap(a: dict, b: dict) -> float:
 
 
 def merge_windows(results: list[dict], bounds: list[tuple[float, float]]) -> tuple[list[dict], list[dict]]:
-    """Склейка тем из окон с перекрытием.
+    """Склейка кусков из окон с перекрытием.
 
-    Внутри перекрытия решает более позднее окно (оно видит продолжение). Тема, пересекающая начало нового окна
-    (в том числе помеченная предыдущим окном как незакрытая), объединяется с первой темой нового окна.
+    Новое окно отвечает за время с начала своего первого куска (оно видит продолжение); старые куски до этого
+    момента остаются. Старый кусок, который заходит в новое окно или помечен незакрытым, продолжается куском
+    нового окна с тем же key, а если такого нет и он явно заходит внутрь — первым куском нового окна.
     """
     topics: list[dict] = []
     shorts: list[dict] = []
     for wi, (res, (wa, wb)) in enumerate(zip(results, bounds)):
         new = sorted(res["topics"], key=lambda t: t["start"])
-        if wi > 0 and topics:
-            spanning = [p for p in topics if p["start"] < wa < p["end"] or p.get("continues")]
-            topics = [p for p in topics if p["start"] < wa]
-            if spanning and new:
-                p = min(spanning, key=lambda x: x["start"]) if any(x["start"] < wa for x in spanning) else spanning[0]
-                t = new[0]
-                if t["start"] <= wa + 90 or abs(t["start"] - p["start"]) <= 60:
+        if wi > 0 and topics and new:
+            cov = new[0]["start"]
+            keep = [x for x in topics if x["start"] < cov]
+            p = max(keep, key=lambda x: x["start"]) if keep else None
+            if p is not None:
+                t = next((x for x in new if p.get("key") and x.get("key") == p["key"] and x["start"] <= cov + 90), None)
+                if t is None and p["end"] > cov + 30:
+                    t = new[0]
+                if t is not None:
                     t["start"] = min(t["start"], p["start"])
                     t["merged_from"] = p.get("merged_from", []) + [p["title"]]
-                    topics = [x for x in topics if x is not p]
-            for p in topics:
-                p["continues"] = False
-                if new and p["end"] > new[0]["start"]:
-                    p["end"] = new[0]["start"]
-            topics = [p for p in topics if p["end"] - p["start"] > 1]
+                    keep.remove(p)
+                    old = t.get("key")
+                    if p.get("key") and old and old != p["key"]:  # продолжение темы из прошлого окна — её key
+                        for x in new:
+                            if x.get("key") == old:
+                                x["key"] = p["key"]
+            for x in keep:
+                x["continues"] = False
+                x["end"] = min(x["end"], cov)
+            topics = [x for x in keep if x["end"] - x["start"] > 1]
+        elif wi > 0 and not new:
+            continue
         topics.extend(new)
         for s in res.get("shorts", []):
             dup = next((x for x in shorts
@@ -176,6 +200,45 @@ def seam_problems(topics: list[dict], bounds: list[tuple[float, float]], tol: fl
     return probs
 
 
+# ---------- темы из нескольких кусков ----------
+
+def group_topics(pieces: list[dict], max_parts: int = 6) -> list[dict]:
+    """Куски с одинаковым key — одна тема (стример вернулся к ней позже). Описание берётся у последнего куска."""
+    by_key: dict[str, list[dict]] = {}
+    for i, p in enumerate(sorted(pieces, key=lambda x: x["start"])):
+        by_key.setdefault(p.get("key") or f"_{i}", []).append(p)
+    topics = []
+    for key, ps in by_key.items():
+        if len(ps) > max_parts:  # скорее ошибка модели — не склеиваем
+            for j, p in enumerate(ps):
+                topics.append(group_topics([{**p, "key": f"{key}#{j}"}])[0])
+            continue
+        parts: list[list[float]] = []
+        for p in ps:
+            if parts and p["start"] - parts[-1][1] <= 2:
+                parts[-1][1] = max(parts[-1][1], p["end"])
+            else:
+                parts.append([p["start"], p["end"]])
+        last = ps[-1]
+        kinds: dict[str, float] = {}
+        for p in ps:
+            kinds[p["kind"]] = kinds.get(p["kind"], 0) + p["end"] - p["start"]
+        t = {k: v for k, v in last.items() if k not in ("start", "end", "continues")}
+        t.update(key=key, start=parts[0][0], end=parts[-1][1], parts=parts,
+                 duration=round(sum(b - a for a, b in parts), 1), kind=max(kinds, key=kinds.get),
+                 score=max(p["score"] for p in ps))
+        merged = [m for p in ps for m in p.get("merged_from", [])]
+        if merged:
+            t["merged_from"] = merged
+        topics.append(t)
+    topics.sort(key=lambda t: t["start"])
+    return topics
+
+
+def parts_of(t: dict) -> list[list[float]]:
+    return t.get("parts") or [[t["start"], t["end"]]]
+
+
 # ---------- отбор ----------
 
 def select(topics: list[dict], shorts: list[dict], muted: list[list[float]], cfg: dict, sc: dict) -> None:
@@ -183,12 +246,12 @@ def select(topics: list[dict], shorts: list[dict], muted: list[list[float]], cfg
     lo = sc["clips"].get("long_min_minutes", tc["min_minutes"]) * 60
     hi = sc["clips"].get("long_max_minutes", tc["max_minutes"]) * 60
     for t in topics:
-        m = sum(overlap(t, {"start": a, "end": b}) for a, b in muted)
+        m = sum(overlap({"start": pa, "end": pb}, {"start": a, "end": b}) for pa, pb in parts_of(t) for a, b in muted)
         t["muted_sec"] = round(m, 1)
         reasons = []
         if t["score"] < tc["min_score"]:
             reasons.append(f"оценка ниже {tc['min_score']}")
-        d = t["end"] - t["start"]
+        d = sum(b - a for a, b in parts_of(t))
         if d < lo:
             reasons.append(f"короче {lo // 60:.0f} мин")
         if d > hi:
@@ -247,9 +310,9 @@ def pass1(rec: Record, llm: LLM, model: str, step: str = "pass1") -> dict:
     system = SYSTEM_PASS1 + (WINDOW_NOTE.format(recap_words=int(lc["recap_tokens"] / 2)) if windowed else "")
     schema = pass1_schema(windowed)
     results, bounds = [], []
-    recap, open_topic = "", None
+    recap, open_topic, prev = "", None, []
     for i, w in enumerate(windows):
-        prompt = user_prompt(rec, render(w), (i + 1, len(windows)) if windowed else None, recap, open_topic)
+        prompt = user_prompt(rec, render(w), (i + 1, len(windows)) if windowed else None, recap, open_topic, prev)
         res = llm.call(step if not windowed else f"{step}.w{i + 1}", model, system, prompt, schema).data
         to_seconds(res["topics"])
         to_seconds(res["shorts"])
@@ -257,11 +320,13 @@ def pass1(rec: Record, llm: LLM, model: str, step: str = "pass1") -> dict:
         bounds.append((w[0].start, w[-1].end))
         recap = res.get("recap", "")
         open_topic = next((t for t in res["topics"] if t.get("continues")), None)
+        prev += res["topics"]
     if windowed:
-        topics, shorts = merge_windows(results, bounds)
+        pieces, shorts = merge_windows(results, bounds)
     else:
-        topics, shorts = results[0]["topics"], results[0]["shorts"]
-    problems = seam_problems(topics, bounds, cfg["topics"]["seam_check_sec"]) if windowed else []
+        pieces, shorts = results[0]["topics"], results[0]["shorts"]
+    problems = seam_problems(pieces, bounds, cfg["topics"]["seam_check_sec"]) if windowed else []
+    topics = group_topics(pieces, cfg["topics"].get("max_parts", 6))
     for p in problems:
         log.warning("  проверка стыков: %s", p)
     muted = read_json(rec.muted)["muted"] if rec.muted.exists() else []
@@ -286,7 +351,7 @@ def run_topics(rec: Record, force: bool = False, model: str | None = None) -> No
         write_json(rec.topics, out)
         sel = [t for t in out["topics"] if t["selected"]]
         log.info("  тем: %d (отобрано %d, всего %s), шортов: %d", len(out["topics"]), len(sel),
-                 fmt_duration(sum(t["end"] - t["start"] for t in sel)), len(out["shorts"]))
+                 fmt_duration(sum(t.get("duration", t["end"] - t["start"]) for t in sel)), len(out["shorts"]))
 
 
 def topics_file_for(rec: Record, model: str) -> Path:

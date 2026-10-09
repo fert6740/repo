@@ -205,9 +205,9 @@ class FakeBackend:
         a, b = lines[0][1:].split("]")[0], lines[-1][1:].split("]")[0]
         mid = fmt_time((parse_time(a) + parse_time(b)) / 2)
         data = {"topics": [
-            {"start": a, "end": mid, "title": "Первая", "summary": "s", "kind": "story", "score": 8,
+            {"start": a, "end": mid, "key": "p" + a, "title": "Первая", "summary": "s", "kind": "story", "score": 8,
              "why": "w", "self_contained": True},
-            {"start": mid, "end": b, "title": "Вторая", "summary": "s", "kind": "discussion", "score": 5,
+            {"start": mid, "end": b, "key": "v" + mid, "title": "Вторая", "summary": "s", "kind": "discussion", "score": 5,
              "why": "w", "self_contained": True}],
             "shorts": [{"start": a, "end": fmt_time(parse_time(a) + 40), "hook": "h", "score": 9, "why": "w"}]}
         if "recap" in schema["properties"]:
@@ -356,3 +356,43 @@ def test_alert_intervals():
     from clipper.alerts import to_intervals
     s = np.array([0, .8, .9, 0, 0, .75, 0, 0, 0, 0, .9, .1], dtype=np.float32)
     assert to_intervals(s, 0.7) == [[1, 6], [10, 11]]
+
+
+def test_group_topics_parts():
+    pieces = [{**t(0, 300, "Сосед: начало"), "key": "сосед"},
+              {**t(300, 900, "Босс", 6, "gameplay"), "key": "босс"},
+              {**t(900, 1200, "Сосед целиком", 9), "key": "сосед"},
+              {**t(1200, 1210, "Сосед хвост", 9), "key": "сосед"}]
+    topics = T.group_topics(pieces)
+    sos = next(x for x in topics if x["key"] == "сосед")
+    assert sos["parts"] == [[0, 300], [900, 1210]] and sos["duration"] == 610
+    assert sos["title"] == "Сосед хвост" and sos["score"] == 9 and (sos["start"], sos["end"]) == (0, 1210)
+    cfg = load_config()
+    T.select(topics, [], [[950, 970]], cfg, cfg.streamer("_template"))
+    assert sos["muted_sec"] == 20 and sos["reject"] == ["звук вырезан Twitch"]  # 610 с — длины хватает
+    many = [{**t(i * 100, i * 100 + 50, "x"), "key": "k"} for i in range(8)]
+    assert len(T.group_topics(many, max_parts=6)) == 8
+
+
+def test_merge_windows_key_remap():
+    w1 = {"topics": [{**t(0, 3000, "A"), "key": "a"}, {**t(3000, 4000, "B", cont=True), "key": "b"}], "shorts": []}
+    w2 = {"topics": [{**t(3400, 4300, "B хвост"), "key": "bb"}, {**t(4300, 6000, "D"), "key": "d"},
+                     {**t(6000, 8000, "снова B"), "key": "bb"}], "shorts": []}
+    pieces, _ = T.merge_windows([w1, w2], [(0, 4000), (3400, 8000)])
+    topics = T.group_topics(pieces)
+    b = next(x for x in topics if x["key"] == "b")
+    assert b["parts"] == [[3000, 4300], [6000, 8000]]
+
+
+def test_merge_windows_regression_partial_cover():
+    # настоящий ответ модели: окно 3 начинает разметку не с начала перекрытия; незакрытый кусок нулевой длины
+    k = lambda a, b, key, title, cont=False: {**t(a, b, title, cont=cont), "key": key}
+    w1 = {"topics": [k(0, 168, "сосед", "Сосед"), k(168, 441, "босс", "Босс"),
+                     k(441, 441, "очередь", "Очередь", True)], "shorts": []}
+    w2 = {"topics": [k(168, 441, "босс", "Босс"), k(441, 630, "очередь", "Очередь"),
+                     k(630, 817, "сосед", "Сосед", True)], "shorts": []}
+    w3 = {"topics": [k(630, 817, "сосед", "Сосед целиком")], "shorts": []}
+    pieces, _ = T.merge_windows([w1, w2, w3], [(0, 461), (168, 650), (357, 811)])
+    topics = T.group_topics(pieces)
+    got = {x["key"]: x["parts"] for x in topics}
+    assert got == {"сосед": [[0, 168], [630, 817]], "босс": [[168, 441]], "очередь": [[441, 630]]}
