@@ -1,0 +1,222 @@
+Английский язык — Фоксфорд.Учебник
+Источник: https://foxford.ru/wiki/angliyskiy-yazyk
+Разделов: 7, тем: 193
+
+Обозначения в файлах тем (разметка страницы, переведённая в текст):
+  **так** — полужирный;  __так__ — подчёркнутый;  {так} — выделено цветом
+  # / ## / ### — заголовки;  | a | b | — строка таблицы
+  [рисунок Рисунки/NNN-k.png: …] — что изображено на картинке со страницы (переписано с неё);
+      сама картинка лежит в подпапке «Рисунки». Чисто декоративные картинки убраны.
+  текст <ссылка> — гиперссылка
+  ===== … ===== — часть статьи, которую сайт показывает только при выбранном уровне сложности
+
+
+== Английская грамматика для начальной школы / English grammar for young learners ==
+  001 The Present Simple — Настоящее простое время.txt
+  002 Глагол Must — должен.txt
+  003 To be (am, is, are) — Глагол to be в настоящем времени.txt
+  004 The Present Continuous — Настоящее продолженное.txt
+  005 The Present Simple vs The Present Continuous — Настоящее Простое и Продолженное.txt
+  006 To be (was, were) — Глагол to be в прошедшем времени.txt
+  007 The Past Simple - Простое прошедшее время.txt
+  008 Be going to — собираться, намереваться, планировать.txt
+  009 The Future Simple — Будущее простое время.txt
+  010 Модальный глагол Can — уметь, мочь.txt
+  011 Глагол Have to — вынужден, обязан, должен.txt
+  012 Have got —иметь, обладать.txt
+  013 Infinitive of purpose — Инфинитив цели.txt
+  014 Imperative — Повелительное наклонение.txt
+  015 Let's — Давай.txt
+  016 Would like — Мне бы хотелось.txt
+  017 Артикли A и An.txt
+  018 Zero article — Нулевой артикль.txt
+  019 The definite article — Определённый артикль The.txt
+  020 Uncountable nouns - Неисчисляемые существительные.txt
+  021 Plurals — Множественное число существительных.txt
+  022 Possessive nouns — Притяжательный падеж существительных.txt
+  023 Personal pronouns — Личные местоимения.txt
+  024 Possessive adjectives — Притяжательные местоимения.txt
+  025 Demonstrative pronouns — Указательные местоимения.txt
+  026 Some, any, no — Неопределенные и отрицательные местоимения.txt
+  027 The comparative degree of adjectives — Сравнительная степень прилагательных.txt
+  028 The superlative degree — Превосходная степень прилагательных.txt
+  029 Quantifiers (many much a lot of) — Количественные местоимения.txt
+  030 Cardinal numbers — Количественные числительные.txt
+  031 Ordinal numbers — Порядковые числительные.txt
+  032 Prepositions of place — Предлоги места.txt
+  033 Prepositions of direction — Предлоги направления.txt
+  034 Prepositions of time — Предлоги времени.txt
+  035 There is, there are — Здесь есть.txt
+  036 Dummy it — Пустое подлежащее it.txt
+  037 Question words — Вопросительные слова.txt
+  038 Conjunctions and, or, but, because — Союзы and, or, but, because.txt
+
+== Английская грамматика для средней школы / English  Grammar for Teens А1-А2 ==
+  039 Притяжательный падеж имени существительного Ann's phone, my dad's car.txt
+  040 Исчисляемые и неисчисляемые существительные Countable and uncountable nouns.txt
+  041 Образование множественного числа существительных Singular and plural nouns.txt
+  042 Использование some, any, no с существительными.txt
+  043 Указатели множества Much, many, a lot.txt
+  044 Указатели множества (A) little, (a) few.txt
+  045 Использование all none, both neither, some most с существительными.txt
+  046 Неопределённый артикль a (an) The indefinite article a (an).txt
+  047 Определённый артикль THE The definite article THE.txt
+  048 Отсутствие артикля No article.txt
+  049 Артикль the с географическими названиями Article the with geographical names.txt
+  050 Имя прилагательное Adjectives A1-A2.txt
+  051 Отглагольные прилагательные на -ed или -ing Adjectives with -ed and -ing.txt
+  052 Сравнительная степень прилагательных Comparative.txt
+  053 Превосходная степень прилагательных Superlative.txt
+  054 Альтернативные способы сравнения Other types of comparisons.txt
+  055 Типы наречий Types of adverbs.txt
+  056 Наречия и порядок слов Adverbs and word order.txt
+  057 Сравнительная степень наречий Comparative.txt
+  058 Превосходная степень наречий Superlative.txt
+  059 Личные местоимения I — me, he — him, we — us, they — them.txt
+  060 Притяжательные местоимения my, your, his, her, its, our, their.txt
+  061 Указательные местоимения this, that, these, those.txt
+  062 Неопределённые местоимения somebody, someone, something, anything.txt
+  063 Время Time.txt
+  064 Даты Dates.txt
+  065 Порядковые числительные Ordinal numbers.txt
+  066 Предлоги места Prepositions of place.txt
+  067 Предлоги направления Prepositions of movement.txt
+  068 Предлоги времени (at, in, on) Prepositions of time (at, in, on).txt
+  069 Настоящее простое время глагола to be Present Simple of the verb to be.txt
+  070 Прошедшее простое время глагола to be Past Simple of the verb to be.txt
+  071 Конструкция there is are.txt
+  072 Глагол have и глагольный оборот have got.txt
+  073 Настоящее простое время (использование) Present Simple (usage).txt
+  074 Настоящее простое время (формообразование) Present Simple (formation).txt
+  075 Настоящее длительное время (использование) Present Continuous (usage).txt
+  076 Настоящее длительное время (формообразование) Present Сontinuous (formation).txt
+  077 Настоящее совершённое время (использование) Present Perfect (usage).txt
+  078 Настоящее совершённое время (формообразование) Present Perfect (formation).txt
+  079 Настоящее совершённое длительное время Present Perfect Continuous (usage).txt
+  080 Настоящее совершённое длительное время Present Perfect Continuous (formation).txt
+  081 Настоящее простое или длительное время Present Simple or Present Continuous.txt
+  082 Present Perfect vs Present Perfect Continuous.txt
+  083 Прошедшее простое время (использование) Past Simple (usage).txt
+  084 Прошедшее простое время (формообразование) Past Simple (formation).txt
+  085 Used to для обозначения действий в прошлом.txt
+  086 Прошедшее длительное время (использование) Past Continuous (usage).txt
+  087 Прошедшее длительное время (формообразование) Past Continuous (formation).txt
+  088 Прошедшее простое или длительное время Past Simple or Past Continuous.txt
+  089 Прошедшее простое или настоящее совершённое Past Simple or Present Perfect.txt
+  090 Прошедшее совершённое время (использование) Past Perfect (usage).txt
+  091 Прошедшее совершённое время (формообразование) Past Perfect (formation).txt
+  092 Будущее простое время (использование) Future Simple (usage).txt
+  093 Будущее простое время (формообразование) Future Simple (formation).txt
+  094 Будущее длительное время (использование) Future Continuous (usage).txt
+  095 Будущее длительное время (формообразование) Future Continuous (formation).txt
+  096 Будущее совершённое время (использование) Future Perfect (usage).txt
+  097 Будущее совершённое время (формообразование) Future Perfect (formation).txt
+  098 Будущее совершённое длительное Future Perfect Continuous (usage).txt
+  099 Будущее совершённое длительное Future Perfect Continuous (formation).txt
+  100 Конструкция to be going to для выражения будущего.txt
+  101 Способы выражения будущего Future Time Expressions.txt
+  102 Модальный глагол can Modal verb can.txt
+  103 Модальные глаголы must и have to Modal verb must and have to.txt
+  104 Модальный глагол should Modal verb should.txt
+  105 Модальный глагол ought to Modal verb ought to.txt
+  106 Модальные глаголы для возможностей и способностей Modals for abilities.txt
+  107 Модальные глаголы для выражения предположения Might, may, must, can't, could.txt
+  108 Модальные глаголы в правилах и инструкциях Modals for rules and regulations.txt
+  109 Модальные глаголы для выражения разрешения и запретов Modals for prohibitions.txt
+  110 Глаголы в страдательном залоге Passive Voice.txt
+  111 Страдательный залог с модальными глаголами Passive Voice with modal verbs.txt
+  112 Конструкция have something done The Causative have something done.txt
+  113 Инфинитив после глаголов want и would like.txt
+  114 Герундий (ing-форма) после глаголов like love enjoy hate.txt
+  115 Глагол + герундий (ing-форма) Verb + gerund (ing-form).txt
+  116 Глагол + инфинитив Verb + infinitive.txt
+  117 Глагол + инфинитив или -ing форма Verb + infinitive or -ing form.txt
+  118 Инфинитив цели Infinitive of purpose.txt
+  119 Глагол + объект действия + инфинитив (I want smb to do sth, I make smb do sth).txt
+  120 Порядок слов в вопросительных предложениях Word order in questions.txt
+  121 Прямые и косвенные вопросы Direct and indirect questions.txt
+  122 Условные предложения нулевого типа Zero Conditional.txt
+  123 Условные предложения первого типа First Conditional.txt
+  124 Условные предложения второго типа Second Conditional.txt
+  125 Условные предложения третьего типа Third Conditional.txt
+  126 Условные предложения с wish, if only.txt
+  127 Косвенная речь в утвердительных предложениях Reported statements A1-A2.txt
+  128 Косвенная речь в вопросительных предложениях Reported questions A1-A2.txt
+  129 Косвенная речь в повелительном наклонении Reported orders and requests.txt
+  130 Слова-связки Linkers and, but, so, because.txt
+  131 Придаточные определительные Relative clauses.txt
+
+== Английская грамматика для старшей школы / English  Grammar for Teens В1-В2 ==
+  132 Притяжательные формы имени существительного Posessive forms of nouns.txt
+  133 Исчисляемые и неисчислимые существительные Countable and uncountable nouns.txt
+  134 Квантификаторы a lot of, much, many, (a) little, (a) few Quantifiers (1).txt
+  135 Артикли Articles.txt
+  136 Имя прилагательное Adjectives B1-B2.txt
+  137 Степени cравнения прилагательных Comparison of adjectives.txt
+  138 Степени сравнения наречий Comparison of adverbs.txt
+  139 Наречие Adverbs.txt
+  140 Возвратные местоимения Reflexive pronouns.txt
+  141 Неопределённые местоимения Indefinite pronouns.txt
+  142 Относительные местоимения Relative pronouns.txt
+  143 Глаголы to be, have и глагольный оборот have got Verbs to be, have, have got.txt
+  144 Настоящее простое или настоящее длительное время Present Simple vs Continuous.txt
+  145 Настоящее совершённое время Present Perfect.txt
+  146 Прошедшее простое время Past Simple.txt
+  147 Прошедшее простое или длительное время Past Simple vs Past Continuous.txt
+  148 Прошедшее совершённое время Past Perfect.txt
+  149 Used to и would для обозначения действий в прошлом Used to and would.txt
+  150 Способы выражения будущего Future forms.txt
+  151 Выражение способностей и возможностей Modals for ability and possibility.txt
+  152 Выражение разрешения и долженствования Modals for permission and obligation.txt
+  153 Выражение необходимости, её отсутствия Modals for necessity, lack of necessity.txt
+  154 Вопросы к подлежащему и дополнению Subject and Object Questions.txt
+  155 Инфинитив Infinitive.txt
+  156 Герундий и причастие I (ing-формы) Gerund and Participle I.txt
+  157 Условные предложения Conditionals.txt
+  158 Косвенная речь в утвердительных предложениях Reported statements B1-B2.txt
+  159 Косвенная речь в вопросительных предложениях Reported questions B1-B2.txt
+  160 Косвенная речь в побудительных предложениях Reported orders and requests.txt
+
+== Основы словообразования в английском языке / Word formation A2-В2 ==
+  161 Основные способы словообразования Types of word formation.txt
+  162 Приставки и суффиксы в английском языке Prefixes and suffixes.txt
+  163 Образование существительных при помощи суффиксов Formation of nouns.txt
+  164 Образование существительных, обозначающих род занятий Nouns for jobs.txt
+  165 Образование существительных, обозначающих национальности Nouns for nationalities.txt
+  166 Образование прилагательных при помощи суффиксов Formation of adjectives.txt
+  167 Отрицательные приставки с прилагательными Negative prefixes with adjectives.txt
+  168 Составные существительные Compound nouns.txt
+  169 Составные прилагательные Compound adjectives.txt
+  170 Образование глаголов Formation of verbs.txt
+  171 Образование наречий Formation of adverbs.txt
+  172 Конверсия Conversion.txt
+
+== Письмо и говорение в английском языке / Speaking and writing skills ==
+  173 Как написать электронное письмо другу Writing an email.txt
+  174 Как написать открытку другу Writing a postcard.txt
+  175 Как написать короткий рассказ Writing a short story.txt
+  176 Как написать пригласительное письмо Writing an invitation letter.txt
+  177 Чтение вслух Reading aloud.txt
+  178 Описание фотографии Describing a photo.txt
+  179 Сравнение фотографий Comparing photos.txt
+  180 Как написать обзор Writing a review.txt
+  181 Как написать краткую биографию Writing a short biography.txt
+
+== Лексика по английскому языку для начальной школы / English vocabulary for young learners ==
+  182 Дни недели на английском.txt
+  183 Времена года и месяцы на английском.txt
+  184 Школьные предметы на английском особенности и отличия от российской системы.txt
+  185 Комнаты на английском.txt
+  186 Счёт на английском.txt
+  187 Погода на английском.txt
+  188 Семья на английском.txt
+  189 Части тела на английском.txt
+  190 Одежда на английском.txt
+
+== Английский язык - Фонетика ==
+  191 Английский алфавит.txt
+  192 Цвета на английском.txt
+  193 Страны на английском.txt
+
+
+== Темы, где текст зависит от уровня сложности: 0 ==

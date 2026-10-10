@@ -1,0 +1,59 @@
+Равномерное движение по окружности: ЕГЭ по физике
+Предмет: Физика
+Раздел: Подготовка к ЕГЭ по физике
+Источник: https://foxford.ru/wiki/fizika/ravnomernoe-dvizhenie-pookruzhnosti
+Обновлено: 2026-10-04
+
+При равномерном движении по окружности скорость точки не меняется по модулю, но меняется по направлению.
+
+[рисунок https://uploads-foxford-ru.ngcdn.ru/uploads/tinymce_file/file/141457/bb4268e91baaa020.png]
+
+При равномерном движении по окружности, так как модуль скорости не меняется, то $\vec a_\tau=\vec 0,$ значит, $\vec a=\vec a_n,$ поэтому ускорение $\vec a$ направлено к центру $O$ окружности $(\vec a \perp \vec v).$
+
+$\begin{cases}v=const\\ R=const \end{cases}~~\Rightarrow~~a=a_n=\dfrac{v^2R}=const.$
+
+[рисунок https://uploads-foxford-ru.ngcdn.ru/uploads/tinymce_file/file/141458/ad8b09bd1fc826d0.png]
+
+При равномерном движении по окружности угол поворота вектора скорости равен углу поворота радиуса, поэтому
+
+$\omega=\dfrac{\Delta \varphi\Delta t}=\dfrac{\dfrac{lR}\Delta t}=\dfrac{lR\Delta t},$
+
+где $l$ — длина дуги окружности, соответствующей углу $\Delta \varphi.$
+
+[рисунок https://uploads-foxford-ru.ngcdn.ru/uploads/tinymce_file/file/141456/8783de140850e6b8.png]
+
+С другой стороны, $l$ — это путь, пройденный точкой за время $\Delta t,$ то, так как движение равномерное, получаем, что
+
+$v=\dfrac{l\Delta t},$
+
+$\Rightarrow~~\omega=\dfrac{vR},$
+
+$\begin{cases}v=const\\ R=const \end{cases}~~\Rightarrow~~\omega=const.$
+
+$\Rightarrow ~~ a=a_n=\dfrac{v^2R}=\omega^2 R.$
+
+Период обращения $T$ — это время одного полного оборота.
+
+$[T]=\text{с}.$
+
+Частота обращения $\nu$ — число полных оборотов за $1$ с.
+
+$[\nu]=\dfrac{1\text{с}}=\text{Гц}.$
+
+Пусть $N$ — число оборотов, которое сделала точка за время $t,$ тогда
+
+$T=\dfrac{tN},$
+
+$\nu=\dfrac{Nt},$
+
+$\nu=\dfrac{1T}.$
+
+$\Rightarrow~~\omega=\dfrac{\Delta \varphi\Delta t}=\dfrac{2\piT}=2\pi\nu.$
+
+При равномерном вращении твёрдого тела вокруг неподвижной оси все точки тела поворачиваются на один и тот же угол $\Delta \varphi,$ поэтому угловая скорость всех точек тела одинакова.
+
+[рисунок https://uploads-foxford-ru.ngcdn.ru/uploads/tinymce_file/file/141489/989dc2ea43dcb5d9.png]
+
+$\omega=const~~\Rightarrow$
+
+$\begin{cases}v_1=\omega R_1\\ v_2=\omega R_2\end{cases}~~\Rightarrow~~\dfrac{v_1v_2}=\dfrac{R_1R_2}.$

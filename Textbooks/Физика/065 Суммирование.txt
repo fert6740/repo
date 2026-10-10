@@ -1,0 +1,61 @@
+Суммирование
+Предмет: Физика
+Раздел: Подготовка к олимпиадам 9-11
+Источник: https://foxford.ru/wiki/fizika/matematicheskie-metody-kinematika
+Обновлено: 2026-10-04
+
+### **Суммирование**
+
+Рассмотрим некоторую физическую величину, которая меняется со временем: $x=x(t).$
+Пусть $x_0$ — значение физической величины в начальный момент времени, $x$ — в конечный момент.
+
+[рисунок https://uploads-foxford-ru.ngcdn.ru/uploads/tinymce_file/file/159962/56f682e8d1421372.png]
+
+Сумма:
+
+$\sum\Delta x = \Delta x_1 +\Delta x _2+\Delta x _3+\dots=(x_1-x_0)+(x_2-x_1)+(x_3-x_2)+\dots=x-x_0.$
+
+$\boxed{\sum\Delta x=x-x_0}$
+
+Пусть некоторая физическая величина $y$ зависит от другой физической величины $x$:
+$y=y(x)$:
+
+[рисунок https://uploads-foxford-ru.ngcdn.ru/uploads/tinymce_file/file/160011/f8d0f1543e9ee63d.png]
+
+Тогда $y\cdot \Delta x=\Delta S:$
+
+[рисунок https://uploads-foxford-ru.ngcdn.ru/uploads/tinymce_file/file/160012/1e828384abc4c8f6.png]
+
+$S= \sum \Delta S=\Delta S_1+\Delta S_2+\Delta S_3+\dots=y_1\Delta x_1+y_2\Delta x_2+y_3\Delta x_3+\dots.$
+
+[рисунок https://uploads-foxford-ru.ngcdn.ru/uploads/tinymce_file/file/160013/fec93c36001e43bc.png]
+
+$S$ — площадь под графиком, если $\Delta x\rightarrow0$.
+
+### Пример 1
+
+Пусть $x=t:$
+
+[рисунок https://uploads-foxford-ru.ngcdn.ru/uploads/tinymce_file/file/160014/ac275672db154e60.png]
+
+$\sum x\Delta x=S=\dfrac{x+x_02}\cdot (x-x_0)=\dfrac12\left(x^2-x_0^2\right)=\dfrac{x^22}-\dfrac{x_0^22}.$
+
+$\boxed{\sum x \Delta x=\dfrac{x^22}-\dfrac{x_0^22}}$
+
+### Пример 2
+
+Пусть точка движется с постоянным ускорением $\vec{a}=\overrightarrow{const},$ доказать, что $\vec{S}=\vec{v}_0t+\dfrac12\vec{a}t^2.$
+
+$\vec{a}=\dfrac{\Delta\vec{v}\Delta t}=\dfrac{\vec{v}-\vec{v}_0t}~\Rightarrow~\vec{v}=\vec{v}_0+\vec{a}t.\tag{1}$
+
+$\Delta\vec{S}=\vec{v}\Delta t$ при $t\Rightarrow0.$
+
+$\vec{S}=\Delta\vec{S}_1+\Delta\vec{S}_2+\Delta\vec{S}_3+\dots=\sum\Delta \vec{S}=\sum\vec{v}\Delta t.\tag{2}$
+
+Подставим (1) в (2), получим:
+
+$\sum\left(\vec{v}_0+\vec{a}t\right)\Delta t=\sum\vec{v}_0\Delta t+\sum\vec{a}t\Delta t=\vec{v}_0\sum\Delta t+\vec{a}\sum t\Delta t.$
+
+Учтём, что $\sum \Delta t=t-t_0=t$ и $\sum t \Delta t=\dfrac{t^22}-\dfrac{t_0^22}=\dfrac{t^22}.$
+
+$\vec{S}=\vec{v}_0t+\dfrac12\vec{a}t^2.$

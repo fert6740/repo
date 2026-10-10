@@ -1,0 +1,112 @@
+Баллистика. Аналитический подход
+Предмет: Физика
+Раздел: Подготовка к ЕГЭ по физике
+Источник: https://foxford.ru/wiki/fizika/ballistika
+Обновлено: 2026-10-04
+Уровни сложности на сайте: Подготовиться к ЕГЭ — текст для всех уровней один
+
+Рассмотрим движение тела, брошенного с горизонтальной поверхности со скоростью $v_0$ под углом $\alpha$ к горизонту. Точки броска и падения находятся на одном горизонтальном уровне.
+
+Сопротивление воздуха отсутствует, значит, тело движется только под действием силы тяжести с постоянным ускорением, равным ускорению свободного падения
+
+$\vec a=\vec{\mathrm{g}}.$
+
+## Перемещение тела от точки броска до верхней точки траектории
+
+[рисунок https://uploads-foxford-ru.ngcdn.ru/uploads/tinymce_file/file/140783/2927257480efcd08.png]
+
+В верхней точке траектории вертикальная составляющая скорости тела обращается в ноль, поэтому в этой точке вектор скорости направлен горизонтально
+
+$v_{1y}=0~\text{м}/\text{с}, ~~v_{1x}=v_1.$
+
+По рисунку видно, что
+
+$S_{1y}=H.$
+
+По формулам кинематики равноускоренного движения
+
+$\begin{cases}v_x=v_{0x}+a_x t\\ \\v_y=v_{0y}+a_y t\\ \\2a_yS_y=v_y^2-v_{0y}^2 \end{cases}$
+
+$\Rightarrow~~\begin{cases}v_1=v_0\cos\alpha+0\\ \\0=v_0\cos(90^\circ-\alpha)-\mathrm{g}t_\text{под}\\ \\ 2(-\mathrm{g})H=0-(v_0\cos(90^\circ-\alpha))^2 \end{cases}$ $\Rightarrow~~\begin{cases}v_1=v_0\cos\alpha\\ \\v_0\sin\alpha=\mathrm{g}t_\text{под}\\ \\ 2\mathrm{g}H=v_0^2\sin^2\alpha \end{cases}$
+
+$\Rightarrow~~\begin{cases}v_1=v_0\cos\alpha\\ \\ t_\text{под}=\dfrac{v_0\sin\alpha\mathrm{g}}\\ \\ H=\dfrac{v_0^2\sin^2\alpha2\mathrm{g}}\end{cases}$
+
+## Перемещение тела за всё время полёта
+
+[рисунок https://uploads-foxford-ru.ngcdn.ru/uploads/tinymce_file/file/140784/ba1817b917e1a27b.png]
+
+Из рисунка видно, что в момент падения
+
+$S_{2y}=0~\text{м},~~S_{2x}=L.$
+
+По формулам кинематики равноускоренного движения
+
+$\begin{cases} S_x=v_{0x}t+\dfrac{a_xt^22}\\ \\S_y=v_{0y}t+\dfrac{a_yt^22}\end{cases}$
+
+$\Rightarrow~~\begin{cases}L=v_0\cos\alpha\cdot t_\text{пол}+0\\ \\0=v_0\cos(90^\circ-\alpha)\cdot t_\text{пол}-\dfrac{\mathrm{g}t_\text{пол}^22} \end{cases}$ $\Rightarrow~~\begin{cases}L=v_0\cos\alpha\cdot t_\text{пол} \\ \\v_0\sin\alpha=\dfrac{\mathrm{g}t_\text{пол}2} \end{cases}$
+
+$\Rightarrow~~t_\text{пол}=\dfrac{2v_0\sin\alpha\mathrm{g}},$
+
+$\Rightarrow~~L=v_0\cos\alpha\cdot \dfrac{2v_0\sin\alpha\mathrm{g}}=\dfrac{2v_0^2\cos\alpha\sin\alpha\mathrm{g}}=\dfrac{v_0^2\sin(2\alpha)\mathrm{g}}.$
+
+По формулам кинематики равноускоренного движения
+
+$\begin{cases} v_x=v_{0x}+a_xt\\ \\v_y=v_{0y}+a_y t \end{cases}$
+
+$\Rightarrow~~\begin{cases} v_2\cos\beta=v_0\cos\alpha+0\\ \\-v_2\cos(90^\circ-\beta)=v_0\cos(90^\circ-\alpha)-\mathrm{g}t_\text{пол}\end{cases}$ $\Rightarrow~~\begin{cases} v_2\cos\beta=v_0\cos\alpha\\ \\-v_2\sin\beta=v_0\sin\alpha-\mathrm{g}\cdot \dfrac{2v_0\sin\alpha\mathrm{g}} \end{cases}$
+
+$\Rightarrow~~\begin{cases} v_2\cos\beta=v_0\cos\alpha\\ \\-v_2\sin\beta=v_0\sin\alpha-2v_0\sin\alpha \end{cases}$ $\Rightarrow~~\begin{cases} v_2\cos\beta=v_0\cos\alpha\\ \\v_2\sin\beta=v_0\sin\alpha \end{cases}$
+
+Возведём в квадрат и сложим полученные уравнения
+
+$\Rightarrow~~\begin{cases} v_2^2\cos^2\beta=v_0^2\cos^2\alpha\\ \\v_2^2\sin^2\beta=v_0^2\sin^2\alpha \end{cases}$
+
+$\Rightarrow~~v_2^2\cos^2\beta+v_2^2\sin^2\beta=v_0^2\cos^2\alpha+v_0^2\sin^2\alpha . $
+
+Используя основное тригонометрическое тождество, получаем, что
+
+$v_2^2=v_0^2,$
+
+$\Rightarrow~~v_2=v_0,$
+
+$\Rightarrow~~v_0\cos\beta=v_0\cos\alpha~~\Rightarrow~~\beta=\alpha .$
+
+[рисунок https://uploads-foxford-ru.ngcdn.ru/uploads/tinymce_file/file/162467/e47215ad98030519.png]
+
+## Горизонтальный бросок
+
+Рассмотрим движение тела, брошенного горизонтально со скоростью $v_0.$
+
+[рисунок https://uploads-foxford-ru.ngcdn.ru/uploads/tinymce_file/file/140786/927c53000f92847b.png]
+
+В этом случае точка падения находится ниже точки броска на $h.$
+
+[рисунок https://uploads-foxford-ru.ngcdn.ru/uploads/tinymce_file/file/140693/523823e0204f674b.png]
+
+По рисунку видно, что
+
+$S_x=L,~~S_y=h.$
+
+По формулам кинематики равноускоренного движения получаем, что
+
+$\begin{cases}S_x=v_{0x}t+\dfrac{a_xt^22}\\ \\S_y=v_{0y}t+\dfrac{a_yt^22}\end{cases}$
+
+$\Rightarrow~~\begin{cases}L=v_0t+0\\ \\h=0+\dfrac{\mathrm{g}t^22}\end{cases}$
+
+$\Rightarrow~~t=\sqrt{\dfrac{2h\mathrm{g}}},$
+
+$\Rightarrow~~L=v_0t=v_0\sqrt{\dfrac{2h\mathrm{g}}}.$
+
+По формулам кинематики равноускоренного движения
+
+$\begin{cases} v_x=v_{0x}+a_xt\\ \\v_y=v_{0y}+a_y t \end{cases}$
+
+$\Rightarrow~~\begin{cases}v\cos\beta=v_0\\ \\v\cos(90^\circ-\beta)=0+\mathrm{g}t\end{cases}$
+
+$~~\Rightarrow~~\begin{cases}v\cos\beta=v_0\\ \\v\sin\beta=\mathrm{g}\cdot \sqrt{\dfrac{2h\mathrm{g}}}\end{cases}$
+
+Возведём в квадрат полученные уравнения и сложим с учётом основного тригонометрического тождества
+
+$v^2\cos^2\beta+v^2\sin^2\beta=v_0^2+2\mathrm{g}h,$
+
+$\Rightarrow~~v=\sqrt{v_0^2+2\mathrm{g}h}.$

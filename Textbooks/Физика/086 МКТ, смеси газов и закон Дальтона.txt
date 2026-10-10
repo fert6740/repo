@@ -1,0 +1,159 @@
+МКТ, смеси газов и закон Дальтона
+Предмет: Физика
+Раздел: Подготовка к олимпиадам 9-11
+Источник: https://foxford.ru/wiki/fizika/smesi-gazov-i-zakon-daltona
+Обновлено: 2026-10-04
+Уровни сложности на сайте: Победить в олимпиаде — текст для всех уровней один
+Видео: https://kinescope.io/tjyaYAj2DU5TdDFNZrrBPw
+
+## Молекулярная физика
+
+Количество вещества $\nu$:
+
+$\textcolor{Orange\nu=\dfrac{NN_A}.}$
+
+В СИ $[\nu]=\text{моль}.$
+
+$1$ моль — порция вещества, которая содержит $N_\text{А}$ молекул.
+
+$N_\text{А}=6{\cdot}10^{23}~\text{моль}^{-1}$ — число Авогадро.
+
+Масса вещества $m$:
+
+$\textcolor{Orangem=N m_0.}$
+
+$m_0$ — масса одной молекулы.
+
+Молярная масса $\mu,$ или $M,$ — масса одного моля вещества.
+
+$\textcolor{Orange\mu=N_\text{А} m_0.}$
+
+$\textcolor{Orange\nu=\dfrac{m\mu}.}$
+
+В СИ $[\mu]=\text{кг}/\text{моль}.$
+
+Концентрация вещества $n$:
+
+$\textcolor{Orangen=\dfrac{NV}.}$
+
+В СИ $[n]=\text{м}^{-3}.$
+
+Плотность $\rho$:
+
+$\textcolor{Orange\rho=\dfrac{mV}.}$
+
+В СИ $[\rho]=\text{кг}/\text{м}^{3}$
+
+$\textcolor{Orange\rho=nm_0.}$
+
+## Температура
+
+$T$ — температура по шкале Кельвина, $[T]=\text{К}.$
+
+$t$ — температура по шкале Цельсия, $[t]={^\circ}\textrm{C}.$
+
+$T=t+273$
+
+$\Delta T=\Delta t$
+
+[рисунок https://uploads-foxford-ru.ngcdn.ru/uploads/tinymce_file/file/146937/0ab401ed45b0323f.png]
+
+Средняя кинетическая энергия поступательного движения одной молекулы:
+
+$\textcolor{Orange\bar E=\dfrac{m_0\bar{v^2}2}=\dfrac{32}kT}.$
+
+$k=1{,}38{\cdot}10^{-23}~\text{Дж}/\text{К}$ — постоянная Больцмана.
+
+{Абсолютная температура $T$} — мера средней кинетической энергии поступательного движения одной молекулы.
+
+## Основное уравнение МКТ
+
+{Идеальный газ} — это модель реального газа, в которой пренебрегают размерами молекул и взаимодействием молекул между собой.
+
+Основное уравнение МКТ:
+
+$p=\dfrac{23}n \bar E~~\Rightarrow~~p=nkT~~\Rightarrow~~p=\dfrac{13}nm_0\bar{v}^2$
+
+$\Rightarrow~~p=\dfrac{13}\rho \bar{v}^2.$
+
+Уравнение состояния идеального газа (уравнение Менделеева — Клапейрона):
+
+$\textcolor{OrangepV=\nu RT=\dfrac{m\mu}RT.}$
+
+$R=kN_\text{А}=8{,}31~\text{Дж}/(\text{моль\cdot}\text{К})$ — универсальная газовая постоянная
+
+$\Rightarrow~~\rho=\dfrac{p\muRT}.$
+
+Среднеквадратичная скорость молекул:
+
+$\textcolor{Orangev_\text{ср.кв.}=\sqrt{\dfrac{3kTm_0}}=\sqrt{\dfrac{3RT\mu}}=\sqrt{\dfrac{3p\rho}}.}$
+
+## Смеси газов
+
+{**Закон Дальтона:**} давление $p$ смеси газов, химически не взаимодействующих между собой, равно сумме давлений (парциальных давлений) каждого из компонентов смеси:
+
+$\textcolor{Orangep=p_1+p_2+…+p_N.}$
+
+При этом парциальное давление каждой из компонент смеси подчиняется уравнению Менделеева-Клапейрона:
+
+$p_1 V=\nu_1 R T,~ p_2 V=\nu_2 R T,~p_3 V=\nu_4 R T,~\dots, \,\,p_N V=\nu_N R T,$
+
+где $V$ – объем смеси, $T$ – ее температура.
+
+$\nu_{\textrm{см}}=\nu_1+\nu_2+\nu_3+\dots+\nu_n.$
+
+$m_{\textrm{см}}=m_1+m_2+m_3+\dots+m_n.$
+
+$\mu_{\textrm{см}}\neq\mu_1+\mu_2+\mu_3+\dots+\mu_n.$
+
+Рассмотрим смесь двух газов.
+
+Газ 1: $p_1,~ V,~ T,~\nu_1,~\mu_1~,m_1.$
+
+Газ 2: $p_2,~ V,~ T,~\nu_2,~\mu_2~,m_2.$
+
+[рисунок https://uploads-foxford-ru.ngcdn.ru/uploads/tinymce_file/file/165797/fe4a278926d0c16c.png]
+
+$\nu_{\textrm{см}}=\nu_1+\nu_2,~m_{\textrm{см}}=m_1+m_2,~\mu_{\textrm{см}}\neq\mu_1+\mu_2.$
+
+$\mu_{\textrm{см}}=\dfrac{m_{\textrm{см}}\nu_{\textrm{см}}}=\dfrac{m_1+m_2\nu_1+\nu_2}$
+
+$\mu_{\textrm{см}}= \dfrac{m_1+m_2\dfrac{m_1\mu_1}+\dfrac{m_2\mu_2}}.$
+
+## Бесконечно-малый процесс
+
+$\left|\dfrac{\Delta pp}\right|\ll 1,~\left|\dfrac{\Delta VV}\right|\ll 1,~\left|\dfrac{\Delta TT}\right|\ll 1,~\left|\dfrac{\Delta \nu\nu}\right|\ll 1.$
+
+Рассмотрим два состояния такого процесса:
+
+$p,~V,~T,~\nu$ и $p^*,~V^*,~T^*,~\nu^*,$ такие, что
+
+$p^*=p+\Delta p, V^*=V+\Delta V,~T^*=T+\Delta T,~\nu^*=\nu+\Delta \nu.$
+
+Запишем уравнения состояния:
+
+$pV=\nu RT,$
+
+$(p+\Delta p)(V+\Delta V)=(\nu+\Delta \nu)R(T+\Delta T).$
+
+$pV+V\Delta p+p\Delta V+\Delta p\Delta V=\nu RT+\Delta\nu RT+\nu R\delta T+\Delta\nu R\Delta T;$
+
+так как $\Delta p\Delta V\longrightarrow0,~\Delta\nu R\Delta T\longrightarrow0;$
+
+$\dfrac{pVpV}+\dfrac{V\Delta ppV}+\dfrac{p\Delta VpV}=\dfrac{\nu RTpV}+\dfrac{\Delta\nu RTpV}+\dfrac{\nu R\Delta TpV};$
+
+$ \textcolor{Orange\dfrac{\Delta pp}+\dfrac{\Delta VV}=\dfrac{\Delta\nu\nu}+\dfrac{\Delta TT}.}$
+
+Пример:
+
+$pV^n=const,$
+
+$p=p(V)=\dfrac{\mathrm{const}V^n}=\mathrm{const} \cdot V^{-n},$
+
+$p^\prime_V=\dfrac{\Delta p\Delta V}=\left(\mathrm{const}\cdot V^{-n}\right)^\prime=\mathrm{const}\cdot\left(V^{-n}\right)^\prime=\mathrm{const}\cdot(-n)V^{(-n-1)}=-n \cdot\mathrm{const} \cdot V^{-n}V^{-1};$
+
+$\dfrac{\Delta p\Delta V}=-npV^{-1}=-\dfrac{npV};$
+
+$\textcolor{Orange\dfrac{\Delta pp}=-n\dfrac{\Delta VV}}$
+
+Связанные темы: Внутренняя энергия идеального газа: подготовка к олимпиадам

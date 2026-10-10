@@ -1,0 +1,223 @@
+ Глаголы в страдательном залоге / Passive Voice
+Предмет: Английский язык
+Раздел: Английская грамматика для средней школы / English  Grammar for Teens А1-А2
+Источник: https://foxford.ru/wiki/angliyskiy-yazyk/glagoly-v-stradatelnom-zaloge-passive-voice
+Обновлено: 2026-10-09
+
+### **Прочитайте высказывания**
+
+[рисунок https://uploads-foxford-ru.ngcdn.ru/uploads/tinymce_file/file/49500/fac119494146085a.png] [рисунок https://uploads-foxford-ru.ngcdn.ru/uploads/tinymce_file/file/49501/a27b1c7d5e85dfbb.png]
+
+Рис. Пример разницы между **действительным залогом / active voice** и **страдательным залогом / passive voice**
+
+**В каком случае речь идёт о коте, а в каком — о еде?**
+
+### Check yourself
+
+В первом случае мы узнаём о том, что **кот** съел всю еду со стола.
+
+Во втором случае мы узнаём, что **вся еда** была съедена котом.
+
+## Из этой статьи вы узнаете:
+
+[рисунок https://uploads-foxford-ru.ngcdn.ru/uploads/tinymce_file/file/49503/e6a6822a117f5e2e.png]
+
+чем отличаются **действительный / active voice** и **страдательный / passive voice** залоги;
+
+в каких случаях используется **страдательный залог / passive voice**;
+
+как образуются формы **страдательного залога / passive voice**;
+
+как трансформировать предложения из **действительного залога / active voice** в **страдательный / passive voice.**
+
+## Действительный и страдательный залоги
+
+Английский глагол имеет два залога: **действительный / active voice** и **страдательный / passive voice**.
+
+**Действительный залог / active voice** используется для того, чтобы показать, что субъект, лицо или предмет совершает какое-либо действие над объектом.
+
+**Страдательный залог / passive voice** используется, когда необходимо показать, что субъект, лицо или предмет испытывает какое-либо действие на себе, то есть над ним совершается действие.
+
+She **read** this book 5 days ago. — This book **was read** 5 days ago.
+Она прочитала эту книгу пять дней назад. — Эта книга была прочитана пять дней назад.
+
+My mother **cleans** **up** the flat every week. — The flat **is cleaned up** every week by my mother.
+Моя мама убирает всю квартиру каждую неделю. — Вся квартира убирается каждую неделю моей мамой.
+
+## Случаи использования страдательного залога
+
+**Страдательный залог / passive voice** используется в следующих случаях:
+
+когда неважно, кто выполняет действие, и акцент ставится на действии, а не его исполнителе:
+
+I **was reminded** to do my homework.
+Мне напомнили сделать мою домашнюю работу.
+
+- когда не хочется говорить об исполнителе действия (например, не хочется никого обвинять в плохой ситуации):
+
+The gift **was destroyed**.
+
+Подарок был уничтожен.
+
+когда неизвестно, кто выполняет действие:
+
+This building **was buil**t five years ago.
+Это здание было построено пять лет назад.
+
+когда очевидно, кто выполняет действие:
+
+Dinner **is** always **served** on time in this hotel.
+Обед всегда подают вовремя в этом отеле.
+
+когда необходимо сделать высказывание более официальным или вежливым:
+
+The work **has** **been done** on time according to our agreement.
+Работа была сделана вовремя в соответствии с нашим договором.
+
+- когда описываются научные процессы, законы, правила:
+
+During the flight all the devices **must be turned off**.
+
+Во время полёта все устройства должны быть выключены.
+
+## Образование форм страдательного залога
+
+Формы **страдательного залога / passive voice** образуются с помощью глагола **to be** и третьей формы глаголов действия / **Past Participle**.
+
+| **Грамматическое время** | **Схема образования** | **Примеры** |
+| Present Simple Passive | [рисунок https://uploads-foxford-ru.ngcdn.ru/uploads/tinymce_file/file/49689/2ed405318bca748f.png] | Flowers **are watered** by the gardener every week. / Цветы поливаются садовником каждую неделю. This essay **is** usually **written** at the end of the year. / Это эссе обычно пишут в конце года. I**’m visited** in the hospital every day. / Меня навещают в больнице каждый день. |
+| Past Simple Passive | [рисунок https://uploads-foxford-ru.ngcdn.ru/uploads/tinymce_file/file/49691/a6e9f92702a63d0d.png] | The cathedral **wasn’t built** by Sir Christopher Wren. / Собор не был построен сэром Кристофером Реном. The houses **were decorated** for Christmas. / Дома были украшены к Рождеству. |
+| Present Continuous Passive | [рисунок https://uploads-foxford-ru.ngcdn.ru/uploads/tinymce_file/file/49692/7971debe90513821.png] | Our passports **are being** **checked** right now. / Наши паспорта проверяют прямо сейчас. |
+| Past Continuous Passive | [рисунок https://uploads-foxford-ru.ngcdn.ru/uploads/tinymce_file/file/49685/0a5e52d9d7b490ec.png] | Apple pie **was being made** from 5 to 7 p.m. yesterday. / Яблочный пирог готовили вчера с пяти до семи вечера. |
+| Present Perfect Passive | [рисунок https://uploads-foxford-ru.ngcdn.ru/uploads/tinymce_file/file/49686/6b91a8645db9a0c1.png] | This film **has** already **been watched**. / Этот фильм уже посмотрели. |
+| Past Perfect Passive | [рисунок https://uploads-foxford-ru.ngcdn.ru/uploads/tinymce_file/file/49687/7637243ab75fb537.png] | The problem **had been solved** before you came. / Проблема была решена до того, как ты пришёл. |
+| Future Simple Passive | [рисунок https://uploads-foxford-ru.ngcdn.ru/uploads/tinymce_file/file/49688/ef8d1536a8e3b7cc.png] | Our talk **will be recorded**. / Наш разговор будет записан. |
+| Future Perfect Passive | [рисунок https://uploads-foxford-ru.ngcdn.ru/uploads/tinymce_file/file/49697/a59545932dbcb82f.png] | The work **won’t have been finished** by tomorrow. / Работа не будет закончена к завтрашнему дню. |
+| Modal Verbs Passive | [рисунок https://uploads-foxford-ru.ngcdn.ru/uploads/tinymce_file/file/174675/86fc8b95fffe0e1d.png] | During the flight all the devices **must be turned off**. Во время полёта все устройства должны быть выключены. |
+| Infinitives Passive | [рисунок https://uploads-foxford-ru.ngcdn.ru/uploads/tinymce_file/file/174676/0c0e6a59bbef9628.png] | The task **should be completed** today. Задание должно быть выполнено сегодня. |
+
+[рисунок https://uploads-foxford-ru.ngcdn.ru/uploads/tinymce_file/file/49522/f94869c9319cbed1.png]
+
+В английском языке формы **страдательного залога / passive voice** имеют только те глаголы, которые имеют прямое дополнение.
+
+They **drank** __a lot of water__. (active voice)
+Они выпили много воды.
+
+__A lot of water__ **was drunk**. (passive voice)
+Было выпито много воды.
+
+Глаголы, которые не имеют прямого дополнения, не могут образовывать формы **страдательного залога / passive voice**. Такие глаголы называются **непереходными**. Вот самые используемые из них:
+
+- **be** (быть);
+
+- **go** (идти);
+
+- **come** (приходить);
+
+- **happen** (случаться, происходить);
+
+- **wait** (ждать);
+
+- **fly** (летать);
+
+- **arrive** (прибывать);
+
+- **become** (становиться);
+
+- **die** (умирать).
+
+He **became** a teacher in 1999. (active voice)
+Он стал учителем в 1999 году.
+
+Глагол **become** — непереходный глагол, поэтому мы не можем трансформировать предложения с этим глаголом в страдательный залог.
+
+## Трансформация действительного залога в страдательный
+
+Чтобы трансформировать предложение в **действительном залоге / active voice** в **страдательный залог / passive voice**, необходимо выполнить следующие действия:
+
+дополнение в предложении в **действительном залоге / active voice** сделать подлежащим в предложении в **страдательном залоге / passive voice**;
+
+поменять глагол-сказуемое в **действительном залоге / active voice** на соответствующую форму **страдательного залога / passive voice**. Важно помнить, что время глагола не должно меняться;
+
+подлежащее предложения в **действительном залоге / active voice** сделать дополнением, обозначающим лицо, которое совершает действие, и поставить в конце предложения с предлогом **by** или опустить.
+
+Существительное, обозначающее исполнителя действия, может быть опущено, если оно выражено такими словами, как **people**, **one**, личными или неопределёнными местоимениями.
+
+**НО:**
+
+Если исполнитель важен для передачи смысла предложения, его нельзя опускать.
+
+[рисунок https://uploads-foxford-ru.ngcdn.ru/uploads/tinymce_file/file/49523/4bd44cebd269a2d7.png]
+
+/
+
+Рис. Схема преобразования предложения в действительном залоге / active voice в предложение страдательного залога / passive voice
+
+She **buys** __books__ every month. (Present Simple Active)
+Она покупает книги каждый месяц.
+
+__Books__ **are bought** every month. (Present Simple Passive)
+Книги покупают каждый месяц.
+
+Someone **created** __a new site__. (Past Simple Active)
+Кто-то создал новый сайт.
+
+__A new site__ **was created**. (Past Simple Passive)
+Был создан новый сайт.
+
+{a}
+
+[рисунок https://uploads-foxford-ru.ngcdn.ru/uploads/tinymce_file/file/49524/8aa0fa07210b3ef1.png]
+
+[рисунок https://uploads-foxford-ru.ngcdn.ru/uploads/tinymce_file/file/49533/4bbe5629367e75d2.png]
+
+### **Поставьте глаголы в скобках в форму действительного или страдательного залога**
+
+My friend’s mother often (cook) a very tasty dessert.
+
+Birds (fly) so high in the sky.
+
+I promise that your dog (feed), when you go on a trip next month.
+
+Cakes always (bake) for the parties by my aunt.
+
+The wall (paint) green yesterday.
+
+The criminals (arrest) five months ago.
+
+I (swim) in the sea a lot when I was on a holiday
+
+### Check yourself
+
+1. My friend’s mother often **cooks** a very tasty dessert.
+Мама моего друга часто готовит очень вкусный десерт.
+
+2. Birds **fly** so high in the sky.
+Птицы летают так высоко в небе.
+
+3. I promise that your dog **will be fed** when you go on a trip next month.
+Я обещаю, что вашу собаку будут кормить, когда вы поедете в путешествие в следующем месяце.
+
+4. Cakes **are** always **baked** for the parties by my aunt.
+Торты для вечеринок всегда печёт моя тётя.
+
+5. The wall **was painted** green yesterday.
+Стену покрасили в зелёный вчера.
+
+6. The criminals were arrested five months ago.
+Преступники были арестованы пять месяцев назад.
+
+7. I **swam** in the sea a lot when I was on a holiday.
+Я много плавал в море, когда был в отпуске.
+
+## Теперь вы умеете:
+
+[рисунок https://uploads-foxford-ru.ngcdn.ru/uploads/tinymce_file/file/49527/5956be2ef1a1f898.png]
+
+говорить о том, что с каким-либо человеком или предметом что-то произошло или происходит;
+
+делать в своей речи акцент на действии, а не его исполнителе;
+
+делать высказывание более официальным;
+
+правильно использовать страдательный залог в речи.

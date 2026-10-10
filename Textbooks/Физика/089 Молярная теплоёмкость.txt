@@ -1,0 +1,82 @@
+Молярная теплоёмкость
+Предмет: Физика
+Раздел: Подготовка к олимпиадам 9-11
+Источник: https://foxford.ru/wiki/fizika/molyarnaya-teployomkost
+Обновлено: 2026-10-04
+Видео: http://www.youtube.com/watch?v=7ZpPP_LZYNM
+
+## Теплообмен с газом
+
+$Q$ — количество теплоты, подведённого к газу.
+
+Если $Q>0$, то тепло к газу подводят.
+
+Если $Q<0$, то тепло к газу подводят.
+
+$Q_{\textrm{отв}}$ — количество теплоты, которое от газа отводилось.
+
+$Q_{\textrm{отв}}=-Q$
+
+{**Первое начало термодинамики**}
+
+$\Large{\textcolor{OrangeQ=\Delta U+A}}$
+
+Если $Q>0$, то тепло к газу подводят.
+
+Если $Q<0$, то тепло к газу подводят.
+
+Для бесконечно-малого процесса количество теплоты подведённого к газу обозначим $\delta Q.$
+
+$\textcolor{Orange\delta Q=\Delta U+\delta A}$
+
+## Теплоёмкость
+
+Теплоёмкость газа — физическая величина равная количеству теплоты $\delta Q,$ которое необходимо сообщить газу для нагревания его на один кельвин.
+
+$\textrm{C}=\dfrac{\delta Q\Delta T},~~[\textrm{C}]=\dfrac{\textrm{Дж}\textrm{К}}.$
+
+Молярная теплоёмкость газа — теплоёмкость одного моля вещества.
+
+$c=\dfrac{\textrm{C}\nu}=\dfrac{\delta Q\nu\Delta T}$
+
+$\textcolor{Orange\delta Q=c\nu\Delta T.}$
+
+Рассмотрим бесконечно-малый процесс, причём $\nu=\textrm{const}.$
+
+$\delta Q=\Delta U+\delta A~\Rightarrow~c\nu\Delta T=\dfrac{i2}\nu R\cdot dT+p\cdot dV$
+
+$c=\dfrac{i2} R +\dfrac{p\cdot dV\nu \cdot dT}$
+
+Изохорный процесс $\nu=\textrm{const},$ $V=\textrm{const}$
+
+$dV=0,~\delta A=0$
+
+$\delta Q=d U~\Rightarrow~c\nu\,dT= \dfrac{i2}\nu R\,dT$
+
+$c=\dfrac{i2} R,~c_V=\textrm{const}$
+
+$\textcolor{Orangec_V=\dfrac{i2} R.}$
+
+Изобарный процесс $\nu=\textrm{const},$ $p=\textrm{const}$
+
+$pV=\nu RT$
+
+$p(V+dV)=\nu R(T+dT)$
+
+$p\, dV=\nu R\,dT$
+
+$\delta Q=d U+\delta A~\Rightarrow~c\nu\,dT= \dfrac{i2}\nu R\, dT+p\,dV$
+
+$c\nu\,dT= \dfrac{i2}\nu R\, dT+\nu R\,dT$
+
+$c= \dfrac{i2} R + R=c_V+R=\textrm{const}$
+
+$\textcolor{Orangec_p=\dfrac{i+22} R=c_V+R.}$
+
+Процесс, в котором молярная теплоёмкость постоянна называется политропным, для таких процессов справедливо соотношение:
+
+$Q=\sum{\delta Q}=\sum{c\nu\,dT}=c\nu\sum{dT}=c\nu\Delta T$
+
+$\textcolor{OrangeQ=c\nu(T_2-T_1).}$
+
+Связанные темы: Применение первого начала термодинамики

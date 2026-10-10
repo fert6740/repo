@@ -1,0 +1,165 @@
+Именные реакции в органической химии
+Предмет: Химия
+Раздел: Взаимосвязь классов органических веществ
+Источник: https://foxford.ru/wiki/himiya/imennye-reaktsii-v-organicheskoy-himii
+Обновлено: 2026-09-11
+
+[рисунок https://uploads-foxford-ru.ngcdn.ru/uploads/tinymce_file/file/8747/477636fccf366c68.png] {**Содержание**}
+
+- Реакция Вюрца
+
+- Реакция Дюма
+
+- Реакция Кольбе
+
+- Реакция Вюрца–Фиттига
+
+- Реакция Кучерова
+
+- Реакция Зелинского
+
+- Реакция Зелинского–Казанского
+
+- Реакция Коновалова
+
+- Реакция Зинина
+
+- Реакция Густавсона
+
+- Реакция Фриделя–Крафтса
+
+- Реакция Прилежаева
+
+- Реакция Вагнера
+
+- Реакция Лебедева
+
+В органической химии существует достаточно много реакций, которые получили название «именные». Они названы в честь учёных, предложивших, осуществивших и описавших эти процессы. Перечислим наиболее известные именные реакции в органической химии.
+
+## Реакция Вюрца
+
+Удлинение углеродной цепи.
+
+$2R-Hal + 2Na \rightarrow R-R + 2NaHal$
+
+$CH_3–Br + 2Na + Br–CH_3 \stackrel{t\rightarrow} CH_3–CH_3 + 2NaBr$
+
+## Реакция Дюма
+
+Декарбоксилирование солей карбоновых кислот — сплавление со щелочами.
+
+$RCOONa + NaOH \xrightarrow{t} RH + Na_2CO_3$
+
+$CH_3COONa _\textrm{(тв.)} + NaOH _\textrm{(тв.)} \rightarrow CH_4 + Na_2CO_3$
+
+## Реакция Кольбе
+
+Электролиз растворов солей карбоновых кислот.
+
+$2RCOONa + 2H_2O \xrightarrow{эл.ток} R-R + 2CO_2 + 2NaOH + H_2$
+
+$CH_3COONa + 2H_2O\xrightarrow[]{\textrm{эл.ток}} 2CO_2 + H_2 + C_2H_6 + 2NaOH$
+
+## Реакция Вюрца–Фиттига
+
+Получение гомологов бензола из галогенбензола и галогеналканов.
+
+$Ar-Hal + 2Na + R-Hal \rightarrow Ar-R + 2NaHal$
+
+$C_6H_5Br + 2Na + Br–CH_3 \longrightarrow C_6H_5–CH_3 + 2NaBr$
+
+## Реакция Кучерова
+
+Гидратация алкинов. В результате гидратации алкинов образуются кетоны, только ацетилен даёт ацетальдегид.
+
+$CH \equiv CH + H_2O \xrightarrow[]{Hg^{2+}, \hspace{2pt} H^+} [CH_2=CH–OH] \xrightarrow[]{\textrm{изомеризация}} CH_3CHO$
+
+$CH_3-C \equiv CH + H_2O \xrightarrow[]{Hg^{2+}, \hspace{2pt} H^+} CH_3-CO-CH_3$
+
+## Реакция Зелинского
+
+Тримеризация ацетилена.
+
+$3CH \equiv CH \xrightarrow[]{t> 400^\circ C, \hspace{2pt} C_\textrm{акт} } C_6H_6$
+
+## Реакция Зелинского–Казанского
+
+Получение бензола из циклогексана в результате дегидрирования.
+
+$C_6H_{12} \xrightarrow[]{420–480^\circ C,\hspace{2pt}Pd,\hspace{2pt}Pt} C_6H_6 + 3H_2$
+
+## Реакция Коновалова
+
+Нитрование алканов при взаимодействии с азотной кислотой.
+
+$CH_3–CH_2–CH_3 + HNO_3 \xrightarrow{110–140^\circ C} CH_3–CH(NO_2)–CH_3 + H_2O$
+
+## Реакция Зинина
+
+Восстановление нитробензола до анилина.
+
+$C_6H_5–NO_2 + 3H_2 \longrightarrow C_6H_5–NH_2 + 2H_2O$
+
+$C_6H_5–NO_2 + 3(NH_4)_2S \longrightarrow C_6H_5–NH_2 + 3S + 6NH_3 + 2H_2O$
+
+$C_6H_5–NO_2 + 2Al + 2NaOH + 4H_2O \longrightarrow C_6H_5–NH_2 + 2Na[Al(OH)_4]$
+
+$C_6H_5–NO_2 + 3Fe + 7HCl \longrightarrow C_6H_5–NH_3Cl + 3FeCl_2 + 2H_2O$
+
+## Реакция Густавсона
+
+Получение циклоалкана из дигалогенопроизводных.
+
+[рисунок https://uploads-foxford-ru.ngcdn.ru/uploads/tinymce_file/file/61623/a5e747c9269d26f9.jpg]
+
+## Реакция Фриделя–Крафтса
+
+Алкилирование (введение в кольцо алкильной группы) бензола.
+
+$C_6H_6 + Cl–CH_3 \stackrel{AlCl_3\longrightarrow} C_6H_5–CH_3 + HCl$
+
+$C_6H_6 + H_2C = CH_2 \stackrel{AlCl_3\longrightarrow} C_6H_5–CH_2–CH_3$
+
+$C_6H_6 + H_2C = CH–CH_3 \stackrel{AlCl_3\longrightarrow} C_6H_5–CH(CH_3)–CH_3$
+
+## Реакция Прилежаева
+
+Окисление алкенов пероксикислотами с образованием эпоксидов.
+
+[рисунок https://uploads-foxford-ru.ngcdn.ru/uploads/tinymce_file/file/101438/2232fed179759e1b.png]
+
+## Реакция Вагнера
+
+Мягкое окисление алкенов ледяным водным раствором перманганата калия c получением диолов.
+
+$3CH_2=CH_2 + 2KMnO_4 + 4H_2O \xrightarrow{0-4^ \circ C} 3CH_2OH–CH_2OH + 2MnO_2 \downarrow + 2KOH$
+
+## Реакция Лебедева
+
+Получение бутадиена-1,3 из этилового спирта в результате дегидратации и дегидрирования.
+
+$2C_2H_5OH \xrightarrow[]{400–500 ^\circ C, \hspace{2pt} Al_2O_3,\hspace{2pt} ZnO} CH_2 = CH–CH = CH_2 + 2H_2O + H_2$
+
+**[рисунок https://uploads-foxford-ru.ngcdn.ru/uploads/tinymce_file/file/175777/f9686935bb7d99af.png] Пример 1.** Рассмотрите схемы превращений, предположите, схемы каких именных реакций приведены.
+
+- $CH_3-CH=CH_2 \rightarrow CH_3-CH(OH)-CH_2(OH)$
+
+- $C_6H_5Br \rightarrow C_6H_5CH_3$
+
+- $CH_3-CH_2Br \rightarrow CH_3-CH_2-CH_2-CH_3$
+
+- $CH_3-CH_2-COONa \rightarrow CH_3-CH_3$
+
+- $CH_3-CH_2-COONa \rightarrow CH_3-CH_2-CH_2-CH_3$
+
+Проверьте себя
+
+$3CH_3-CH=CH_2 + 2KMnO_4 + 4H_2O \xrightarrow{0-4^\circ C} 3CH_3-CH(OH)-CH_2(OH) + 2KOH + 2MnO_2$ — синтез Вагнера
+
+$C_6H_5Br + 2Na + CH_3Br \rightarrow C_6H_5CH_3 + 2NaBr$ — синтез Вюрца-Фиттига
+
+$2CH_3-CH_2Br + 2Na \rightarrow CH_3-CH_2-CH_2-CH_3 + 2NaBr$ — синтез Вюрца
+
+$CH_3-CH_2-COONa + NaOH \xrightarrow{сплавление} CH_3-CH_3 + Na_2CO_3$ — синтез Дюма
+
+$2CH_3-CH_2-COONa + 2H_2O \xrightarrow{эл. ток} CH_3-CH_2-CH_2-CH_3 + 2CO_2 + 2NaOH + H_2$ — синтез Кольбе

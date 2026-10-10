@@ -1,0 +1,95 @@
+Уравнение гармонических колебаний
+Предмет: Физика
+Раздел: Подготовка к олимпиадам 9-11
+Источник: https://foxford.ru/wiki/fizika/garmonicheskie-kolebaniya
+Обновлено: 2026-10-04
+
+## Дифференциальное уравнение гармонических колебаний
+
+$\textcolor{Orangef^{\prime\prime}+\omega^2f=\omega^2f_0}.\tag{1}$
+
+Решением такого дифференциального уравнения в общем виде является функция:
+
+$\textcolor{Orangef=f(t)=A\sin(\omega t)+B\cos(\omega t)+f_0},\tag{2}$
+
+где $A$ и $B$ некоторые постоянные, которые задаются начальными условиями, $f_0$ — среднее значение функции $f(t),$ около которого функция $f(t)$ совершает гармонические колебания, $\omega$ — циклическая частота.
+
+[рисунок https://uploads-foxford-ru.ngcdn.ru/uploads/tinymce_file/file/164621/3c6c64a18f8672d7.png]
+
+Амплитуда колебаний
+
+$\textcolor{Orangel=f_{max}-f_0=\sqrt{A^2+B^2}}$
+
+Период колебаний - время одного полного колебания, связан с циклической частотой соотношением:
+
+$\textcolor{OrangeT=\dfrac{2\pi\omega}}$
+
+Покажем, что функция $(2)$ является решением дифференциального уравнения $(1).$ Продифференцируем дважды функцию $(2):$
+
+$f^\prime(t)=(A\sin(\omega t)+B\cos(\omega t)+f_0)^\prime=(A\sin(\omega t))^\prime+(B\cos(\omega t))^\prime+f^\prime_0=A\omega\cos(\omega t)-B\omega\sin(\omega t);$
+
+$f^{\prime\prime}(t) =(f^\prime(t))^\prime=(A\omega\cos(\omega t)-B\omega\sin(\omega t)^\prime=-A\omega^2\sin(\omega t)-B\omega^2\cos(\omega t).$
+
+Подставим полученное выражение второй производной функции в (1):
+
+$-A\omega^2\sin(\omega t)-B\omega^2\cos(\omega t)+\omega^2\cdot(A\sin(\omega t)+B\cos(\omega t)+f_0)=\omega^2f_0;$
+
+$-A\omega^2\sin(\omega t)-B\omega^2\cos(\omega t)+\omega^2 A\sin(\omega t)+\omega^2 B\cos(\omega t)+\omega^2 f_0=\omega^2f_0;$
+
+$0=0$
+
+## Пружинный маятник
+
+[рисунок https://uploads-foxford-ru.ngcdn.ru/uploads/tinymce_file/file/164635/e7223de066d33041.png]
+
+Пусть $x(t)$ — координата груза.
+
+Проекция скорости груза
+
+$v_x=v_x(t)=x^\prime(t)=x^\prime.$
+
+Проекция ускорения груза
+
+$a_x=a_x(t)=v_x^\prime(t)=v_x^\prime=(x^\prime)^\prime=x^{\prime\prime}.$
+
+в положении равновесия $m\mathrm{g}=kx_0$
+
+По 2 закону Ньютона для некоторого положения груза с координатой $x$
+
+$m\mathrm{g}-k(x_0+x)=ma_x;$
+
+$m\mathrm{g}-kx_0-kx=ma_x;$
+
+$kx_0-kx_0-kx=ma_x;$
+
+$ma_x+kx=0;$
+
+$a_x+\dfrac{km}x=0;$
+
+$x^{\prime\prime}+\dfrac{km}x=0,~~~\dfrac{km}=\omega^2;$
+
+$x_1=0,~~~\omega=\sqrt{\dfrac{km}},~~~T=\dfrac{2\pi\omega}=2\pi\sqrt{\dfrac{mk}};$
+
+Решение дифференциального уравнения в общем виде:
+
+$x=x(t)=A\sin(\omega t)+B\cos(\omega t);$
+
+Коэффициенты $A$ и $B$ определяются из начальных условий.
+
+Пусть $t=0$ при $x=0,$ $x(0)=0,$ $x\left(\dfrac{T4}\right)=l;$
+
+$x(0)=A\sin0+B\cos0=B=0$
+
+$x\left(\dfrac{T4}\right)=A\sin\left(\dfrac{2\piT}\cdot\dfrac{T4}\right)+B\cos\left(\dfrac{2\piT}\cdot\dfrac{T4}\right)=A\sin\dfrac{\pi2}+B\cos\dfrac{\pi2}=A=l;$
+
+$\textcolor{Orangex=x(t)=l\sin(\omega t)}$
+
+$v_x=x^\prime=(l\sin(\omega t))^\prime=l\omega\cos(\omega t)=v_{max}\cos(\omega t);$
+
+$\textcolor{Orangev_{max}=l\omega}$
+
+$a_x=v_x^\prime=(v_{max}\cos(\omega t))^\prime=-v_{max}\omega\sin(\omega t)=-a_{max}\sin(\omega t);$
+
+$\textcolor{Orangea_{max}=v_{max}\omega=l\omega^2}$
+
+Связанные темы: Производная функции в физике
