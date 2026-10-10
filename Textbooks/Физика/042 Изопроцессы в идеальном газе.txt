@@ -1,0 +1,47 @@
+Изопроцессы в идеальном газе
+Предмет: Физика
+Раздел: Подготовка к ЕГЭ по физике
+Источник: https://foxford.ru/wiki/fizika/izoprocessy
+Обновлено: 2026-10-04
+
+Изобарный процесс — это равновесный процесс, в котором давление и количество вещества газа постоянно.
+
+Из уравнения Менделеева — Клапейрона следует, что
+
+$V=\dfrac{\nu Rp}\cdot T~~\Rightarrow~~V=const \cdot T~~\Rightarrow~~\dfrac{VT}=const$
+
+Следовательно, в изобарном процессе объём $V$ меняется прямо пропорционально температуре $T.$
+
+Соотношение $\dfrac{VT}=const$ носит название закона Гей-Люссака.
+
+График изобарного процесса — изобара.
+
+[рисунок https://uploads-foxford-ru.ngcdn.ru/uploads/tinymce_file/file/147164/ca687cef9fa42c79.png] [рисунок https://uploads-foxford-ru.ngcdn.ru/uploads/tinymce_file/file/147165/df9def566c12f77e.png] [рисунок https://uploads-foxford-ru.ngcdn.ru/uploads/tinymce_file/file/147166/34fa896a4b8ea149.png]
+
+Изохорный процесс — это равновесный процесс, в котором объём и количество вещества газа постоянно.
+
+Из уравнения Менделеева-Клапейрона следует, что
+
+$p=\dfrac{\nu RV}\cdot T~~\Rightarrow~~p=const \cdot T~~\Rightarrow~~\dfrac{pT}=const$
+
+Следовательно, в изохорном процессе давление $p$ меняется прямо пропорционально температуре $T.$
+
+Соотношение $\dfrac{pT}=const$ носит название закон Шарля.
+
+График изохорного процесса — изохора.
+
+[рисунок https://uploads-foxford-ru.ngcdn.ru/uploads/tinymce_file/file/147168/ae50067acacbf0cc.png] [рисунок https://uploads-foxford-ru.ngcdn.ru/uploads/tinymce_file/file/147167/9d22802597906013.png] [рисунок https://uploads-foxford-ru.ngcdn.ru/uploads/tinymce_file/file/147169/431824031395fdcc.png]
+
+Изотермический процесс — это равновесный процесс, в котором температура и количество вещества газа постоянно.
+
+Из уравнения Менделеева-Клапейрона следует, что
+
+$pV=\nu R T~~\Rightarrow~~pV=const.$
+
+Следовательно, в изотермическом процессе давление $p$ меняется обратно пропорционально объёму $V.$
+
+Соотношение $pV=const$ носит название закон Бойля-Мариотта.
+
+График изотермического процесса — изотерма.
+
+[рисунок https://uploads-foxford-ru.ngcdn.ru/uploads/tinymce_file/file/147170/ee65ed122054d806.png] [рисунок https://uploads-foxford-ru.ngcdn.ru/uploads/tinymce_file/file/147171/282de13d42968cb9.png] [рисунок https://uploads-foxford-ru.ngcdn.ru/uploads/tinymce_file/file/147172/453bf9bb5172b848.png]

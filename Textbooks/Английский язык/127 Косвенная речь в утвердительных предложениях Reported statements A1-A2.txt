@@ -1,0 +1,313 @@
+Косвенная речь в утвердительных предложениях / Reported statements  A1-A2
+Предмет: Английский язык
+Раздел: Английская грамматика для средней школы / English  Grammar for Teens А1-А2
+Источник: https://foxford.ru/wiki/angliyskiy-yazyk/kosvennaya-rech-v-utverditelnyh-predlozheniyah-reported-statements
+Обновлено: 2026-10-09
+
+**Прочитайте высказывания.**
+
+[рисунок https://uploads-foxford-ru.ngcdn.ru/uploads/tinymce_file/file/14526/b7672ccd6f416090.png] [рисунок https://uploads-foxford-ru.ngcdn.ru/uploads/tinymce_file/file/14527/27d8258ce61b57c6.png]
+
+**Какой способ передачи слов другого человека используется в каждом случае?**
+
+Check yourself
+
+В первом случае для передачи слов другого человека используется прямая речь.
+
+Миранда сказала: «Мы ездим на море летом».
+
+Во втором случае — косвенная речь.
+
+Миранда сказала, что летом они ездят на море.
+
+## Из этой статьи вы узнаете:
+
+[рисунок https://uploads-foxford-ru.ngcdn.ru/uploads/tinymce_file/file/14529/1d54458e5bccc75a.png]
+
+чем отличаются прямая и косвенная речь;
+
+как перевести прямую речь в косвенную;
+
+как согласовывать личные и притяжательные местоимения при переводе прямой речи в косвенную;
+
+как согласовывать времена;
+
+какие ещё случаи согласования необходимо учитывать.
+
+## Прямая и косвенная речь
+
+**Прямая речь** — это высказывание, дословно переданное говорящим или пишущим.
+
+‘It’s going to rain,’ — Mom says.
+"{Дождь собирается", — говорит мама.}
+
+‘I want to have a cup of coffee,’ — She said.
+{"Я хочу чашку кофе", — сказала она.}
+
+Mia said, ‘Peter, the weather is fine.’
+{Миа сказала: «Питер, погода чудесная».}
+
+- Bill said to the teacher, ‘Kira is cheating.’
+{Билл сказал учителю: «Кира списывает».}
+
+**Косвенная речь** — это передача слов другого человека или повторение своих собственных в другой ситуации.
+
+More examples
+
+| Прямая речь | Косвенная речь |
+| He says, ‘I’ll be there’. / Он говорит: «Я буду там». | He says he’ll be there. / Он говорит, что будет там. |
+| She said, ‘I have never been to Paris.’ / Она сказала: «Я никогда не была в Париже». | She said she had never been to Paris. / Она сказала, что никогда не была в Париже. |
+| My parents said, ‘You can play Fortnite when you finish your homework.’ / Мои родители сказали: «Ты можешь поиграть в Fortnite, когда закончишь своё домашнее задание». | My parents said I could play Fortnite when I finished my homework. / Мои родители сказали, что я могу поиграть в Fortnite, когда закончу своё домашнее задание. |
+| My sister says, ‘My friends are the best / Моя сестра говорит: «Мои друзья самые лучшие». | My sister says her friends are the best. / Моя сестра говорит, что её друзья самые лучшие. |
+
+## Структура косвенной речи
+
+Косвенная речь представляет собой сложноподчинённое предложение, где в главном предложении передаются слова автора, а в придаточном — само высказывание.
+
+Слова автора и высказывание могут быть соединены союзом **that** (что), который в английском языке мы можем опускать.
+
+[рисунок https://uploads-foxford-ru.ngcdn.ru/uploads/tinymce_file/file/14536/d802a8a6a499daa6.png]
+
+Amy said **that** she was busy.
+
+Эми сказала, что она занята.
+
+Amy said she was busy.
+
+Эми сказала, что она занята.
+
+Для передачи слов автора мы можем использовать глаголы **say** и **tell** как в прямой, так и в косвенной речи.
+
+После глагола **tell** следует указывать, к кому обращено высказывание: **tell somebody**.
+
+The teacher told me, ‘You can see the contest results on the school site.’
+{Учитель сказал мне: «Ты можешь посмотреть результаты конкурса на школьном сайте».}
+
+The teacher told me I could see the contest results on the school site.
+{Учитель сказал мне, что я могу посмотреть результаты конкурса на школьном сайте.}
+
+После глагола **say** мы не указываем, к кому обращено высказывание: **say something**.
+
+Mom said, ‘I’m happy with your test results.’
+{Мама сказала: «Я очень довольна твоими результатами тестирования».}
+
+Mom said she was happy with my test results.
+Мама сказала, что она очень довольна моими результатами тестирования.
+
+Если после глагола **say** мы хотим указать, к кому обращено высказывание, то после глагола **say** следует добавить **to**.
+
+Alex said **to** me, ‘I bought a new phone.’
+Алекс сказал мне: «Я купил новый телефон».
+
+Alex said **to** __me__ he bought a new phone.
+Алекс сказал мне, что он купил новый телефон.
+
+[рисунок https://uploads-foxford-ru.ngcdn.ru/uploads/tinymce_file/file/14539/b64611adecd0b8ac.png]
+
+Глаголы **say** и **tell** в словах автора могут также использоваться в устойчивых сочетаниях.
+
+Глагол **say**
+
+say hello, good morning / afternoon, etc. — приветствовать
+
+say something / nothing, etc. — сказать что-нибудь
+
+say one’s prayers — молиться
+
+say so — сказать так
+
+say a few words — сказать несколько слов
+
+More examples
+
+Say hello to my friends.
+{Поздоровайся с моими друзьями.}
+
+I won’t just sit and say nothing.
+{Я не буду просто сидеть и молчать.}
+
+The children said their prayers and got into bed.
+{Дети помолились и отправились спать.}
+
+Don’t move unless I say so.
+{Не двигайтесь, пока я не скажу.}
+
+I should probably say a few words about an accident.
+{Наверное, мне нужно сказать несколько слов о происшествии.}
+
+**Глагол tell**
+
+tell the truth — говорить правду
+
+tell a lie — лгать; ошибаться
+
+tell a secret — рассказать секрет
+
+tell a story — рассказать историю
+
+tell the time — сказать/показать время
+
+tell the difference — отличать
+
+tell somebody one’s name — указать имя
+
+tell somebody the way — указать дорогу
+
+tell one from another — различать одно от другого
+
+tell one’s fortune — гадать, предсказывать судьбу
+
+More examples
+
+I don’t really want to go out, to tell the truth.
+{Честно говоря, мне не очень хочется куда-то идти.}
+
+How do you know she’s telling the truth?
+{Откуда ты знаешь, что она говорит правду?}
+
+I think it’s wrong to tell a lie.
+{Я думаю, что врать нехорошо.}
+
+There were only five people at the meeting — I tell a lie — there were six. (Spoken English)
+{На встрече было только пять человек, нет, вру, было шесть. (Разговорный вариант)}
+
+The trick to a good novel is to tell a secret and keep a secret all at once.
+Уловка хорошего романа состоит в том, чтобы рассказать секрет и сохранить секрет одновременно.
+
+- An image can tell a story.
+Изображение может рассказать историю.
+
+Does your watch tell the time accurately?
+Твои часы показывают точное время?
+
+It's hard to tell the difference between one action movie and another.
+Трудно отличить один боевик от другого.
+
+Now, tell me your name.
+А теперь, назовите мне своё имя.
+
+We want to go to the museum, could you tell us the way there?
+{Мы хотим сходить в музей, не покажете нам дорогу?}
+
+I can't tell one essay from another.
+{Не могу отличить одно сочинение от другого.}
+
+Do you believe she can tell your fortune?
+{Ты веришь, что она может предсказать твоё будущее?}
+
+## СОГЛАСОВАНИЕ ЛИЧНЫХ И ПРИТЯЖАТЕЛЬНЫХ МЕСТОИМЕНИЙ
+
+В косвенной речи личные и притяжательные местоимения изменяются соответственно ситуации, как в русском языке.
+
+The geography teacher said, ‘You’ve designed a marvelous project, guys!’
+Учитель географии сказал: «Вы разработали потрясающий проект, ребята!»
+
+The geography teacher said that we had designed a marvelous project.
+{Учитель географии сказал, что мы разработали потрясающий проект.}
+
+The manager said to Mike, ‘Your project is perfect.’
+{Менеджер сказал Майку: «Твой проект идеален».}
+
+The manager said to Mike that his project was perfect.
+{Менеджер сказал Майку, что его проект идеален.}
+
+‘You are driving too fast,’ says the instructor.
+{«Ты едешь слишком быстро», — говорит инструктор.}
+
+The instructor says that I am driving too fast.
+{Инструктор говорит, что я еду очень быстро.}
+
+‘I’ll visit Granny at the weekend,’ Sandra says.
+{«Я навещу бабушку на выходных», — говорит Сандра.}
+
+Sandra says that she’ll visit Granny at the weekend.
+{Сандра говорит, что она навестит бабушку на выходных.}
+
+Но, как правило, мы пересказываем то, что было сказано в прошлом. Соответственно, слова автора стоят в прошедшем времени **Amy said (that)…**
+
+В таких случаях требуется согласование времён.
+
+Таблица согласования времён
+
+| Прямая речь / Direct Speech | Косвенная речь / Reported Speech |
+| Present Simple 🡲 Past Simple |
+| ‘I am a student and live on campus,’ Clair said. {«Я студентка и живу в кампусе», — сказала Клэр.} | Clair said that she was a student and lived on campus. {Клэр сказала, что она студентка и живёт в кампусе.} |
+| Present Continuous 🡲 Past Continuous |
+| ‘I’m watching TV,’ my father said. {«Я смотрю телевизор», — сказал папа.} | My father said he was watching TV. {Папа сказал, что он смотрит телевизор.} |
+| Present Perfect 🡲 Past Perfect |
+| She answered, ‘I’ve never seen this film.’ {Она ответила: «Я никогда не смотрела этот фильм».} | She answered that she had never seen that film. Она ответила, что никогда не смотрела этот фильм. |
+| Present Perfect Continuous 🡲 Past Perfect Continuous |
+| He said, ‘I’ve been studying maths for three hours.’ Он сказал: «Я учу математику уже три часа». | He said he had been studying maths for three hours. Он сказал, что учит математику уже три часа. |
+| Past Simple 🡲 Past Simple / Past Perfect |
+| My friend said, ‘We won!’ Мой друг сказал: «Мы выиграли!» | My friend said they won. My friend said they had won. Мой друг сказал, что они выиграли. |
+| Past Continuous 🡲 Past Continuous / Past Perfect Continuous |
+| She said, ‘I was watching TV at 9.’ {Она сказала: «Я смотрела телевизор в 9 часов».} | She said she had been watching TV at 9. {Она сказала, что смотрела телевизор в 9 часов.} |
+| Past Perfect 🡲 Past Perfect |
+| He replied: ‘I had finished that report two days before the deadline.’ {Он ответил: «Я закончил отчёт за два дня до срока».} | He replied he had finished that report two days before the deadline. {Он ответил, что закончил отчёт за два дня до срока.} |
+| will 🡲 would |
+| ‘I’ll be back,’ he said. {«Я вернусь», — он сказал.} | He said he would be back. {Он сказал, что вернётся.} |
+| can 🡲 could |
+| ‘I can help you,’ she told me. {«Я могу тебе помочь», — сказала она мне.} | She said she could help me. {Она сказала, что может помочь мне.} |
+| may 🡲 might |
+| She said, ‘I may be a bit late.’ {Она сказала: «Я могу немного опоздать».} | She said she might be a bit late. {Она сказала, что может немного опоздать.} |
+
+## [рисунок https://uploads-foxford-ru.ngcdn.ru/uploads/tinymce_file/file/49738/437abdf6fb84c8aa.png]
+
+Если в придаточном предложении говорится об общеизвестных фактах, то время глагола не меняется.
+
+| Прямая речь / Direct Speech | Косвенная речь / Reported Speech |
+| Present Simple 🡲 Present Simple |
+| He said, ‘The Earth is round, it’s not flat.’ Он сказал: «Земля круглая, а не плоская». Our teacher told us, ‘Water boils at 100 degrees Celsius.’ Наш учитель сказал нам: «Вода закипает при 100 градусах Цельсия». | He said (that) The Earth is round, it’s not flat. Он сказал, что Земля круглая, а не плоская. Our teacher told us (that) water boils at 100 degrees Celsius. Наш учитель сказал, что вода закипает при 100 градусах Цельсия. |
+
+## ДРУГИЕ СЛУЧАИ СОГЛАСОВАНИЯ В КОСВЕННОЙ РЕЧИ
+
+Таблица
+
+| Прямая речь / Direct Speech | Косвенная речь / Reported Speech |
+| **now** Lilly said, ‘We are doing a project now.’ Лили сказала: «Мы сейчас делаем проект». | **then** Lilly said that they were doing the project then. Лили сказала, что они сейчас делают проект. |
+| **today** Grandad said, ‘It’s so right today.’ Дедушка сказал: «Сегодня замечательная погода». | **that day** Grandad said that it was so bright that day. Дедушка сказал, что в тот день была замечательная погода. |
+| **tomorrow** Nick said, ‘Julia, our train leaves at 7 p. m. tomorrow.’ Ник сказал: «Джулия, наш поезд отправляется завтра в 7 вечера». | **the next day / the following day** Nick told Julia that the train left at 7 p. m. the following day. Ник сказал Джулии, что их поезд отправляется на следующий день в 7 вечера. |
+| **the day after tomorrow** ‘I’m going to the live performance the day after tomorrow,’ Dan said. «Я пойду на концерт послезавтра», — сказал Дэн. | **two days later** Dan said that he was going to the concert two days later. Дэн сказал, что пойдёт на концерт послезавтра. |
+| **yesterday** ‘I saw Tom yesterday,’ he said. «Я видел Тома вчера», — сказал он. | **the day before / the previous day** He said that he had seen Tom the day before. Он сказал, что видел Тома вчера. |
+| **the day before yesterday** ‘We watched the football match the day before yesterday,’ said John. «Мы смотрели этот футбольный матч позавчера», — сказал Джон. | **two days before / two days earlier** John said that they watched the football match two days before. Джон сказал, что они смотрели этот футбольный матч позавчера. |
+| **ago** Nataly said to the teacher, ‘I did my homework three days ago.’ Натали сказала учителю: «Я сделала домашнюю работу три дня назад». | **before / earlier** Nataly said to the teacher that she had done her homework three days earlier. Натали сказала учителю, что она сделала домашнюю работу три дня назад. |
+| **next …** Kate said, ‘My family and I are going to London next month.’ Кейт сказала: «Мы с семьёй собираемся в Лондон в следующем месяце». | **the next … / the following …** Kate said that her family and she were going to London the following month. Кейт сказала, что она с семьёй собирается в Лондон в следующем месяце. |
+| **last …** ‘The Browns bought a new house last winter,’ Pete said. «Семья Браунов купила новый дом прошлой зимой», — сказал Пит. | **the previous … / the … before** Pete said that the Browns had bought a new house the previous winter. Пит сказал, что семья Браунов купила новый дом прошлой зимой. |
+| **here** Jim said, ‘It’s great to have dinner here.’ Джим сказал: «Мне нравится здесь ужинать». | **there** Jim said that he liked to have dinner there. Джим сказал, что ему нравится там ужинать. |
+| **this** Mary said, ‘This coat suits you.’ Мэри сказала: «Это пальто тебе идёт». | **that** Mary said that coat suited me. Мэри сказала, что это пальто мне идёт. |
+| **these** Mom said: ‘These days are so boring.’ Мама сказала: «Эти дни такие скучные». | **those** Mom said that those days were so boring. Мама сказала, что эти дни были такие скучные. |
+
+{a}
+
+[рисунок https://uploads-foxford-ru.ngcdn.ru/uploads/tinymce_file/file/14549/b4d7004b11b1b521.png]
+
+**Переведи следующие предложения в косвенную речь.**
+
+[рисунок https://uploads-foxford-ru.ngcdn.ru/uploads/tinymce_file/file/14550/766c90247de9c770.png]
+
+The teacher said to me, ‘You never make mistakes on this topic.’
+
+She said, ‘Paul, I like your song.’
+
+She said to me, ‘I will come to see you tomorrow.’
+
+Check yourself
+
+The teacher said to me (that) I never made mistakes in that topic.
+Учитель сказал мне, что я никогда не делаю ошибок в этой теме.
+
+She told Paul (that) she liked his song.
+Она сказала Полу, что ей нравится его песня.
+
+She told me she would come to see me the following day / the next day.
+Она сказала, что на следующий день придёт меня проведать.
+
+## Теперь вы умеете:
+
+[рисунок https://uploads-foxford-ru.ngcdn.ru/uploads/tinymce_file/file/14551/683523d5909810f4.png]
+
+передавать слова другого человека от третьего лица;
+
+использовать правила согласования (личных, притяжательных и указательных местоимений, времён и наречий) при переводе прямой речи в косвенную;
+
+использовать глаголы say и tell в словах автора.

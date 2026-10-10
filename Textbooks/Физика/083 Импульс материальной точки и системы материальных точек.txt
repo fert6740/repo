@@ -1,0 +1,79 @@
+Импульс материальной точки и системы материальных точек
+Предмет: Физика
+Раздел: Подготовка к олимпиадам 9-11
+Источник: https://foxford.ru/wiki/fizika/impuls-tochki
+Обновлено: 2026-10-04
+
+## Импульс материальной точки
+
+Импульс точки — это физическая величина, равная произведению массы точки на её скорость
+
+$\vec p=m\vec v,~~\Rightarrow~~p=mv.$
+
+[рисунок https://uploads-foxford-ru.ngcdn.ru/uploads/tinymce_file/file/145549/11efae21e197100a.png]
+
+В СИ: $[p]=\text{кг\cdot}\text{м}/\text{с}=\text{Н\cdot}\text{с}.$
+
+Второй закон Ньютона в обобщённом виде
+
+В ИСО для материальной точки верно, что
+
+$\textcolor{Orange\vec R=\dfrac{\Delta \vec p\Delta t}~~~(\Delta t\rightarrow 0)}.$
+
+Закон изменения импульса материальной точки
+
+В ИСО для материальной точки верно, что
+
+$\textcolor{Orange\Delta \vec p=\vec R\Delta t ~~(\Delta t \rightarrow 0)}.$
+
+Изменение импульса точки $\Delta \vec p$ равно импульсу равнодействующей силы $\vec R\Delta t.$
+
+Если $\vec R=\overrightarrow{const},$ то $\Delta \vec p=\vec p- \vec p_0=\vec R \Delta t$ для большого промежутка времени $\Delta t.$
+
+## Импульс системы материальных точек
+
+Импульс системы материальных точек равен векторной сумме импульсов каждой из точек системы.
+
+$\vec p_\text{сист}=\vec p_1+\vec p_2 + \ldots + \vec p_i.=\sum\limits_i \vec p_i$
+
+[рисунок https://uploads-foxford-ru.ngcdn.ru/uploads/tinymce_file/file/162472/6d5d7976321d6336.png]
+
+Рассмотрим силы, действующие на систему двух материальных точек:
+
+[рисунок https://uploads-foxford-ru.ngcdn.ru/uploads/tinymce_file/file/162473/cedec54abb0a6bfc.png]
+
+Силы, действующие между точками, входящими в систему $\vec{F}_{12}$ и $\vec{F}_{21},$ называют **внутренними** силами системы.
+
+По третьему закону Ньютона
+
+$\vec{F}_{12}=-\vec{F}_{21}.$
+
+$\vec{R}_{внутр}=\vec{F}_{12}+\vec{F}_{21}=\vec{0}.$
+
+Силы, действующие на материальные точки системы со стороны тел, не входящих в систему: $\vec{F}_{1},$ $\vec{F}_{2},$ $\vec{F}_{3}$ и $\vec{F}_{4}.$ Такие силы называют **внешними** для данной системы материальных точек.
+
+$\vec{R}_{внеш}=\vec{F}_{1}+\vec{F}_{2}+\vec{F}_{3}+\vec{F}_{4}.$
+
+Изменение импульса для каждой из материальных точек:
+
+$\Delta \vec{p}_1=(\vec{F}_1+\vec{F}_2+\vec{F}_{12})\Delta t~~(\Delta t \rightarrow 0),$
+
+$\Delta \vec{p}_2=(\vec{F}_3+\vec{F}_4+\vec{F}_{21})\Delta t~~(\Delta t \rightarrow 0).$
+
+Изменение импульса системы материальных точек:
+
+$\Delta \vec{p}_{сист}=\Delta \vec{p}_1+\Delta \vec{p}_2=(\vec{F}_1+\vec{F}_2+\vec{F}_{12})\Delta t +(\vec{F}_3+\vec{F}_4+\vec{F}_{21})\Delta t=(\vec{F}_1+\vec{F}_2+\vec{F}_{3}+\vec{F}_{4})\Delta t .$
+
+В ИСО для системы материальной точки верно, что
+
+$\textcolor{Orange\Delta \vec{p}_{сист}=\vec{R}_{внеш}\Delta t ~~(\Delta t \rightarrow 0)}.$
+
+$\textcolor{Orange\vec R_\text{внеш}=\dfrac{\Delta \vec p_\text{сист}\Delta t}~~~(\Delta t\rightarrow 0)}.$
+
+Если $\vec R_\text{внеш}=\overrightarrow{const},$ то $\Delta \vec p_\text{сист}=\vec R_\text{внеш} \Delta t$ для большого промежутка времени $\Delta t.$
+
+Систему материальных точек, которые взаимодействуют только друг с другом (то есть не взаимодействуют с телами, не входящими в эту систему), называют {**замкнуто**й} системой.
+
+Из закона изменения импульса следует, что при $\vec R_\text{внеш}=\vec 0$ (система замкнута) для системы верен закон сохранения импульса
+
+$\textcolor{Orange}{ \vec p_\text{сист}=\overrightarrow{const}}.$

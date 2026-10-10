@@ -1,0 +1,49 @@
+Механические колебания
+Предмет: Физика
+Раздел: Подготовка к ЕГЭ по физике
+Источник: https://foxford.ru/wiki/fizika/mehanicheskie-kolebania
+Обновлено: 2026-10-04
+
+Гармонические механические колебания
+
+[рисунок https://uploads-foxford-ru.ngcdn.ru/uploads/tinymce_file/file/146757/689b908bb30598c6.png]
+
+$x$ — смещение (координата) колеблющейся точки.
+
+$A$ — амплитуда колебаний, максимальное смещение от положения равновесия.
+
+$(\omega t+\varphi)$ — фаза колебаний.
+
+$\omega$ — циклическая частота колебаний, число колебаний за $2\pi$ с.
+
+$\varphi_0$ — начальная фаза.
+
+Период колебаний $T$ — время одного колебания.
+
+$T=\dfrac{tN}=\dfrac{2\pi\omega}.$
+
+Частота $\nu$ — число колебаний за $1$ с.
+
+$\nu=\dfrac{Nt}=\dfrac{1T}=\dfrac{\omega2\pi}.$
+
+[рисунок https://uploads-foxford-ru.ngcdn.ru/uploads/tinymce_file/file/146758/6b7d6ec7f800d207.png]
+
+$v_x=v_x(t)=x'(t)=A\omega\cos(\omega t +\varphi)=v_\mathrm{max}\cos(\omega t+\varphi_0),$
+
+$v_\mathrm{max}=A\omega.$
+
+$a_x=a_x(t)=v_x'(t)=-v_\mathrm{max}\omega\sin(\omega t+\varphi_0)=-A\omega^2\sin(\omega t+\varphi_0)=-a_\mathrm{max}\sin(\omega t+\varphi_0)=-\omega^2 x,$
+
+$a_\mathrm{max}=v_\mathrm{max}\omega=A\omega^2.$
+
+Математический маятник
+
+[рисунок https://uploads-foxford-ru.ngcdn.ru/uploads/tinymce_file/file/164899/bc529cba89c1ef87.png]
+
+$T=2\pi\sqrt{\dfrac{l\mathrm{g}}},~~~\omega=\sqrt{\dfrac{\mathrm{g}l}}.$
+
+Пружинный маятник
+
+[рисунок https://uploads-foxford-ru.ngcdn.ru/uploads/tinymce_file/file/164900/c6ded30b93c07930.png]
+
+$T=2\pi\sqrt{\dfrac{mk}},~~~\omega=\sqrt{\dfrac{km}}.$

@@ -1,0 +1,304 @@
+Притяжательные формы имени существительного / Posessive forms of nouns
+Предмет: Английский язык
+Раздел: Английская грамматика для старшей школы / English  Grammar for Teens В1-В2
+Источник: https://foxford.ru/wiki/angliyskiy-yazyk/prityazhatelnye-formy-imeni-sushchestvitelnogo-posessive-forms-of-nouns
+Обновлено: 2026-10-09
+
+### **Прочитайте диалог**
+
+[рисунок https://uploads-foxford-ru.ngcdn.ru/uploads/tinymce_file/file/10344/d0ad2894c651c4fe.png]
+
+Рис. Пример использования притяжательной формы имени существительного / Possessive form of a noun
+
+**Как мы понимаем, что речь идёт именно об экономике Китая?**
+
+### Check yourself
+
+Притяжательные формы **China’s** (economy) и **its** (economy) указывают на принадлежность экономики этой стране.
+
+— Экономика Китая быстро развивается.
+
+— Действительно. Его экономика демонстрирует существенный рост в течение двух последних десятилетий.
+
+## Из этой статьи вы узнаете:
+
+[рисунок https://uploads-foxford-ru.ngcdn.ru/uploads/tinymce_file/file/13105/aac795a36878fcbc.png]
+
+как образуется притяжательный падеж существительных (**Possessive Case**);
+
+что такое притяжательные местоимения (**Possessive Adjectives and Possessive Pronouns**);
+
+как использовать альтернативные способы выражения принадлежности.
+
+## Что такое притяжательный падеж
+
+Притяжательный падеж используется для того, чтобы показать принадлежность предмета кому-либо. Существительные в притяжательном падеже отвечают на вопросы «чей? / чья? / чьё?».
+
+- I’m browsing for the data at **Mathew’s** colleague’s request.
+
+Я ищу информацию по запросу коллеги Мэтью.
+
+- I find **the CEO’s** high expectations about the sales quite reasonable.
+
+Я считаю, что надежды генерального директора на высокие продажи вполне обоснованы.
+
+- **The WHO’s** African branch has been fiercely criticized lately.
+
+В последнее время африканский филиал ВОЗ (Всемирной организации здравоохранения) подвергается серьёзной критике.
+
+## Как образуется притяжательный падеж
+
+Для образования притяжательного падежа используется **апостроф + s** (**‘s**).
+
+| | Единственное число | Множественное число |
+| Заканчивается на **-s** | добавляется **‘s** или **просто апостроф (‘)**. the boss**’s** demands / the boss’ demands — требования босса | добавляется **просто апостроф (‘)**. mammals’ habitats — места обитания млекопитающих |
+| Заканчивается на другую букву | добавляется **апостроф + s**. the tutor**’s** dictionary — словарь репетитора | добавляется **‘s**. young businessmen**’s** ambitions — амбиции молодых предпринимателей |
+
+В составных существительных **‘s** добавляется к последнему слову.
+
+her brother-in-law**'s** property — собственность её зятя
+
+Если речь идёт об общей принадлежности нескольким людям, то **‘s** добавляется к последнему существительному.
+
+__Stephen, Christy, and Benedict**’s**__ **aunt** left them an inheritance of £100,000.
+
+Тётя Стивена, Кристи и Бенедикта оставила им наследство в 100 000 фунтов.
+
+__Stephen, Christy, and Benedict’**s**__ **aunt** — у Стивена, Кристи и Бенедикта одна тётя
+
+Если речь идёт об индивидуальной принадлежности, то **‘s** добавляется к каждому существительному.
+
+I keep my __relatives__’, __colleagues__’, and __friends__' **telephone numbers** at hand.
+
+Телефоны родственников, коллег и друзей я держу под рукой.
+
+__relatives’, colleagues’, and friends’__ **telephone numbers** — у каждого из родственников, коллег и друзей свой номер телефона
+
+[рисунок https://uploads-foxford-ru.ngcdn.ru/uploads/tinymce_file/file/10346/aec0e0f37f5869a8.png]
+
+С некоторыми существительными, обозначающими профессии и места торговли, и с существительными, обозначающими владельца чего-либо, мы также используем **‘s** без указания места или владельца.
+
+- I was at baker**’s** (shop).
+
+Я был в булочной.
+
+- We celebrated our graduation at Mike**’s** (flat).
+
+Мы отмечали окончание университета у Майка (дома).
+
+- It’s not my office. It’s Steven**’s**.
+
+Это не мой офис. Это (офис) Стивена.
+
+### More examples
+
+the greengroce**r’s** — овощной ларёк
+
+the chemist**’s** — аптека
+
+the doctor**’s** — кабинет врача
+
+the dentist**’s** — кабинет зубного врача
+
+the jeweller**'s** — ювелирный магазин
+
+[рисунок https://uploads-foxford-ru.ngcdn.ru/uploads/tinymce_file/file/10349/0466c9a099234794.png]
+
+Если существительное в единственном числе оканчивается на звуки [**s**], [**z**], [**ʃ**], [**ʒ**], [**tʃ**], [**dʒ**], то окончание притяжательного падежа **‘s** произносится как [**iz**].
+
+Jess’ keys [‘dʒesiz]
+
+James**’s** umbrella [‘dʒeɪmziz]
+
+Punch**’s** jokes [‘pʌntʃiz]
+
+Mr Auldridge**’s** documents [‘ɔːldrɪdʒiz ]
+
+[рисунок https://uploads-foxford-ru.ngcdn.ru/uploads/tinymce_file/file/10350/e3dd035b731439fb.png]
+
+С неодушевлёнными существительными предпочтительнее использовать не **‘s**, а предлог **of**. Предлог **of** также употребляется в устойчивых выражениях:
+
+- **the beginning of;**
+
+- **the middle of**;
+
+- **the end of**;
+
+- **the top of**;
+
+- **the bottom of**;
+
+- **the front of**;
+
+- **the back of**.
+
+the cost **of** living — стоимость жизни
+
+the boot **of** the car — багажник автомобиля
+
+the top **of** the page — верхняя часть страницы
+
+В некоторых случаях возможны оба варианта: **‘s** или структура с предлогом **of**.
+
+NASA**’s** Mars mission or Mars mission **of** NASA — марсианская миссия НАСА
+
+the delegation**'s** arrival or the arrival **of** the delegation — прибытие делегации
+
+the earth**’s** gravity or the gravity **of** the earth — гравитация земли
+
+## Притяжательные местоимения (Possessive Adjectives and Possessive Pronouns)
+
+Для выражения принадлежности и взаимоотношений между людьми мы также используем притяжательные местоимения.
+
+В английском языке различают **possessive adjectives** и **possessive pronouns**.
+
+После **possessive adjectives** следует существительное, в то время как после **possessive pronouns** — нет.
+
+| **Possessive Adjectives** | **Possessive Pronouns** |
+| my | our | mine | ours |
+| your | your | yours | yours |
+| his / her / its | their | his / hers | theirs |
+
+- This is **my** diploma.
+
+Это мой диплом.
+
+- This diploma is **mine**.
+
+Этот диплом мой.
+
+- — Are these **your** backpacks?
+
+— No, they aren’t **ours**.
+
+— Это ваши рюкзаки?
+
+— Нет, не наши.
+
+- I saw a nice detached house for sale but I didn’t see **its** price.
+
+Я видел прекрасный дом, выставленный на продажу, но я не увидел его цену.
+
+[рисунок https://uploads-foxford-ru.ngcdn.ru/uploads/tinymce_file/file/10351/b9c3c8b951cb49be.png]
+
+Структура **a** / **the** / **this** / **that** + **noun** + **of** + **possessive** также служит для выражения принадлежности.
+
+- He is a colleague of Anthony’s.
+
+Он коллега Энтони.
+
+- They are relatives of mine.
+
+Они мои родственники.
+
+- He’s a friend of ours.
+
+Он наш друг.
+
+Если мы хотим подчеркнуть факт принадлежности, то используем структуры **noun** + **of** + **possessive adjective** + **own** или **possessive adjective** + **own** + **noun**.
+
+Фраза **on one’s own** означает «сам, самостоятельно».
+
+- I don’t need to rent a flat. I’ve got **a flat of my own**. / I’ve got **my own flat**.
+
+Мне не нужно снимать квартиру. У меня есть собственная.
+
+- Wow! He’s got **a helicopter** **of his own**. / He’s got **his own helicopter**.
+
+Ух ты! У него есть собственный вертолёт.
+
+- If you don't mind, I'll do it **on my own**.
+
+Если вы не возражаете, я сделаю это сам.
+
+## Структуры **noun** + **noun** для выражения принадлежности
+
+Иногда для описания принадлежности используются структуры **noun** + **noun**.
+
+- milk chocolate (**a kind of chocolate**) — chocolate milk (a kind of milk)
+
+молочный шоколад (вид шоколада) — шоколадное молоко (вид молока)
+
+- a five-day practice (practice lasts five days)
+
+пятидневная практика
+
+- headhunter (someone who finds people to do particular jobs)
+
+специалист по поиску кадров
+
+### More examples
+
+- a car race (a kind of race) — a race car (a kind of car)
+
+автогонки (вид гонки) — гоночный автомобиль (вид автомобиля)
+
+- the airport bus (the bus goes to the airport)
+
+автобус до аэропорта
+
+- an oil well (the well produces oil)
+
+нефтяная скважина
+
+- a ticket office (an office that sells tickets)
+
+билетная касса
+
+- a hundred-dollar bill
+
+счёт на сто долларов
+
+- army officers (officers in the army)
+
+офицеры армии
+
+[рисунок https://uploads-foxford-ru.ngcdn.ru/uploads/tinymce_file/file/10353/59130f77a780de3a.png]
+
+### [рисунок https://uploads-foxford-ru.ngcdn.ru/uploads/tinymce_file/file/13102/47bc46134daf7ec5.png]
+
+### **Завершите высказывания, используя соответствующие притяжательные формы**
+
+1. I have to talk to Jason. Does anybody know ___ phone number?
+
+2. My phone is flat. Has anyone seen ___ ___ charger?
+
+3. I can’t lend you this device. It's not ___.
+
+4. He doesn’t have to get a driving licence. He’s got a driver ___ ___ ___. / He’s got ___ ___ driver.
+
+5. Do you like horses? Have you ever watched a ___ race?
+
+### Check yourself
+
+1) I have to talk to Jason. Does anybody know **his** / **Jason’s** phone number?
+
+Мне нужно поговорить с Джейсоном. Кто-нибудь знает его номер телефона?
+
+2) My phone is flat. Has anyone seen **my** **phone** charger?
+
+Мой телефон разрядился. Кто-нибудь видел мой зарядник?
+
+3) I can’t lend you this device. It's not **mine**.
+
+Я не могу одолжить тебе это устройство. Оно не моё.
+
+4) He doesn’t have to get a driving licence. He’s got a driver **of his own**. / He’s got **his own** driver.
+
+Ему не нужно получать водительские права. У него есть свой собственный водитель.
+
+5) Do you like horses? Have you ever watched a **horse** race?
+
+Ты любишь лошадей? Ты когда-нибудь смотрел скачки?
+
+## Теперь вы умеете:
+
+[рисунок https://uploads-foxford-ru.ngcdn.ru/uploads/tinymce_file/file/13103/273ec8cc3983cae3.png]
+
+строить высказывание о том, что вещь принадлежит какому-то человеку или группе лиц, что кто-то является чьим-то родственником или другом;
+
+правильно произносить существительные в притяжательном падеже;
+
+указывать на принадлежность с помощью притяжательных местоимений;
+
+различать, в каких случаях использовать **апостроф + s** (**‘s**) и предлог **of**.

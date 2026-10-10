@@ -1,0 +1,242 @@
+Движение тела, брошенного под углом к горизонту
+Предмет: Физика
+Раздел: Подготовка к олимпиадам 9-11
+Источник: https://foxford.ru/wiki/fizika/dvizhenie-tela-broshennogo-pod-uglom-k-gorizontu
+Обновлено: 2026-10-04
+
+Рассмотрим движение тела, брошенного с горизонтальной поверхности со скоростью $v_0$ под углом $\alpha$ к горизонту.
+
+Сопротивление воздуха отсутствует, значит, тело движется только под действием силы тяжести с постоянным ускорением, равным ускорению свободного падения:
+
+{$\boxed{\vec a=\vec{\mathrm{g}}}$}
+
+Основные формулы кинематики равноускоренного движения в векторном виде:
+
+$ \textcolor{Red\begin{cases} \vec v=\vec v_0+\vec{\mathrm{g}}t\\ \\\vec S=\vec v_0 t+\dfrac{12}\vec{\mathrm{g}}t^2\\ \\2\vec{\mathrm{g}}\vec{S}=v^2-v_0^2\\ \\\vec{S}=\dfrac12\left(\vec{v}_0+\vec{v}\right)t \end{cases}}$
+
+## Аналитический подход
+
+**Для случая, когда точки броска и падения находятся на одном горизонтальном уровне.**
+
+Выберем систему координат так, что ось $Ox$ направлена горизонтально, ось $Oy$ — вертикально. Начало координат удобно совместить с точкой начала движения.
+
+Для тела, брошенного с поверхности Земли с начальной скоростью $v_0$ под углом $\alpha$ к горизонту, в системе координат, изображённой на рисунке:
+
+[рисунок https://uploads-foxford-ru.ngcdn.ru/uploads/tinymce_file/file/160636/181841a615ead9d5.png]
+
+Скорость $\vec{v}$ точки в проекции на оси $x$ и $y$ изменяется по закону:
+
+$ \textcolor{Orangev_x(t)=v_0 \cos\alpha,}\tag{1}$
+
+$ \textcolor{Orangev_y(t)=v_0\sin\alpha-\mathrm{g}t.}\tag{2}$
+
+Координаты $x$ и $y$ точки изменяются по закону:
+
+$ \textcolor{Orangex(t)=v_0\cos\alpha t,}\tag{3}$
+
+$ \textcolor{Orangey(t)=v_0\sin\alpha t-\dfrac{\mathrm{g}t^22}.}\tag{4}$
+
+Время подъёма $(v_y(t_{\textrm{под}})=0),$ из (2) получим
+
+$ \textcolor{Greent_{\textrm{под}}=\dfrac{v_0\sin(\alpha)\mathrm{g}}.}\tag{5}$
+
+Время падения из верхней точки траектории:
+
+$t_{\textrm{пад}}=t_{\textrm{под}}.$
+
+Время полёта:
+
+$t_{\textrm{полн}}=2t_{\textrm{под}},$
+
+$\textcolor{Greent_{\textrm{полн}}=\dfrac{2v_0\sin(\alpha)\mathrm{g}}.}\tag{6}$
+
+Максимальная высота подъёма $y(t_{\textrm{под}})=H,$ подставим (5) в (4):
+
+$\textcolor{GreenH=\dfrac{v_0^2\sin^2\alpha2\mathrm{g}}.}\tag{7}$
+
+Дальность полёта $x(t_{\textrm{полн}})=L,$ подставим (6) в (3):
+
+$\textcolor{GreenL=\dfrac{v_0^2\sin(2\alpha)\mathrm{g}}.}\tag{8}$
+
+Уравнение траектории:
+
+$\textcolor{Greeny(x)=x\tg\alpha-\dfrac{\mathrm{g}x^22v_0^2\cos^2\alpha}.}\tag{9}$
+
+## Геометрический подход
+
+**Рассмотрим случай, когда точки броска и падения находятся на разных горизонтальных уровнях.**
+
+[рисунок https://uploads-foxford-ru.ngcdn.ru/uploads/tinymce_file/file/160639/da2d37442cff0456.png]
+
+**Треугольник скоростей**
+
+$ \textcolor{Red\vec{v}=\vec{v}_0+\vec{\mathrm{g}}t}.$
+
+[рисунок https://uploads-foxford-ru.ngcdn.ru/uploads/tinymce_file/file/160640/54bf1b2439725046.png]
+
+По теореме косинусов
+
+${v}^2=v_0^2+(\mathrm{g}t)^2-2v_0\mathrm{g}t\cos(90^\circ-\alpha)$
+
+${v}^2=v_0^2+\mathrm{g}^2t^2-2v_0\mathrm{g}t\sin\alpha.$
+
+По теореме синусов
+
+$\dfrac{v\sin(90^\circ-\alpha)}=\dfrac{v_0\sin(90^\circ-\beta)}=\dfrac{\mathrm{g}t\sin(\alpha+\beta)}.$
+
+Используя высоту треугольника, можно записать:
+
+$v_0\cos\alpha=v\cos\beta~\Rightarrow ~v_x=const.$
+
+Дальность полёта $L=v_xt.$
+Площадь треугольника скоростей:
+
+$S_\Delta=\dfrac12 v_x\mathrm{g}t=\dfrac12 v_0\cos\alpha\mathrm{g}t.$
+
+Воспользовавшись теоремой синусов, получим
+
+$S_\Delta=\dfrac12v_0\cos\alpha\dfrac{v\sin(90^\circ-\alpha)}\sin(\alpha+\beta)=\dfrac12v_0 v \sin(\alpha+\beta),$
+
+$v_x\mathrm{g}t=v_0 v \sin(\alpha+\beta),$
+
+$\textcolor{GreenL=v_xt=\dfrac{v_0 v \sin(\alpha+\beta)\mathrm{g}}}.$
+
+Если точки броска и падения находятся на одном горизонтальном уровне, то $v=v_0,$ $\beta=\alpha$
+
+$L\dfrac{v_0v_0\mathrm{g}}\sin(\alpha+\alpha)=\dfrac{v_0^2\mathrm{g}}\sin(2\alpha).$
+
+Полученное соотношение совпадает с формулой (8).
+
+**Треугольник перемещений**
+
+$\textcolor{Red\vec S=\vec v_0 t+\dfrac{12}\vec{\mathrm{g}}t^2}.$
+
+[рисунок https://uploads-foxford-ru.ngcdn.ru/uploads/tinymce_file/file/160641/8ba83d4d5e4bc27c.png]
+
+По теореме косинусов
+
+${S}^2=(v_0t)^2+(\dfrac12\mathrm{g}t^2)^2-2v_0t\dfrac12\mathrm{g}t^2\cos(90^\circ-\alpha),$
+
+$S=\sqrt{v_0^2t^2+\dfrac12\mathrm{g}^2t^4-2v_0\mathrm{g}t^3\sin\alpha}.$
+
+По теореме Пифагора
+
+$L^2+\left(\dfrac{\mathrm{g}t^22}-h\right)^2=\left(v_0t\right)^2.$
+
+$\cos\alpha=\dfrac{Lv_0t},~\sin\alpha=\dfrac{\dfrac12\mathrm{g}t^2-hv_0t}.$
+
+## 🧩**Перемещение тела от точки броска до верхней точки траектории**
+
+[рисунок https://uploads-foxford-ru.ngcdn.ru/uploads/tinymce_file/file/141349/4a30e89c0c473ce7.png]
+
+В верхней точке траектории вертикальная составляющая скорости тела обращается в ноль, поэтому в этой точке вектор скорости направлен горизонтально.
+
+По формулам кинематики равноускоренного движения
+
+$\begin{cases} \vec v=\vec v_0+\vec{\mathrm{g}}t\\ \\\vec S=\vec v_0 t+\dfrac{12}\vec{\mathrm{g}}t^2 \end{cases}$
+
+Изобразим векторные соотношения на рисунке:
+
+[рисунок https://uploads-foxford-ru.ngcdn.ru/uploads/tinymce_file/file/141339/5d599bf3e8a2e276.png]
+
+По рисунку из левого треугольника видно, что
+
+$\cos\alpha=\dfrac{v_1v_0},~~~\sin\alpha=\dfrac{\mathrm{g}t_\text{под}v_0}$
+
+$\Rightarrow~~v_1=v_0\cos\alpha,$
+
+$\Rightarrow~~t_\text{под}=\dfrac{v_0\sin\alpha\mathrm{g}}.$
+
+Из правого треугольника получаем, что
+
+$\sin\alpha=\dfrac{\dfrac{12}\mathrm{g}t^2+Hv_0t_\text{под}},$
+
+$\Rightarrow~~\sin\alpha=\dfrac{\dfrac{12}\mathrm{g}\left(\dfrac{v_0\sin\alpha\mathrm{g}}\right)^2+H }{v_0\cdot \dfrac{v_0\sin\alpha\mathrm{g}}}=\dfrac{\dfrac{12}\dfrac{v_0^2\sin^2\alpha\mathrm{g}}+H\dfrac{v_0^2\sin\alpha\mathrm{g}}},$
+
+$\Rightarrow~~\dfrac{v_0^2\sin^2\alpha\mathrm{g}}=\dfrac{12}\dfrac{v_0^2\sin^2\alpha\mathrm{g}}+H,$
+
+$\Rightarrow~~H=\dfrac{12}\dfrac{v_0^2\sin^2\alpha\mathrm{g}}.$
+
+## 🧩**Перемещение тела за всё время полёта**
+
+[рисунок https://uploads-foxford-ru.ngcdn.ru/uploads/tinymce_file/file/141350/b6984219573564b7.png]
+
+В момент падения
+
+$L=S=|\vec S|.$
+
+По формулам кинематики равноускоренного движения
+
+$\begin{cases} \vec v=\vec v_0+\vec{\mathrm{g}}t\\ \\\vec S=\vec v_0 t+\dfrac{12}\vec{\mathrm{g}}t^2 \end{cases}$
+
+Изобразим векторные соотношения на рисунке:
+
+[рисунок https://uploads-foxford-ru.ngcdn.ru/uploads/tinymce_file/file/141343/c6fe5f7b0a2b14f4.png]
+
+Из правого рисунка видно, что
+
+$\sin\alpha=\dfrac{\dfrac{12}\mathrm{g}t^2_\text{пол}v_0t_\text{пол}},$
+
+$\Rightarrow~~t_\text{пол}=\dfrac{2v_0\sin\alpha\mathrm{g}}.$
+
+$\cos\alpha=\dfrac{S_2v_0t_\text{пол}}=\dfrac{Lv_0\cdot \dfrac{2v_0\sin\alpha\mathrm{g}}},$
+
+$\Rightarrow~~L=\dfrac{2v_0^2\sin\alpha\cos\alpha\mathrm{g}}=\dfrac{v_0^2\sin(2\alpha)\mathrm{g}}.$
+
+Из левого рисунка видно, что
+
+$v_0\cos\alpha=v_2\cos\beta,~~~\mathrm{g}t_\text{пол}=v_0\sin\alpha+v_2\sin\beta,$
+
+$\Rightarrow~~\mathrm{g}\cdot \dfrac{2v_0\sin\alpha\mathrm{g}}=v_0\sin\alpha+v_2\sin\beta,$
+
+$\Rightarrow~~\begin{cases} v_0\cos\alpha=v_2\cos\beta\\ \\v_0\sin\alpha=v_2\sin\beta \end{cases}$
+
+Возведём в квадрат и сложим полученные уравнения:
+
+$\Rightarrow~~\begin{cases} v_2^2\cos^2\beta=v_0^2\cos^2\alpha\\ \\v_2^2\sin^2\beta=v_0^2\sin^2\alpha \end{cases}$
+
+$\Rightarrow~~v_2^2\cos^2\beta+v_2^2\sin^2\beta=v_0^2\cos^2\alpha+v_0^2\sin^2\alpha $
+
+Используя основное тригонометрическое тождество, получаем, что
+
+$v_2^2=v_0^2$
+
+$\Rightarrow~~v_2=v_0,$
+
+$\Rightarrow~~v_0\cos\beta=v_0\cos\alpha~~\Rightarrow~~\beta=\alpha.$
+
+[рисунок https://uploads-foxford-ru.ngcdn.ru/uploads/tinymce_file/file/162467/e47215ad98030519.png] <https://uploads-foxford-ru.ngcdn.ru/uploads/tinymce_file/file/162467/e47215ad98030519.png>
+
+## 🧩**Горизонтальный бросок**
+
+Рассмотрим движение тела, брошенного горизонтально со скоростью $v_0.$
+
+[рисунок https://uploads-foxford-ru.ngcdn.ru/uploads/tinymce_file/file/140786/927c53000f92847b.png]
+
+В этом случае точка падения находится ниже точки броска на $h.$
+
+По формулам кинематики равноускоренного движения
+
+$\begin{cases} \vec v=\vec v_0+\vec{\mathrm{g}}t\\ \\\vec S=\vec v_0 t+\dfrac{12}\vec{\mathrm{g}}t^2 \end{cases}$
+
+Изобразим векторные соотношения на рисунке:
+
+[рисунок https://uploads-foxford-ru.ngcdn.ru/uploads/tinymce_file/file/141472/ce93ae29fa20c285.png]
+
+По правому рисунку видно, что
+
+$h=\dfrac{12}\mathrm{g}t^2,$
+
+$\Rightarrow~~t=\sqrt{\dfrac{2h\mathrm{g}}}.$
+
+$L=v_0t,$
+
+$\Rightarrow~~L=v_0t=v_0\sqrt{\dfrac{2h\mathrm{g}}}.$
+
+Из левого рисунка видно, что
+
+$v^2=v_0^2+(\mathrm{g}t)^2,$
+
+$\Rightarrow~~v=\sqrt{v_0^2+\mathrm{g}^2\cdot \dfrac{2h\mathrm{g}}}=\sqrt{v_0^2+2\mathrm{g}h}.$
+
+Связанные темы: Свободное падение тел; Движение тела, брошенного вертикально

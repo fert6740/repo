@@ -1,0 +1,126 @@
+Баллистика. Геометрический подход
+Предмет: Физика
+Раздел: Подготовка к ЕГЭ по физике
+Источник: https://foxford.ru/wiki/fizika/ballistika-geometricheskij-podhod
+Обновлено: 2026-10-04
+Уровни сложности на сайте: Победить в олимпиаде, Подготовиться к ЕГЭ — текст для всех уровней один
+
+Рассмотрим движение тела, брошенного с горизонтальной поверхности со скоростью $v_0$ под углом $\alpha$ к горизонту. Точки броска и падения находятся на одном горизонтальном уровне.
+
+Сопротивление воздуха отсутствует, значит, тело движется только под действием силы тяжести с постоянным ускорением, равным ускорению свободного падения
+
+$\vec a=\vec{\mathrm{g}}.$
+
+## Перемещение тела от точки броска до верхней точки траектории
+
+[рисунок https://uploads-foxford-ru.ngcdn.ru/uploads/tinymce_file/file/141349/4a30e89c0c473ce7.png]
+
+В верхней точке траектории вертикальная составляющая скорости тела обращается в ноль, поэтому в этой точке вектор скорости направлен горизонтально.
+
+По формулам кинематики равноускоренного движения
+
+$\begin{cases} \vec v=\vec v_0+\vec{\mathrm{g}}t\\ \\\vec S=\vec v_0 t+\dfrac{12}\vec{\mathrm{g}}t^2 \end{cases}$
+
+Изобразим векторные соотношения на рисунке.
+
+[рисунок https://uploads-foxford-ru.ngcdn.ru/uploads/tinymce_file/file/141339/5d599bf3e8a2e276.png]
+
+По рисунку из левого треугольника видно, что
+
+$\cos\alpha=\dfrac{v_1v_0},~~~\sin\alpha=\dfrac{\mathrm{g}t_\text{под}v_0}$
+
+$\Rightarrow~~v_1=v_0\cos\alpha,$
+
+$\Rightarrow~~t_\text{под}=\dfrac{v_0\sin\alpha\mathrm{g}}.$
+
+Из правого треугольника получаем, что
+
+$\sin\alpha=\dfrac{\dfrac{12}\mathrm{g}t^2+Hv_0t_\text{под}},$
+
+$\Rightarrow~~\sin\alpha=\dfrac{\dfrac{12}\mathrm{g}\left(\dfrac{v_0\sin\alpha\mathrm{g}}\right)^2+H }{v_0\cdot \dfrac{v_0\sin\alpha\mathrm{g}}}=\dfrac{\dfrac{12}\dfrac{v_0^2\sin^2\alpha\mathrm{g}}+H\dfrac{v_0^2\sin\alpha\mathrm{g}}},$
+
+$\Rightarrow~~\dfrac{v_0^2\sin^2\alpha\mathrm{g}}=\dfrac{12}\dfrac{v_0^2\sin^2\alpha\mathrm{g}}+H,$
+
+$\Rightarrow~~H=\dfrac{12}\dfrac{v_0^2\sin^2\alpha\mathrm{g}}.$
+
+## Перемещение тела за всё время полёта
+
+[рисунок https://uploads-foxford-ru.ngcdn.ru/uploads/tinymce_file/file/141350/b6984219573564b7.png]
+
+В момент падения
+
+$L=S=|\vec S|.$
+
+По формулам кинематики равноускоренного движения
+
+$\begin{cases} \vec v=\vec v_0+\vec{\mathrm{g}}t\\ \\\vec S=\vec v_0 t+\dfrac{12}\vec{\mathrm{g}}t^2 \end{cases}$
+
+Изобразим векторные соотношения на рисунке.
+
+[рисунок https://uploads-foxford-ru.ngcdn.ru/uploads/tinymce_file/file/141343/c6fe5f7b0a2b14f4.png]
+
+Из правого рисунка видно, что
+
+$\sin\alpha=\dfrac{\dfrac{12}\mathrm{g}t^2_\text{пол}v_0t_\text{пол}},$
+
+$\Rightarrow~~t_\text{пол}=\dfrac{2v_0\sin\alpha\mathrm{g}}.$
+
+$\cos\alpha=\dfrac{S_2v_0t_\text{пол}}=\dfrac{Lv_0\cdot \dfrac{2v_0\sin\alpha\mathrm{g}}},$
+
+$\Rightarrow~~L=\dfrac{2v_0^2\sin\alpha\cos\alpha\mathrm{g}}=\dfrac{v_0^2\sin(2\alpha)\mathrm{g}}.$
+
+Из левого рисунка видно, что
+
+$v_0\cos\alpha=v_2\cos\beta,~~~\mathrm{g}t_\text{пол}=v_0\sin\alpha+v_2\sin\beta,$
+
+$\Rightarrow~~\mathrm{g}\cdot \dfrac{2v_0\sin\alpha\mathrm{g}}=v_0\sin\alpha+v_2\sin\beta,$
+
+$\Rightarrow~~\begin{cases} v_0\cos\alpha=v_2\cos\beta\\ \\v_0\sin\alpha=v_2\sin\beta \end{cases}$
+
+Возведём в квадрат и сложим полученные уравнения
+
+$\Rightarrow~~\begin{cases} v_2^2\cos^2\beta=v_0^2\cos^2\alpha\\ \\v_2^2\sin^2\beta=v_0^2\sin^2\alpha \end{cases}$
+
+$\Rightarrow~~v_2^2\cos^2\beta+v_2^2\sin^2\beta=v_0^2\cos^2\alpha+v_0^2\sin^2\alpha . $
+
+Используя основное тригонометрическое тождество, получаем, что
+
+$v_2^2=v_0^2,$
+
+$\Rightarrow~~v_2=v_0,$
+
+$\Rightarrow~~v_0\cos\beta=v_0\cos\alpha~~\Rightarrow~~\beta=\alpha.$
+
+[рисунок https://uploads-foxford-ru.ngcdn.ru/uploads/tinymce_file/file/162468/a7f303a7ab1e7b31.png]
+
+## Горизонтальный бросок
+
+Рассмотрим движение тела, брошенного горизонтально со скоростью $v_0.$
+
+[рисунок https://uploads-foxford-ru.ngcdn.ru/uploads/tinymce_file/file/140786/927c53000f92847b.png]
+
+В этом случае точка падения находится ниже точки броска на $h.$
+
+По формулам кинематики равноускоренного движения
+
+$\begin{cases} \vec v=\vec v_0+\vec{\mathrm{g}}t\\ \\\vec S=\vec v_0 t+\dfrac{12}\vec{\mathrm{g}}t^2 \end{cases}$
+
+Изобразим векторные соотношения на рисунке.
+
+[рисунок https://uploads-foxford-ru.ngcdn.ru/uploads/tinymce_file/file/141472/ce93ae29fa20c285.png]
+
+Из правого рисунка видно, что
+
+$h=\dfrac{12}\mathrm{g}t^2,$
+
+$\Rightarrow~~t=\sqrt{\dfrac{2h\mathrm{g}}}.$
+
+$L=v_0t,$
+
+$\Rightarrow~~L=v_0t=v_0\sqrt{\dfrac{2h\mathrm{g}}}.$
+
+Из левого рисунка видно, что
+
+$v^2=v_0^2+(\mathrm{g}t)^2,$
+
+$\Rightarrow~~v=\sqrt{v_0^2+\mathrm{g}^2\cdot \dfrac{2h\mathrm{g}}}=\sqrt{v_0^2+2\mathrm{g}h}.$

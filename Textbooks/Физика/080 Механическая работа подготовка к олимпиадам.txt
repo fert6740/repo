@@ -1,0 +1,206 @@
+Механическая работа: подготовка к олимпиадам
+Предмет: Физика
+Раздел: Подготовка к олимпиадам 9-11
+Источник: https://foxford.ru/wiki/fizika/mehanicheskay-rabota
+Обновлено: 2026-10-04
+
+## Механическая работа силы $\vec{F}$
+
+Работа силы на малом перемещении
+
+[рисунок https://uploads-foxford-ru.ngcdn.ru/uploads/tinymce_file/file/161971/12bcac7e4b8ce97c.png]
+
+Разобьём траекторию движения точки на малые участки перемещения $\Delta \vec S_k$ (элементарные перемещения), такие, что каждый из этих участков можно считать отрезком прямой, и на каждом из таких участков силу $\vec F_k$, действующую на точку можно считать постоянной.
+
+Тогда элементарная механическая работа $\delta A_k$ силы $\vec F_k$ на элементарном перемещении $\Delta \vec S_k$ равна:
+
+$\delta A_k=\vec{F}_k\cdot \Delta \vec{S}_k=F_k \Delta S_k \cos \beta_k.\tag{1}$
+
+Полная механическая работа $A$ силы $\vec F$ на конечном пути
+
+$A=\delta A_1+\delta A_2+\delta A_3+\dots=\sum\limits_k \delta A_k= \sum\limits_kF_k \Delta S_k \cos \beta_k.\tag{2}$
+
+В СИ $[A]=\text{Дж}.$
+
+## Мгновенная механическая мощность $P$ силы $\vec F$
+
+Мгновенная механическая мощность $P$ силы $\vec F$ равна скорости изменения механической работы $A$ силы $\vec F.$
+
+$P=\dfrac{\delta A\Delta t},~~~(\Delta t\rightarrow 0),\tag{3}$
+
+$P_k=\dfrac{\delta A_k\Delta t}=\dfrac{F_k \Delta S_k \cos \beta_k\Delta t}=F_k v_k \cos \beta_k=\vec{F}_k\cdot\vec{v}_k,$
+
+где $\beta$ - угол между вектором силы $\vec F$ и вектором скорости $\vec v.$
+
+В общем виде:
+
+$P=Fv\cos\beta=\vec{F}\cdot\vec{v},\tag{4}$
+
+В СИ $[P]=\text{Вт}.$
+
+Из (2) и (3) получим:
+
+$A=\sum\limits_k \delta A_k=\sum\limits_k P_k\Delta t$
+
+Работу можно определить как
+
+$\textcolor{OrangeA=\pm S_{гр}}$
+
+{} [рисунок https://uploads-foxford-ru.ngcdn.ru/uploads/tinymce_file/file/146109/1808b200c18e0f1c.png]
+
+## Примеры расчёта механической работы некоторых сил
+
+$1).~$Вектор силы в процессе движения $\vec{F}\perp\vec{v}$ для любого момента времени.
+
+Из (4) следует, что $N=0$ для любого момента времени, следовательно $\delta A=0$ на любом участке перемещения $\delta S_k,$ следовательно
+
+$\textcolor{OrangeA=\sum\limits_k \delta A_k=0}.$
+
+## 🧩Пример 1
+
+Брусок соскальзывает с неподвижной поверхности.
+
+[рисунок https://uploads-foxford-ru.ngcdn.ru/uploads/tinymce_file/file/176600/83ef457c49a1d4f5.png]
+
+$A_N=0$ так как $\vec{N}\perp\vec{v}$ в любой момент времени.
+
+## 🧩Пример 2
+
+Брусок соскальзывает с движущегося клина.
+
+[рисунок https://uploads-foxford-ru.ngcdn.ru/uploads/tinymce_file/file/176601/66e56aa0859b003c.png]
+
+В СО клина $A_N=0,~~~\vec{N}\perp\vec{v}_{отн}.$
+
+В СО Земли $A_N\neq0,~~~\vec{N}\cancel\perp\vec{v}_{aбс}.$
+
+## 🧩Пример 3
+
+Маятник
+
+[рисунок https://uploads-foxford-ru.ngcdn.ru/uploads/tinymce_file/file/176602/59eb8aa683a074b8.png]
+
+$A_T=0,~~~\vec{T}\perp\vec{v}$ в любой момент времени.
+
+$2).~$ $\vec F=\overrightarrow{const}.$
+
+Если $\vec F=\overrightarrow{const},$ то
+
+$\textcolor{OrangeA=FS\cos\varphi},$
+
+где $\varphi$ - угол между вектором силы $\vec F$ и вектором перемещения $\vec S.$
+
+[рисунок https://uploads-foxford-ru.ngcdn.ru/uploads/tinymce_file/file/146120/eb4f8e05fa8ccc93.png]
+
+$\varphi < 90^\circ ~~\Rightarrow~~ A>0$
+
+$\varphi >90^\circ ~~\Rightarrow~~ A<0$
+
+$\varphi =90^\circ ~~\Rightarrow~~ A=0$
+
+## 🧩Пример 4
+
+Бросок с некоторой высоты на горизонтальную поверхность.
+
+[рисунок https://uploads-foxford-ru.ngcdn.ru/uploads/tinymce_file/file/161976/4fcda9e54f606530.png]
+
+$A_{m\mathrm{g}}=m\mathrm{g}S\cos\beta=m\mathrm{g}h$
+
+## 🧩Пример 5
+
+Бросок с горизонтальной поверхности на некоторую высоту.
+
+[рисунок https://uploads-foxford-ru.ngcdn.ru/uploads/tinymce_file/file/161977/40834f022ddfd99a.png]
+
+$A_{m\mathrm{g}}=m\mathrm{g}S\cos\beta=m\mathrm{g}S\cos(90^\circ+\phi)=-m\mathrm{g}S\sin\phi=-m\mathrm{g}h$
+
+$3).~$В процессе движения угол между векторами $\vec{F}$ и $\vec{v}$ постоянный и равен $\phi$.
+
+$\textcolor{OrangeA=S_{гр}\cos\phi},$
+
+где $S_{гр}$ - площадь под графиком зависимости силы $F$ от пройденного пути $L$
+
+**Пояснение:**
+
+$A=\sum\limits_k \delta A_k=\sum\limits_k F_k\Delta S_k\cos\phi=\cos\phi\sum\limits_k F_k\Delta S_k$
+
+$\vec{S}=\sum\limits_k\Delta\vec{S}_k$ — перемещение.
+
+$L=\sum\limits_k\Delta{S}_k$ — путь.
+
+[рисунок https://uploads-foxford-ru.ngcdn.ru/uploads/tinymce_file/file/176603/9c71aab2fac9580c.png]
+
+## 🧩Пример 6
+
+Брусок соскальзывает с неподвижной наклонной плоскости, причём коэффициент трения изменяется по закону $\mu=\mu(x)=kx$
+
+[рисунок https://uploads-foxford-ru.ngcdn.ru/uploads/tinymce_file/file/176604/2ec63be3eaa0b26c.png]
+
+$A_{F_{тр}}= S_{гр}\cos180^\circ=-S_{гр}$
+
+$F_{тр}=\mu N$
+
+$N=m\mathrm{g}\cos\alpha$
+
+$F_{тр}=\mu m\mathrm{g}\cos\alpha=km\mathrm{g}\cos(\alpha)x$
+
+[рисунок https://uploads-foxford-ru.ngcdn.ru/uploads/tinymce_file/file/176605/2b416ac36bf7dd6e.png]
+
+$S_{гр}=\dfrac12km\mathrm{g}\cos(\alpha)x^2$
+
+$A=-\dfrac12km\mathrm{g}\cos(\alpha)x^2.$
+
+$4).~$В процессе движения модуль силы остаётся постоянным и угол между векторами $\vec{F}$ и $\vec{v}$ постоянный и равен $\phi$.
+
+$F=|\vec{F}|=const$
+
+$\textcolor{OrangeA=FL\cos\phi},$
+
+где $L$ — пройденный путь.
+
+**Пояснение:**
+
+$A=\sum\limits_k \delta A_k=\sum\limits_k F_k\Delta S_k\cos\phi=F\cos\phi\sum\limits_k \Delta S_k=FL\cos\phi.$
+
+## 🧩Пример 7
+
+Маленький груз m, прикреплённый к лёгкой нити длиной $R$ покоился на наклонной плоскости. Грузу сообщили горизонтальную скорость $v$ вдоль поверхности плоскости такую, что он сместился до положения, в котором нить оказалась горизонтальной. Определить работу силы трения на пути, который проделал груз, если коэффициент трения $\mu$.
+
+[рисунок https://uploads-foxford-ru.ngcdn.ru/uploads/tinymce_file/file/176606/871e376ca00d8395.png]
+
+$F_{тр}=\mu N$
+
+$N=m\mathrm{g}\cos\alpha$
+
+$F_{тр}=\mu m\mathrm{g}\cos\alpha=const$
+
+$A_{тр}=F_{тр}L\cos180^\circ=-\mu m\mathrm{g}L\cos\alpha.$
+
+$ L=\dfrac{2\pi R4}=\dfrac{\pi R2}.$
+
+$A_{тр}= -\mu m\mathrm{g}\dfrac{\pi R2}\cos\alpha.$
+
+## Внутренние силы трения
+
+Рассмотрим силы терния между двумя брусками $\vec{F}_1$ и $\vec{F}_2$:
+
+[рисунок https://uploads-foxford-ru.ngcdn.ru/uploads/tinymce_file/file/176607/fce89e06a63b7204.png]
+
+$\vec{v}_{отн 1}=-\vec{v}_{отн 2},$
+
+${v}_{отн 1}={v}_{отн 2} ={v}_{отн},$
+
+$\vec{F}_{1}=-\vec{F}_{2}.$
+
+$ {F}_{1}= {F}_{2}=F_{тр}.$
+
+Количество теплоты, выделяемой при трении $Q\geq 0$
+
+$Q=-(A_{тр1}+A_{тр2})$
+
+$A_{тр1}+A_{тр2}\leq 0$
+
+В любой системе отсчёта работа внутренних сил трения не меняется и равна $(-Q)$
+
+Если $F_{тр}=const,$ то $Q=F_{тр}L_{отн}$
+Если $F_{тр}\neq const,$ то $Q=S_{гр},$ где $S_{гр}$ — площадь под графиком зависимости $F_{тр}$ от относительного пути $L_{отн}.$

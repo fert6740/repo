@@ -1,0 +1,190 @@
+Инфинитив / Infinitive
+Предмет: Английский язык
+Раздел: Английская грамматика для старшей школы / English  Grammar for Teens В1-В2
+Источник: https://foxford.ru/wiki/angliyskiy-yazyk/infinitiv-infinitive
+Обновлено: 2026-10-09
+
+### **Прочитайте высказывание**
+
+[рисунок https://uploads-foxford-ru.ngcdn.ru/uploads/tinymce_file/file/76068/866b86bd4759da2a.png]
+
+Рис. Прмиер использования **инфинитива / Infinitive**
+
+**Какую информацию мы получили от Минди о её занятиях плаванием?**
+
+### Check yourself
+
+Минди старается проплывать по крайней мере по три километра в день. Это непросто — проплывать так много. Но она знает, что достаточно сильна для того, чтобы плавать ещё больше.
+
+## Из этой статьи вы узнаете:
+
+[рисунок https://uploads-foxford-ru.ngcdn.ru/uploads/tinymce_file/file/76069/bda3872ba0d8024e.png]
+
+что такое **инфинитив / Infinitive** и какие функции он выполняет в предложении;
+
+какие формы имеет **инфинитив / Infinitive**;
+
+в каких случаях используется **инфинитив / Infinitive** без частицы **to**;
+
+в каких случаях используется **инфинитив / Infinitive** с частицей **to**;
+
+способы перевода **инфинитива / Infinitive** на русский язык.
+
+Инфинитив и его функции
+
+**Инфинитив / Infinitive** — это неличная форма глагола, которая обозначает действие, но не показывает, кто его совершает, то есть не изменяется по лицам и числам. Эта начальная, или, как её ещё называют, неопределённая форма глагола отвечает на вопросы «что делать?», «что сделать?». Показатель инфинитива в английском языке — частица to. Для сравнения: в русском языке показатель инфинитива — суффикс -ть.
+
+**to play** — играть
+
+Чтобы образовать отрицательную форму инфинитива, перед ним необходимо поставить частицу **not**.
+
+We decided **to help** her about the house.
+
+Мы решили помочь ей по дому.
+
+We decided **not to help** her about the house.
+
+Мы решили не помогать ей по дому.
+
+## Инфинитив может выполнять в предложении функции:
+
+| подлежащего | **To swim** is pleasant. Плавать приятно. |
+| части составного глагольного сказуемого | She started **to cry**. Она заплакала. |
+| части составного именного сказуемого | My goal is **to become** a famous singer. Моя цель — стать известной певицей. |
+| дополнения (объекта действия) | We are learning **to drive**. Мы учимся водить. |
+| определения (после определяемого слова) | It’s a trip **to remember**. Это путешествие надо запомнить. |
+| обстоятельства цели, часто с союзами **in order (not) to/so as to** (для того, чтобы); | I came **to say** goodbye. Я пришёл, чтобы попрощаться. |
+| обстоятельства следствия, как правило, со словами **too** и **enough** | It’s too cold **to go** outside. Слишком холодно, чтобы выходить на улицу. He isn’t experienced enough **to do** the job. У него недостаточно опыта для этой работы. |
+
+## Формы инфинитива
+
+В английском языке выделяют четыре формы инфинитива в действительном залоге и две формы в страдательном.
+
+| **Форма инфинитива** | **Active voice** | **Passive voice** |
+| **Простой инфинитив / Simple Infinitive** выражает действие, которое происходит одновременно с действием, выраженным смысловым глаголом | **to do** | **to be done** |
+| I want **to go** home. Я хочу пойти домой. | I would like **to be** met at the airport. Я бы хотела, чтобы меня встретили в аэропорту. |
+| **Длительный инфинитив / Continuous Infinitive** выражает продолжительное действие, происходящее в момент речи | **to be doing** / / | – |
+| She seems **to be walking** in the garden now. Кажется, она сейчас гуляет в саду. / My mother must **be listening** to the lecture of a renowned psychologist at the moment. Моя мама в данный момент наверняка слушает лекцию одного прославленного психолога. |
+| **Совершенный или перфектный инфинитив / Perfect Infinitive** выражает действие, которое произошло раньше действия, выраженного смысловым глаголом | **to have done** | **to have been done** |
+| I’m so happy **to have prepared** for the exam beforehand. Я так рада, что подготовилась к экзамену заранее. | The work should **have been done** on time. Работу следовало выполнить вовремя. |
+| Совершенно- длительный инфинитив / Perfect Continuous Infinitive выражает действие, которое началось раньше действия смыслового глагола, длилось на протяжении какого-то времени и, возможно, всё ещё длится | **to have been doing** | – |
+| She seems **to have been waiting** here for two hours. Кажется, она уже ждёт здесь два часа. / She might **have been working** on this project for a year. Кажется, она уже работает над этим проектом целый год. |
+
+Инфинитив может использоваться как с частицей **to**, так и без неё.
+
+## Случаи использования инфинитива без частицы to
+
+Инфинитив без частицы **to** употребляется в следующих ситуациях:
+
+| После вспомогательных глаголов в отрицательных и вопросительных предложениях **don’t do**, **won’t do**, **did…do**? | I think I **won’t succeed** in the sphere of business. Я думаю, что я не преуспею в сфере бизнеса. / **Did** he **bother** you? Он побеспокоил вас? |
+| После модальных глаголов **can**, **must**, **may**, **should**, **need**, **dare** (сметь, отваживаться) | We **can’t believe** our own eyes. Мы не можем поверить нашим собственным глазам. / He is in trouble. You **should give** him a helping hand. Он в беде. Тебе следует протянуть ему руку помощи. / She **must change** her behaviour. Она должна изменить своё поведение. / I **daren’t go** to the business meeting. Я не решился идти на деловую встречу. |
+| После глаголов разрешения и побуждения **let, make** и после глаголов физического восприятия **see**, **hear**, **feel**, **notice**, **observe** | His jokes **made** me **laugh**. Его шутки заставили меня смеяться. / **Let** me **help** you. Позвольте мне помочь вам. / I **noticed** him **leave** the room. Я заметила, что он вышел из комнаты. / He **felt** somebody **move** in the darkness of the room. Он почувствовал, что кто-то двигается в темноте комнаты. |
+| После конструкций **had better** и **would rather** | You **had better revise** the material several times. Лучше повтори материал несколько раз. / I **would rather return** to my hometown as soon as possible. Я бы предпочла вернуться в родной город как можно быстрее. |
+| После глагола **help (**может использоваться и инфинитив с частицей **to**) | I **helped** her (**to**) **launch** a new business. Я помогла ей запустить новый бизнес. |
+
+[рисунок https://uploads-foxford-ru.ngcdn.ru/uploads/tinymce_file/file/76071/565abea4dc1dfd60.png]
+
+В страдательном залоге, после форм **be made** / **heard** / **seen** используется инфинитив с частицей **to**.
+
+**Сравните:**
+
+He **was made** __to cry__. — They **made** him cry.
+
+Его заставили плакать. — Они заставили его заплакать.
+
+Если нужно подчеркнуть, что в предложении речь идёт о незавершённом действии, вместо инфинитива используется **-ing-форма**.
+
+I **saw** Jill **entering** the building. — Я видел, как Джилл входит в здание.
+
+I **saw** Jill **enter** the building. — Я видел, как Джилл вошла в здание.
+
+## Случаи использования инфинитива с частицей to
+
+Инфинитив с частицей **to** употребляется в следующих ситуациях:
+
+| Для выражения цели совершения действия | My brother went to Scotland **to do** scientific research on dialects. Мой брат поехал в Шотландию, чтобы провести научное исследование на тему диалектов. / We came to the British Museum **to see** some world-renowned exhibits. Мы пришли в Британский музей, чтобы увидеть некоторые всемирно известные экспонаты. / **To become** a professional pianist, you need to play the piano six hours a day. Чтобы стать профессиональным пианистом, вам необходимо играть на пианино по шесть часов в день. |
+| После выражений **would like** / **love** и **would prefer** для описания предпочтений человека в конкретной ситуации | He **would prefer not to risk** his job. Он предпочёл бы не рисковать своей работой. / I **would like** / **love to be** left alone. Я бы хотела остаться одна. |
+| После глаголов: - **afford** (позволить себе); - **agree** (соглашаться); - **arrange** (устраивать); - **ask** (просить); - **attempt** (пытаться); - **choose** (выбирать); - **claim** (заявлять); - **decide** (решать); - **demand** (требовать); - **deserve** (заслуживать); - **expect** (ожидать); - **fail** (терпеть неудачу); - **happen** (оказываться); - **hope** (надеяться); - **learn** (учиться); - **manage** (суметь сделать); - **offer** (предлагать); - **plan** (планировать); - **prepare** (готовиться); - **pretend** (притворяться); - **promise** (обещать); - **refuse** (отказываться); - **tend** (стремиться); - **threaten** (угрожать); - **want** (хотеть). | I **can’t afford to buy** this expensive car. Я не могу себе позволить эту дорогую машину. / I **plan to be sunbathing** on the beach next Wednesday. Я планирую загорать на пляже в следующую среду. / She **attempted to climb** this mountain. Она попыталась взобраться на эту гору. / My sister **claims to have passed** the test. Моя сестра утверждает, что сдала тест. / I **demand to see** the manager of your restaurant. Я хочу видеть менеджера вашего ресторана. / You **deserve to be heard**. Ты заслуживаешь быть услышанным. / Bob **refused to pay** the bill. Боб отказался оплачивать счёт. / She **tends to be** optimistic. Она старается быть оптимистичной. / He **threatens to take** his revenge. Он угрожает отомстить. |
+| При наличии дополнения после глаголов: - **advise** (советовать); - **allow** (позволять); - **beg** (умолять); - **cause** (вызывать, быть причиной); - **enable** (давать возможность); - **force** (заставлять); - **invite** (приглашать); - **order** (приказывать); - **persuade** (убеждать); - **recommend** (советовать); - **remind** (напоминать); - **teach** (учить); - **tell** (рассказывать); - **warn** (предупреждать). | She **taught** us **not to envy**. Она научила нас не завидовать. / He **persuaded** us **to start** going in for sports. Он убедил нас начать заниматься спортом. / I **advise** you **to be** more polite. Я советую тебе быть более вежливым. / My mother **told** me **to go** to bed. Моя мама сказала мне идти спать. / What **caused** you **to change** your behaviour? Что заставило тебя изменить своё поведение? / I**’m begging** you **not to leave**. Я умоляю тебя не уходить. / My sister **doesn’t allow** me **to waste** money on unnecessary things. Моя сестра не разрешает мне растрачивать деньги на ненужные вещи. |
+| После глаголов: - **seem** (казаться); - **appear** (казаться, проявлять себя); - **turn out** (оказываться); - **prove** (оказываться). | If you **appear to be** indecisive, people will take advantage of it. Если ты проявишь нерешительность, люди этим воспользуются. / I **seem to have lost** my key. Кажется, я потерял ключ. / He **proved to be** a good person. Он оказался хорошим человеком. / My decision **turned out to be** a mistake. Моё решение оказалось ошибкой. |
+| После некоторых модальных глаголов и конструкций: - **have to** (быть вынужденным что-то сделать); - **ought to** (следует); - **be to** (быть должным); - **be able to** (быть в состоянии). | I **have to find** a solution to the problem as soon as possible. Я должен найти решение этой проблемы как можно скорее. / You **ought to obey** these rules. Вам следует подчиняться этим правилам. / You **are to come** to the meeting at 5 p.m. sharp. Ты должен прийти на встречу ровно в пять. / He **is able to solve** this problem. Он в состоянии решить эту проблему. |
+| В сочетании **It is adjective + Infinitive** | **It was so clever to buy** tickets in advance. Было очень умно купить билеты заранее. / **It’s not easy to find** this street. Найти эту улицу нелегко. |
+| После прилагательных, выражающих чувства и эмоции, готовность что-либо делать, черты характера | I’m **happy to meet** you. Счастлив познакомиться с вами. / He was rather **reluctant to join** his classmates. Он довольно неохотно присоединился к одноклассникам. / My brother was so **generous to lend** me his bicycle for the weekend. Мой брат был так щедр, что одолжил на выходные свой велосипед. / / |
+| После слов **too** **/ enough** | We are **too** **far** from the venue **to come** on time. Мы слишком далеко от места сбора, чтобы прийти вовремя. / Are you **strong enough to do** this exercise? Ты достаточно силён для того, чтобы сделать это упражнение? |
+| В выражениях, использующихся в качестве вводных слов: - **to tell you the truth** (по правде говоря); - **to cut a long story short** (короче говоря); - **to put it mildly** (мягко говоря); - **to say nothing of** (не говоря о); - **to crown it all** (в довершение всего). | **To cut a long story short**, he became a successful businessman. Короче говоря, он стал успешным бизнесменом. / **To crown it all**, she missed her flight. В довершение всего, она не успела на свой самолёт. / It was unpleasant to hear this news, **to put it mildly**. Было, мягко говоря, неприятно услышать эту новость. |
+| В составе конструкции **to be the first** / **second** / **last** / **next to do smth** (делать что-то первым / вторым / последним / следующим) | She **was the first to come** to my party. Она первой пришла на мою вечеринку. / I**’m the last person to take** the exam. Я сдаю экзамен последним. |
+| В составе структуры **Verb + Interrogative Word + Infinitive** после глаголов: - **ask**; - **understand**; - **learn**; - **explain**; - **want to know.** | I **want to know** __how__ **to do** this research. Я хочу знать, как проводить это исследование. / He **understands** __how__ **to promote** this product. Он понимает, как продвигать этот продукт. |
+
+## Перевод инфинитива на русский язык
+
+На русский язык инфинитив можно перевести несколькими способами:
+
+| Как инфинитив | **To draw** is interesting. Рисовать интересно. |
+| Как существительное | **To draw** is interesting. Рисование интересно. |
+| Как деепричастие | **To cut a long story short**, we’ve made up! Короче говоря, мы помирились! |
+| Как личную форму глагола | He was the last **to take** the exam. Он сдавал экзамен последним. |
+| Как придаточное предложение: в составе придаточного предложения может использоваться инфинитив или личная форма глагола | **To solve this problem**, you have to do research. Чтобы решить эту проблему, вы должны провести исследование. |
+
+[рисунок https://uploads-foxford-ru.ngcdn.ru/uploads/tinymce_file/file/76072/65803acb6f9d15bc.png]
+
+### **Найдите предложения с ошибками и исправьте их**
+
+[рисунок https://uploads-foxford-ru.ngcdn.ru/uploads/tinymce_file/file/76073/46144feb879735e7.png]
+
+My sister is clever enough to enter Oxford University.
+
+My doctor recommended me to drink less coffee to improve my sleep.
+
+I’m reluctant to talk about my life.
+
+She can’t afford buying a new purse.
+
+They helped us clean the flat.
+
+Bob was sad to have failed his exam.
+
+You’d better to take it back as soon as possible.
+
+### Check yourself
+
+1) My sister is **clever enough to enter** Oxford University. (В предложении нет ошибок.)
+
+Моя сестра достаточно умна, чтобы поступить в Оксфордский университет.
+
+2) My doctor r**ecommended** me **to drink** less coffee to improve my sleep. (В предложении нет ошибок.)
+
+Мой доктор посоветовал мне пить меньше кофе, чтобы улучшить сон.
+
+3) I**’m reluctant to talk** about my life. (В предложении нет ошибок.)
+
+Мне не хочется говорить о моей жизни.
+
+4) She can’t **afford** buying **to buy** a new purse. (Ошибка: после глагола **afford** используется инфинитив с частицей **to**.)
+
+Она не может позволить себе купить новую сумочку.
+
+5) They **helped** us **clean** the flat. (В предложении нет ошибок.)
+
+Они помогли нам убрать квартиру.
+
+6) Bob **was sad to have** failed his exam. (В предложении нет ошибок.)
+
+Бобу было грустно оттого, что он провалил экзамен.
+
+7) You**’d better** to **take** it back as soon as possible. (Ошибка: после выражения **had better** используется инфинитив без частицы **to**.)
+
+Лучше бы ты отнёс это обратно как можно быстрее.
+
+## Теперь вы умеете:
+
+[рисунок https://uploads-foxford-ru.ngcdn.ru/uploads/tinymce_file/file/76074/16b80424c6e8b018.png]
+
+правильно использовать в речи разные формы **инфинитива / Infinitive**;
+
+говорить о цели совершения какого-либо действия;
+
+выражать свои предпочтения в конкретной ситуации;
+
+правильно использовать **инфинитив / Infinitive** после различных глаголов, прилагательных и в составе некоторых фраз;
+
+переводить **инфинитив / Infinitive** на русский язык.

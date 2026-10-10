@@ -1,0 +1,43 @@
+Статика: ЕГЭ по физике
+Предмет: Физика
+Раздел: Подготовка к ЕГЭ по физике
+Источник: https://foxford.ru/wiki/fizika/statika-ege
+Обновлено: 2026-10-04
+
+Момент $M$ силы $\vec F$ относительно точки $O$
+
+$\boxed{\phantom{\sum{}}M=Fd\phantom{\sum{}}}$
+
+[рисунок https://uploads-foxford-ru.ngcdn.ru/uploads/tinymce_file/file/142994/2c7583f1a38c39ea.png]
+
+$A$ — точка приложения силы, $O$ — полюс, $d$ — плечо силы $\vec F$ относительно точки $O.$
+
+В СИ $[M]=\text{Н\cdot}\text{м}.$
+
+**Правило моментов сил**
+
+$M_\curvearrowright=M_\curvearrowleft.$
+
+Правило моментов сил выполняется:
+
+$1)~$если тело покоится;
+
+$2)~$если тело равномерно вращается;
+
+$3)~$если масса тела равна нулю.
+
+[рисунок https://uploads-foxford-ru.ngcdn.ru/uploads/tinymce_file/file/143047/78b31fd21165a0e7.png]
+
+$M_\curvearrowright=M_1,~~~M_\curvearrowleft=M_2+M_3.$
+
+Твёрдое тело в ИСО будет оставаться в равновесии, если одновременно выполнены два условия.
+
+**Первое условие равновесия:**
+
+$\vec R=\vec F_1+\vec F_2+\vec F_3+\ldots=\vec 0.$
+
+**Второе условие равновесия (правило моментов):**
+
+$M_\curvearrowright=M_\curvearrowleft$
+
+относительно любой точки $O.$
