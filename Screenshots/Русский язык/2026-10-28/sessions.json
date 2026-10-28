@@ -1,0 +1,33 @@
+{
+ "subject": "Русский язык",
+ "label": "2026-10-28",
+ "note": "Проверка по «Свод правил.md» вместо учебника (исключение для этой контрольной)",
+ "sessions": {
+  "1": "session_01RGpHfmo5nzaYurxoHc3x8z",
+  "2": "session_01RGpHfiqYoCYyLEdk3Due3a",
+  "3": "session_01RGpHfnZUHLqcxmHWpErLLt",
+  "4": "session_01RGpHfmXm4J2FiG3xfP9Lxv",
+  "5": "session_01RGpHfiYTeHNNMTZ6wz3YTH",
+  "6": "session_01RGpHfke2KRr6jteWEYoNp2",
+  "7": "session_01RGpHfk4yihekaAuQPeeMRU",
+  "8": "session_01RGpHfiGvWVEurLcGfvDuv6",
+  "9": "session_01RGpHfiWttGN66RKWwziftS",
+  "10": "session_01RGpHfmDJ4AQXuc46VpecjY",
+  "11": "session_01RGpHfmweF23W1qfoozaCkf",
+  "12": "session_01RGpHfmQSXMWgQAE7dvGXSq",
+  "13": "session_01RGpHfkgV9iygnFfCb2wFb1",
+  "14": "session_01RGpHfnTyt6dsUYhFtKaVDd",
+  "15": "session_01RGpHfm7jvpu4bMPFLJ5L82",
+  "16": "session_01RGpHfnnrSHyRoQUebbpo9v",
+  "17": "session_01RGpHfkwUnnkmaUVPedjx8z",
+  "18": "session_01RGpHfieL7VGLwCTy4PSWTd",
+  "19": "session_01RGpHfnMausFvY6krR9YMjS",
+  "20": "session_01RGpHfnLShjXNCfvbQ1wtue",
+  "21": "session_01RGpHfmqTvFkSBqG9feohg5",
+  "22": "session_01RGpHfj35LxKNFXybW7wqMb",
+  "23": "session_01RGpHfmT8Vzv2wHR1YcKmhb",
+  "24": "session_01RGpHfnJ9HbgUbU4eTgUhEh",
+  "25": "session_01RGpHfkxT5mbr8kGWxSwXk1",
+  "26": "session_01RGpHfiMdX3fb7nhhkpT4zY"
+ }
+}
